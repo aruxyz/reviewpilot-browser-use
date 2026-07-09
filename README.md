@@ -825,9 +825,20 @@ This is strongly discouraged for PR reviews. Only disable safe mode for local te
 
 ## Demo
 
-ReviewPilot has a dedicated demo app in a separate repository: [aruxyz/review-pilot-demo](https://github.com/aruxyz/review-pilot-demo).
+ReviewPilot has a dedicated demo app in a separate repository: [aruxyz/review-pilot-demo](https://github.com/aruxyz/review-pilot-demo), deployed to Vercel at [review-pilot-demo.vercel.app](https://review-pilot-demo.vercel.app).
 
-It is a minimal Next.js 14 app with five intentional UX bugs. ReviewPilot should detect several of them when run against the demo.
+It is a minimal Next.js 14 app with five intentional UX bugs. ReviewPilot detects them when run against the demo.
+
+### Live PR with a real ReviewPilot comment
+
+[aruxyz/review-pilot-demo#1](https://github.com/aruxyz/review-pilot-demo/pull/1) is a real Pull Request with a real ReviewPilot review comment. Open it and see for yourself:
+
+- The PR was opened against the demo repo.
+- ReviewPilot ran against the live Vercel deploy.
+- ReviewPilot posted a Markdown review comment with 10 findings: 2 critical, 5 high, 3 medium.
+- Each finding includes expected vs actual behavior, why it matters, reproduction steps, evidence screenshots, and a suggested fix.
+
+The comment is posted by the `aruxyz` account using a Personal Access Token. In a real setup, the GitHub Action posts it automatically using the workflow `GITHUB_TOKEN`.
 
 ### The five intentional bugs
 
