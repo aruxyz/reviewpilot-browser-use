@@ -1,2 +1,6 @@
-﻿2026-07-09T07:45:34.2738782Z Cleaning up orphan processes
-2026-07-09T07:45:34.3042969Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+﻿2026-07-09T08:18:23.1448231Z Cleaning up orphan processes
+2026-07-09T08:18:23.1838405Z Terminate orphan process: pid (3124) (chrome)
+2026-07-09T08:18:23.1862719Z Terminate orphan process: pid (3130) (cat)
+2026-07-09T08:18:23.1911866Z Terminate orphan process: pid (3135) (chrome_crashpad_handler)
+2026-07-09T08:18:23.1937007Z Terminate orphan process: pid (3137) (chrome_crashpad_handler)
+2026-07-09T08:18:23.2026649Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

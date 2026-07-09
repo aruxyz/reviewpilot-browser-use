@@ -1,89 +1,89 @@
-﻿2026-07-09T07:43:57.3228379Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-2026-07-09T07:43:57.3236745Z ##[group]Run actions/checkout@v4
-2026-07-09T07:43:57.3237795Z with:
-2026-07-09T07:43:57.3238275Z   repository: aruxyz/review-pilot-demo
-2026-07-09T07:43:57.3242038Z   token: ***
-2026-07-09T07:43:57.3242471Z   ssh-strict: true
-2026-07-09T07:43:57.3242902Z   ssh-user: git
-2026-07-09T07:43:57.3243345Z   persist-credentials: true
-2026-07-09T07:43:57.3243886Z   clean: true
-2026-07-09T07:43:57.3244343Z   sparse-checkout-cone-mode: true
-2026-07-09T07:43:57.3244865Z   fetch-depth: 1
-2026-07-09T07:43:57.3245314Z   fetch-tags: false
-2026-07-09T07:43:57.3245761Z   show-progress: true
-2026-07-09T07:43:57.3246212Z   lfs: false
-2026-07-09T07:43:57.3246619Z   submodules: false
-2026-07-09T07:43:57.3247267Z   set-safe-directory: true
-2026-07-09T07:43:57.3248028Z ##[endgroup]
-2026-07-09T07:43:57.4266109Z Syncing repository: aruxyz/review-pilot-demo
-2026-07-09T07:43:57.4268523Z ##[group]Getting Git version info
-2026-07-09T07:43:57.4269571Z Working directory is '/home/runner/work/review-pilot-demo/review-pilot-demo'
-2026-07-09T07:43:57.4270743Z [command]/usr/bin/git version
-2026-07-09T07:43:57.4353589Z git version 2.54.0
-2026-07-09T07:43:57.4375582Z ##[endgroup]
-2026-07-09T07:43:57.4392602Z Temporarily overriding HOME='/home/runner/work/_temp/0b1d7541-381b-460b-a5f6-dfaf64e0f939' before making global git config changes
-2026-07-09T07:43:57.4395266Z Adding repository directory to the temporary git global config as a safe directory
-2026-07-09T07:43:57.4399483Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/review-pilot-demo/review-pilot-demo
-2026-07-09T07:43:57.4459312Z Deleting the contents of '/home/runner/work/review-pilot-demo/review-pilot-demo'
-2026-07-09T07:43:57.4462996Z ##[group]Initializing the repository
-2026-07-09T07:43:57.4467799Z [command]/usr/bin/git init /home/runner/work/review-pilot-demo/review-pilot-demo
-2026-07-09T07:43:57.4600162Z hint: Using 'master' as the name for the initial branch. This default branch name
-2026-07-09T07:43:57.4602007Z hint: will change to "main" in Git 3.0. To configure the initial branch name
-2026-07-09T07:43:57.4603622Z hint: to use in all of your new repositories, which will suppress this warning,
-2026-07-09T07:43:57.4604920Z hint: call:
-2026-07-09T07:43:57.4605866Z hint:
-2026-07-09T07:43:57.4607109Z hint: 	git config --global init.defaultBranch <name>
-2026-07-09T07:43:57.4608504Z hint:
-2026-07-09T07:43:57.4609822Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-2026-07-09T07:43:57.4612833Z hint: 'development'. The just-created branch can be renamed via this command:
-2026-07-09T07:43:57.4614336Z hint:
-2026-07-09T07:43:57.4615238Z hint: 	git branch -m <name>
-2026-07-09T07:43:57.4616196Z hint:
-2026-07-09T07:43:57.4617635Z hint: Disable this message with "git config set advice.defaultBranchName false"
-2026-07-09T07:43:57.4620051Z Initialized empty Git repository in /home/runner/work/review-pilot-demo/review-pilot-demo/.git/
-2026-07-09T07:43:57.4623568Z [command]/usr/bin/git remote add origin https://github.com/aruxyz/review-pilot-demo
-2026-07-09T07:43:57.4702269Z ##[endgroup]
-2026-07-09T07:43:57.4703620Z ##[group]Disabling automatic garbage collection
-2026-07-09T07:43:57.4711946Z [command]/usr/bin/git config --local gc.auto 0
-2026-07-09T07:43:57.4743389Z ##[endgroup]
-2026-07-09T07:43:57.4744450Z ##[group]Setting up auth
-2026-07-09T07:43:57.4752398Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-07-09T07:43:57.4797808Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-07-09T07:43:57.5188378Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-07-09T07:43:57.5226476Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-07-09T07:43:57.5448623Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-07-09T07:43:57.5484557Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-07-09T07:43:57.5708571Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-2026-07-09T07:43:57.5748237Z ##[endgroup]
-2026-07-09T07:43:57.5749718Z ##[group]Fetching the repository
-2026-07-09T07:43:57.5759267Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +190c77da2c513b3177043e6312402e3e60be33fd:refs/remotes/pull/2/merge
-2026-07-09T07:43:57.9669056Z From https://github.com/aruxyz/review-pilot-demo
-2026-07-09T07:43:57.9671505Z  * [new ref]         190c77da2c513b3177043e6312402e3e60be33fd -> pull/2/merge
-2026-07-09T07:43:57.9718503Z ##[endgroup]
-2026-07-09T07:43:57.9722282Z ##[group]Determining the checkout info
-2026-07-09T07:43:57.9723773Z ##[endgroup]
-2026-07-09T07:43:57.9724567Z [command]/usr/bin/git sparse-checkout disable
-2026-07-09T07:43:57.9772724Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-2026-07-09T07:43:57.9805498Z ##[group]Checking out the ref
-2026-07-09T07:43:57.9808400Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2/merge
-2026-07-09T07:43:57.9872377Z Note: switching to 'refs/remotes/pull/2/merge'.
-2026-07-09T07:43:57.9874058Z 
-2026-07-09T07:43:57.9875763Z You are in 'detached HEAD' state. You can look around, make experimental
-2026-07-09T07:43:57.9878642Z changes and commit them, and you can discard any commits you make in this
-2026-07-09T07:43:57.9880493Z state without impacting any branches by switching back to a branch.
-2026-07-09T07:43:57.9881726Z 
-2026-07-09T07:43:57.9882739Z If you want to create a new branch to retain commits you create, you may
-2026-07-09T07:43:57.9952501Z do so (now or later) by using -c with the switch command. Example:
-2026-07-09T07:43:57.9953688Z 
-2026-07-09T07:43:57.9954161Z   git switch -c <new-branch-name>
-2026-07-09T07:43:57.9955063Z 
-2026-07-09T07:43:57.9955566Z Or undo this operation with:
-2026-07-09T07:43:57.9956269Z 
-2026-07-09T07:43:57.9956699Z   git switch -
-2026-07-09T07:43:57.9957737Z 
-2026-07-09T07:43:57.9959345Z Turn off this advice by setting config variable advice.detachedHead to false
-2026-07-09T07:43:57.9961548Z 
-2026-07-09T07:43:57.9963444Z HEAD is now at 190c77d Merge ae26757a61b51330a38d3bb24f20d085a305bec9 into 2502e53fd826568852874276de8d9123613a55c4
-2026-07-09T07:43:57.9968392Z ##[endgroup]
-2026-07-09T07:43:57.9970732Z [command]/usr/bin/git log -1 --format=%H
-2026-07-09T07:43:57.9976531Z 190c77da2c513b3177043e6312402e3e60be33fd
+﻿2026-07-09T08:16:47.7668852Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-09T08:16:47.7677658Z ##[group]Run actions/checkout@v4
+2026-07-09T08:16:47.7678672Z with:
+2026-07-09T08:16:47.7679145Z   repository: aruxyz/review-pilot-demo
+2026-07-09T08:16:47.7682888Z   token: ***
+2026-07-09T08:16:47.7683337Z   ssh-strict: true
+2026-07-09T08:16:47.7683793Z   ssh-user: git
+2026-07-09T08:16:47.7684246Z   persist-credentials: true
+2026-07-09T08:16:47.7684734Z   clean: true
+2026-07-09T08:16:47.7685182Z   sparse-checkout-cone-mode: true
+2026-07-09T08:16:47.7685701Z   fetch-depth: 1
+2026-07-09T08:16:47.7686159Z   fetch-tags: false
+2026-07-09T08:16:47.7686610Z   show-progress: true
+2026-07-09T08:16:47.7687055Z   lfs: false
+2026-07-09T08:16:47.7687466Z   submodules: false
+2026-07-09T08:16:47.7688088Z   set-safe-directory: true
+2026-07-09T08:16:47.7688745Z ##[endgroup]
+2026-07-09T08:16:47.8703542Z Syncing repository: aruxyz/review-pilot-demo
+2026-07-09T08:16:47.8706260Z ##[group]Getting Git version info
+2026-07-09T08:16:47.8707660Z Working directory is '/home/runner/work/review-pilot-demo/review-pilot-demo'
+2026-07-09T08:16:47.8709654Z [command]/usr/bin/git version
+2026-07-09T08:16:47.8739043Z git version 2.54.0
+2026-07-09T08:16:47.8791846Z ##[endgroup]
+2026-07-09T08:16:47.8809412Z Temporarily overriding HOME='/home/runner/work/_temp/71024159-8af1-4078-936c-81bb57fb1aea' before making global git config changes
+2026-07-09T08:16:47.8811665Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-09T08:16:47.8814440Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/review-pilot-demo/review-pilot-demo
+2026-07-09T08:16:47.8867332Z Deleting the contents of '/home/runner/work/review-pilot-demo/review-pilot-demo'
+2026-07-09T08:16:47.8872015Z ##[group]Initializing the repository
+2026-07-09T08:16:47.8877811Z [command]/usr/bin/git init /home/runner/work/review-pilot-demo/review-pilot-demo
+2026-07-09T08:16:47.8961396Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-09T08:16:47.8963185Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-09T08:16:47.8964982Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-09T08:16:47.8966340Z hint: call:
+2026-07-09T08:16:47.8967045Z hint:
+2026-07-09T08:16:47.8968247Z hint: 	git config --global init.defaultBranch <name>
+2026-07-09T08:16:47.8969438Z hint:
+2026-07-09T08:16:47.8970389Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-09T08:16:47.8971833Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-09T08:16:47.8972677Z hint:
+2026-07-09T08:16:47.8973106Z hint: 	git branch -m <name>
+2026-07-09T08:16:47.8973592Z hint:
+2026-07-09T08:16:47.8974244Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-09T08:16:47.8975388Z Initialized empty Git repository in /home/runner/work/review-pilot-demo/review-pilot-demo/.git/
+2026-07-09T08:16:47.8978211Z [command]/usr/bin/git remote add origin https://github.com/aruxyz/review-pilot-demo
+2026-07-09T08:16:47.9022060Z ##[endgroup]
+2026-07-09T08:16:47.9027307Z ##[group]Disabling automatic garbage collection
+2026-07-09T08:16:47.9028234Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-09T08:16:47.9060555Z ##[endgroup]
+2026-07-09T08:16:47.9061350Z ##[group]Setting up auth
+2026-07-09T08:16:47.9069158Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-09T08:16:47.9105421Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-09T08:16:47.9460615Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-09T08:16:47.9501736Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-09T08:16:47.9761980Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-09T08:16:47.9803202Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-09T08:16:48.0049729Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-09T08:16:48.0092059Z ##[endgroup]
+2026-07-09T08:16:48.0092968Z ##[group]Fetching the repository
+2026-07-09T08:16:48.0101984Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90e8175940f6bafca8a7e1fd70ff633ebc7850a8:refs/remotes/pull/2/merge
+2026-07-09T08:16:48.2165212Z From https://github.com/aruxyz/review-pilot-demo
+2026-07-09T08:16:48.2167070Z  * [new ref]         90e8175940f6bafca8a7e1fd70ff633ebc7850a8 -> pull/2/merge
+2026-07-09T08:16:48.2198757Z ##[endgroup]
+2026-07-09T08:16:48.2199655Z ##[group]Determining the checkout info
+2026-07-09T08:16:48.2200973Z ##[endgroup]
+2026-07-09T08:16:48.2206795Z [command]/usr/bin/git sparse-checkout disable
+2026-07-09T08:16:48.2257204Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-09T08:16:48.2290441Z ##[group]Checking out the ref
+2026-07-09T08:16:48.2294253Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2/merge
+2026-07-09T08:16:48.2351523Z Note: switching to 'refs/remotes/pull/2/merge'.
+2026-07-09T08:16:48.2352117Z 
+2026-07-09T08:16:48.2352549Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-07-09T08:16:48.2353885Z changes and commit them, and you can discard any commits you make in this
+2026-07-09T08:16:48.2354869Z state without impacting any branches by switching back to a branch.
+2026-07-09T08:16:48.2355516Z 
+2026-07-09T08:16:48.2356090Z If you want to create a new branch to retain commits you create, you may
+2026-07-09T08:16:48.2357742Z do so (now or later) by using -c with the switch command. Example:
+2026-07-09T08:16:48.2358987Z 
+2026-07-09T08:16:48.2359431Z   git switch -c <new-branch-name>
+2026-07-09T08:16:48.2441302Z 
+2026-07-09T08:16:48.2441822Z Or undo this operation with:
+2026-07-09T08:16:48.2442247Z 
+2026-07-09T08:16:48.2442468Z   git switch -
+2026-07-09T08:16:48.2442797Z 
+2026-07-09T08:16:48.2443247Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-07-09T08:16:48.2443876Z 
+2026-07-09T08:16:48.2444551Z HEAD is now at 90e8175 Merge 7245f8abe8e27fa80bd54621fa67e988767cbf80 into 342010e6b348148cd6c28030c56af4509e9e7e1d
+2026-07-09T08:16:48.2446860Z ##[endgroup]
+2026-07-09T08:16:48.2449900Z [command]/usr/bin/git log -1 --format=%H
+2026-07-09T08:16:48.2450656Z 90e8175940f6bafca8a7e1fd70ff633ebc7850a8

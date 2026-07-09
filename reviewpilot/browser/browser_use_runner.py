@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 from pathlib import Path
 from typing import Any
 
@@ -147,6 +148,10 @@ class BrowserUseRunner:
             except Exception:
                 pass
 
+        screenshot_paths = self._save_screenshots_from_history(
+            history, journey.name, viewport.name
+        )
+
         return {
             "name": journey.name,
             "goal": journey.goal,
@@ -157,8 +162,30 @@ class BrowserUseRunner:
             "errors": [e for e in history.errors() if e],
             "urls": [u for u in history.urls() if u],
             "actions": history.action_names(),
-            "screenshot_paths": [p for p in history.screenshot_paths() if p],
+            "screenshot_paths": screenshot_paths,
             "steps": history.number_of_steps(),
             "duration_seconds": history.total_duration_seconds(),
             "history_file": str(conversation_dir / "history.json"),
         }
+
+    def _save_screenshots_from_history(
+        self, history, journey_name: str, viewport_name: str
+    ) -> list[str]:
+        journey_slug = journey_name.lower().replace(" ", "-").replace("/", "-")
+        viewport_slug = viewport_name.lower().replace(" ", "-")
+        screenshots_dir = self._output_dir / "screenshots"
+        screenshots_dir.mkdir(parents=True, exist_ok=True)
+
+        saved: list[str] = []
+        b64_screenshots = history.screenshots()
+        for idx, b64 in enumerate(b64_screenshots):
+            if not b64:
+                continue
+            try:
+                img_data = base64.b64decode(b64)
+                dest = screenshots_dir / f"{journey_slug}-{viewport_slug}-{idx:02d}.png"
+                dest.write_bytes(img_data)
+                saved.append(str(dest))
+            except Exception:
+                continue
+        return saved

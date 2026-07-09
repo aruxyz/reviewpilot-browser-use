@@ -1,622 +1,599 @@
-﻿2026-07-09T07:43:58.2122364Z ##[group]Run pip install "git+https://github.com/aruxyz/reviewpilot-browser-use.git"
-2026-07-09T07:43:58.2124842Z [36;1mpip install "git+https://github.com/aruxyz/reviewpilot-browser-use.git"[0m
-2026-07-09T07:43:58.2126601Z [36;1mpip install playwright[0m
-2026-07-09T07:43:58.2128148Z [36;1mpython -m playwright install chromium --with-deps[0m
-2026-07-09T07:43:58.2357512Z shell: /usr/bin/bash -e {0}
-2026-07-09T07:43:58.2358605Z env:
-2026-07-09T07:43:58.2359598Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
-2026-07-09T07:43:58.2361323Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
-2026-07-09T07:43:58.2363082Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
-2026-07-09T07:43:58.2364627Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
-2026-07-09T07:43:58.2366183Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
-2026-07-09T07:43:58.2368031Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
-2026-07-09T07:43:58.2369353Z ##[endgroup]
-2026-07-09T07:44:01.0472860Z Collecting git+https://github.com/aruxyz/reviewpilot-browser-use.git
-2026-07-09T07:44:01.0477580Z   Cloning https://github.com/aruxyz/reviewpilot-browser-use.git to /tmp/pip-req-build-jz3415k4
-2026-07-09T07:44:01.0498655Z   Running command git clone --filter=blob:none --quiet https://github.com/aruxyz/reviewpilot-browser-use.git /tmp/pip-req-build-jz3415k4
-2026-07-09T07:44:01.7608864Z   Resolved https://github.com/aruxyz/reviewpilot-browser-use.git to commit 69455f297ae2be933693e8e2a4f151af0b60548d
-2026-07-09T07:44:01.7644464Z   Installing build dependencies: started
-2026-07-09T07:44:03.1450531Z   Installing build dependencies: finished with status 'done'
-2026-07-09T07:44:03.1456074Z   Getting requirements to build wheel: started
-2026-07-09T07:44:03.6690676Z   Getting requirements to build wheel: finished with status 'done'
-2026-07-09T07:44:03.6699867Z   Preparing metadata (pyproject.toml): started
-2026-07-09T07:44:03.8411570Z   Preparing metadata (pyproject.toml): finished with status 'done'
-2026-07-09T07:44:03.9870145Z Collecting browser-use>=0.12.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.0377148Z   Downloading browser_use-0.13.3-py3-none-any.whl.metadata (17 kB)
-2026-07-09T07:44:04.0841564Z Collecting typer>=0.12.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.0873427Z   Downloading typer-0.26.8-py3-none-any.whl.metadata (15 kB)
-2026-07-09T07:44:04.1507089Z Collecting rich>=13.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.1541462Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
-2026-07-09T07:44:04.2903736Z Collecting pydantic>=2.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.2938283Z   Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
-2026-07-09T07:44:04.3409485Z Collecting pydantic-settings>=2.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.3447782Z   Downloading pydantic_settings-2.14.2-py3-none-any.whl.metadata (3.4 kB)
-2026-07-09T07:44:04.3982551Z Collecting pyyaml>=6.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.4018494Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
-2026-07-09T07:44:04.4343050Z Collecting jinja2>=3.1.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.4383377Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
-2026-07-09T07:44:04.4720742Z Collecting httpx>=0.27.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.4755262Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
-2026-07-09T07:44:04.5088316Z Collecting python-dotenv>=1.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.5121736Z   Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
-2026-07-09T07:44:04.7099209Z Collecting pillow>=10.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:04.7133616Z   Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
-2026-07-09T07:44:05.1911931Z Collecting aiohttp==3.13.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.1961150Z   Downloading aiohttp-3.13.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
-2026-07-09T07:44:05.2394143Z Collecting anthropic==0.76.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.2433270Z   Downloading anthropic-0.76.0-py3-none-any.whl.metadata (28 kB)
-2026-07-09T07:44:05.2781982Z Collecting anyio==4.12.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.2814276Z   Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
-2026-07-09T07:44:05.3122801Z Collecting browser-harness==0.1.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.3163427Z   Downloading browser_harness-0.1.4-py3-none-any.whl.metadata (5.8 kB)
-2026-07-09T07:44:05.3494847Z Collecting browser-use-sdk==3.4.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.3538115Z   Downloading browser_use_sdk-3.4.2-py3-none-any.whl.metadata (1.0 kB)
-2026-07-09T07:44:05.3850797Z Collecting bubus==1.5.6 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.3892744Z   Downloading bubus-1.5.6-py3-none-any.whl.metadata (37 kB)
-2026-07-09T07:44:05.4398202Z Collecting cdp-use==1.4.5 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.4443783Z   Downloading cdp_use-1.4.5-py3-none-any.whl.metadata (9.5 kB)
-2026-07-09T07:44:05.4774359Z Collecting click==8.3.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.4809122Z   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
-2026-07-09T07:44:05.5113142Z Collecting cloudpickle==3.1.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.5144758Z   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
-2026-07-09T07:44:05.5535840Z Collecting google-api-core==2.29.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.5570119Z   Downloading google_api_core-2.29.0-py3-none-any.whl.metadata (3.3 kB)
-2026-07-09T07:44:05.6073464Z Collecting google-api-python-client==2.188.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.6115072Z   Downloading google_api_python_client-2.188.0-py3-none-any.whl.metadata (7.0 kB)
-2026-07-09T07:44:05.6444676Z Collecting google-auth-oauthlib==1.2.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.6486874Z   Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl.metadata (3.1 kB)
-2026-07-09T07:44:05.6917769Z Collecting google-auth==2.48.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.6950764Z   Downloading google_auth-2.48.0-py3-none-any.whl.metadata (6.2 kB)
-2026-07-09T07:44:05.7341026Z Collecting google-genai==1.65.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.7377447Z   Downloading google_genai-1.65.0-py3-none-any.whl.metadata (51 kB)
-2026-07-09T07:44:05.7752023Z Collecting groq==1.0.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.7792411Z   Downloading groq-1.0.0-py3-none-any.whl.metadata (16 kB)
-2026-07-09T07:44:05.8094524Z Collecting inquirerpy==0.3.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.8125357Z   Downloading InquirerPy-0.3.4-py3-none-any.whl.metadata (8.1 kB)
-2026-07-09T07:44:05.8434772Z Collecting markdownify==1.2.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.8474835Z   Downloading markdownify-1.2.2-py3-none-any.whl.metadata (9.9 kB)
-2026-07-09T07:44:05.8810656Z Collecting mcp==1.26.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.8843797Z   Downloading mcp-1.26.0-py3-none-any.whl.metadata (89 kB)
-2026-07-09T07:44:05.9195375Z Collecting ollama==0.6.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.9234509Z   Downloading ollama-0.6.1-py3-none-any.whl.metadata (4.3 kB)
-2026-07-09T07:44:05.9771318Z Collecting openai==2.16.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:05.9815843Z   Downloading openai-2.16.0-py3-none-any.whl.metadata (29 kB)
-2026-07-09T07:44:05.9890606Z Collecting pillow>=10.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:05.9929437Z   Downloading pillow-12.2.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
-2026-07-09T07:44:06.0398974Z Collecting posthog==7.7.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.0444006Z   Downloading posthog-7.7.0-py3-none-any.whl.metadata (6.4 kB)
-2026-07-09T07:44:06.1224259Z Collecting psutil==7.2.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.1264112Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
-2026-07-09T07:44:06.1346431Z Collecting pydantic>=2.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:06.1378708Z   Downloading pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
-2026-07-09T07:44:06.1712018Z Collecting pyotp==2.9.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.1742250Z   Downloading pyotp-2.9.0-py3-none-any.whl.metadata (9.8 kB)
-2026-07-09T07:44:06.2093298Z Collecting pypdf==6.10.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.2135501Z   Downloading pypdf-6.10.2-py3-none-any.whl.metadata (7.1 kB)
-2026-07-09T07:44:06.2441831Z Collecting python-docx==1.2.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.2471402Z   Downloading python_docx-1.2.0-py3-none-any.whl.metadata (2.0 kB)
-2026-07-09T07:44:06.3578825Z Collecting reportlab==4.4.9 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.3637682Z   Downloading reportlab-4.4.9-py3-none-any.whl.metadata (1.7 kB)
-2026-07-09T07:44:06.4019890Z Collecting requests==2.33.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.4052806Z   Downloading requests-2.33.0-py3-none-any.whl.metadata (5.1 kB)
-2026-07-09T07:44:06.4112155Z Collecting rich>=13.0.0 (from reviewpilot==0.1.0)
-2026-07-09T07:44:06.4165793Z   Downloading rich-14.3.1-py3-none-any.whl.metadata (18 kB)
-2026-07-09T07:44:06.4471312Z Collecting screeninfo==0.8.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.4513525Z   Downloading screeninfo-0.8.1-py3-none-any.whl.metadata (2.9 kB)
-2026-07-09T07:44:06.4831572Z Collecting typing-extensions==4.15.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.4865644Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
-2026-07-09T07:44:06.5309205Z Collecting uuid7==0.1.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.5351750Z   Downloading uuid7-0.1.0-py2.py3-none-any.whl.metadata (3.6 kB)
-2026-07-09T07:44:06.5682261Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.5713509Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
-2026-07-09T07:44:06.5995135Z Collecting aiosignal>=1.4.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.6026026Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
-2026-07-09T07:44:06.6342670Z Collecting attrs>=17.3.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.6372105Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
-2026-07-09T07:44:06.7361799Z Collecting frozenlist>=1.1.1 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.7398045Z   Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
-2026-07-09T07:44:06.9489992Z Collecting multidict<7.0,>=4.5 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:06.9524998Z   Downloading multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
-2026-07-09T07:44:07.0216091Z Collecting propcache>=0.2.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.0253666Z   Downloading propcache-0.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
-2026-07-09T07:44:07.2944157Z Collecting yarl<2.0,>=1.17.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.2984235Z   Downloading yarl-1.24.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (94 kB)
-2026-07-09T07:44:07.3348359Z Collecting distro<2,>=1.7.0 (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.3380656Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
-2026-07-09T07:44:07.3687897Z Collecting docstring-parser<1,>=0.15 (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.3719890Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
-2026-07-09T07:44:07.4682510Z Collecting jiter<1,>=0.4.0 (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.4715843Z   Downloading jiter-0.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
-2026-07-09T07:44:07.5011786Z Collecting sniffio (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.5044320Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
-2026-07-09T07:44:07.5367488Z Collecting idna>=2.8 (from anyio==4.12.1->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.5400864Z   Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
-2026-07-09T07:44:07.5767852Z Collecting certifi (from httpx>=0.27.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.5799469Z   Downloading certifi-2026.6.17-py3-none-any.whl.metadata (2.5 kB)
-2026-07-09T07:44:07.6134031Z Collecting httpcore==1.* (from httpx>=0.27.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.6169469Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
-2026-07-09T07:44:07.6471591Z Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->reviewpilot==0.1.0)
-2026-07-09T07:44:07.6504863Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
-2026-07-09T07:44:08.3250133Z Collecting pydantic-core==2.41.5 (from pydantic>=2.0.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.3290059Z   Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
-2026-07-09T07:44:08.3582562Z Collecting typing-inspection>=0.4.2 (from pydantic>=2.0.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.3640906Z   Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
-2026-07-09T07:44:08.3940814Z Collecting fetch-use==0.4.0 (from browser-harness==0.1.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.3979281Z   Downloading fetch_use-0.4.0-py3-none-any.whl.metadata (7.3 kB)
-2026-07-09T07:44:08.4865600Z Collecting websockets==15.0.1 (from browser-harness==0.1.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.4902721Z   Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
-2026-07-09T07:44:08.5216381Z Collecting aiofiles>=24.1.0 (from bubus==1.5.6->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.5246554Z   Downloading aiofiles-25.1.0-py3-none-any.whl.metadata (6.3 kB)
-2026-07-09T07:44:08.5563223Z Collecting portalocker>=2.7.0 (from bubus==1.5.6->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.5596490Z   Downloading portalocker-3.2.0-py3-none-any.whl.metadata (8.7 kB)
-2026-07-09T07:44:08.6006833Z Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core==2.29.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.6039574Z   Downloading googleapis_common_protos-1.75.0-py3-none-any.whl.metadata (8.6 kB)
-2026-07-09T07:44:08.7519809Z Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.19.5 (from google-api-core==2.29.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.7556388Z   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
-2026-07-09T07:44:08.7890002Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core==2.29.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.7924865Z   Downloading proto_plus-1.28.1-py3-none-any.whl.metadata (2.2 kB)
-2026-07-09T07:44:08.8336361Z Collecting pyasn1-modules>=0.2.1 (from google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:08.8369656Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
-2026-07-09T07:44:09.0094804Z Collecting cryptography>=38.0.3 (from google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.0130779Z   Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
-2026-07-09T07:44:09.0452134Z Collecting rsa<5,>=3.1.4 (from google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.0483266Z   Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
-2026-07-09T07:44:09.2000048Z Collecting charset_normalizer<4,>=2 (from requests==2.33.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.2049166Z   Downloading charset_normalizer-3.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (41 kB)
-2026-07-09T07:44:09.2457075Z Collecting urllib3<3,>=1.26 (from requests==2.33.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.2489848Z   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
-2026-07-09T07:44:09.2835518Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.2867166Z   Downloading httplib2-0.32.0-py3-none-any.whl.metadata (2.2 kB)
-2026-07-09T07:44:09.3169262Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.3198477Z   Downloading google_auth_httplib2-0.4.0-py3-none-any.whl.metadata (3.0 kB)
-2026-07-09T07:44:09.3496412Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.3531557Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
-2026-07-09T07:44:09.3863090Z Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib==1.2.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.3894003Z   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
-2026-07-09T07:44:09.4275419Z Collecting tenacity<9.2.0,>=8.2.3 (from google-genai==1.65.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.4307121Z   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
-2026-07-09T07:44:09.4657899Z Collecting pfzy<0.4.0,>=0.3.1 (from inquirerpy==0.3.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.4691224Z   Downloading pfzy-0.3.4-py3-none-any.whl.metadata (4.9 kB)
-2026-07-09T07:44:09.5102349Z Collecting prompt-toolkit<4.0.0,>=3.0.1 (from inquirerpy==0.3.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.5134173Z   Downloading prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
-2026-07-09T07:44:09.5472642Z Collecting beautifulsoup4<5,>=4.9 (from markdownify==1.2.2->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.5504219Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
-2026-07-09T07:44:09.5815098Z Collecting six<2,>=1.15 (from markdownify==1.2.2->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.5858162Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-2026-07-09T07:44:09.6151112Z Collecting httpx-sse>=0.4 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.6183040Z   Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
-2026-07-09T07:44:09.6561806Z Collecting jsonschema>=4.20.0 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.6593311Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
-2026-07-09T07:44:09.6961114Z Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.6993216Z   Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
-2026-07-09T07:44:09.7304047Z Collecting python-multipart>=0.0.9 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.7337059Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
-2026-07-09T07:44:09.7669907Z Collecting sse-starlette>=1.6.1 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.7700296Z   Downloading sse_starlette-3.4.5-py3-none-any.whl.metadata (15 kB)
-2026-07-09T07:44:09.8115838Z Collecting starlette>=0.27 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.8153191Z   Downloading starlette-1.3.1-py3-none-any.whl.metadata (6.4 kB)
-2026-07-09T07:44:09.8575788Z Collecting uvicorn>=0.31.1 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.8611084Z   Downloading uvicorn-0.51.0-py3-none-any.whl.metadata (6.6 kB)
-2026-07-09T07:44:09.9114486Z Collecting tqdm>4 (from openai==2.16.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.9147483Z   Downloading tqdm-4.68.4-py3-none-any.whl.metadata (57 kB)
-2026-07-09T07:44:09.9528251Z Collecting python-dateutil>=2.2 (from posthog==7.7.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.9572300Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
-2026-07-09T07:44:09.9884794Z Collecting backoff>=1.10.0 (from posthog==7.7.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:09.9916011Z   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
-2026-07-09T07:44:10.2094801Z Collecting lxml>=3.1.0 (from python-docx==1.2.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.2132963Z   Downloading lxml-6.1.1-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
-2026-07-09T07:44:10.5488855Z Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.5522675Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
-2026-07-09T07:44:10.6432287Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.6481877Z   Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
-2026-07-09T07:44:10.6854582Z Collecting soupsieve>=1.6.1 (from beautifulsoup4<5,>=4.9->markdownify==1.2.2->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.6884604Z   Downloading soupsieve-2.8.4-py3-none-any.whl.metadata (4.6 kB)
-2026-07-09T07:44:10.7327843Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.7359597Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
-2026-07-09T07:44:10.7776662Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.7810877Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
-2026-07-09T07:44:10.8186706Z Collecting wcwidth (from prompt-toolkit<4.0.0,>=3.0.1->inquirerpy==0.3.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.8226799Z   Downloading wcwidth-0.8.2-py3-none-any.whl.metadata (43 kB)
-2026-07-09T07:44:10.8683850Z Collecting pyasn1>=0.1.3 (from rsa<5,>=3.1.4->google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:10.8714123Z   Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
-2026-07-09T07:44:10.9994744Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.0033358Z   Downloading cffi-2.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
-2026-07-09T07:44:11.0349811Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.0380720Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
-2026-07-09T07:44:11.1037932Z Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.1072359Z   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
-2026-07-09T07:44:11.1389391Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.1425649Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
-2026-07-09T07:44:11.1795084Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.1826821Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
-2026-07-09T07:44:11.4266047Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.4310845Z   Downloading rpds_py-2026.6.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
-2026-07-09T07:44:11.4634335Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.4665454Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
-2026-07-09T07:44:11.5792039Z Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib==1.2.4->browser-use>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.5827339Z   Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB)
-2026-07-09T07:44:11.6243811Z Collecting shellingham>=1.3.0 (from typer>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.6278314Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
-2026-07-09T07:44:11.6570960Z Collecting annotated-doc>=0.0.2 (from typer>=0.12.0->reviewpilot==0.1.0)
-2026-07-09T07:44:11.6602627Z   Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
-2026-07-09T07:44:11.6769192Z Downloading browser_use-0.13.3-py3-none-any.whl (706 kB)
-2026-07-09T07:44:11.6857542Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 707.0/707.0 kB 96.7 MB/s  0:00:00
-2026-07-09T07:44:11.6900619Z Downloading aiohttp-3.13.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
-2026-07-09T07:44:11.7390830Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 51.6 MB/s  0:00:00
-2026-07-09T07:44:11.7431099Z Downloading anthropic-0.76.0-py3-none-any.whl (390 kB)
-2026-07-09T07:44:11.7503325Z Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
-2026-07-09T07:44:11.7556255Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
-2026-07-09T07:44:11.7609297Z Downloading pydantic-2.12.5-py3-none-any.whl (463 kB)
-2026-07-09T07:44:11.7672424Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
-2026-07-09T07:44:11.7736111Z Downloading browser_harness-0.1.4-py3-none-any.whl (47 kB)
-2026-07-09T07:44:11.7801011Z Downloading browser_use_sdk-3.4.2-py3-none-any.whl (57 kB)
-2026-07-09T07:44:11.7854385Z Downloading bubus-1.5.6-py3-none-any.whl (52 kB)
-2026-07-09T07:44:11.7910421Z Downloading cdp_use-1.4.5-py3-none-any.whl (350 kB)
-2026-07-09T07:44:11.7987787Z Downloading click-8.3.1-py3-none-any.whl (108 kB)
-2026-07-09T07:44:11.8043901Z Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
-2026-07-09T07:44:11.8115647Z Downloading fetch_use-0.4.0-py3-none-any.whl (9.5 kB)
-2026-07-09T07:44:11.8166670Z Downloading google_api_core-2.29.0-py3-none-any.whl (173 kB)
-2026-07-09T07:44:11.8238521Z Downloading google_auth-2.48.0-py3-none-any.whl (236 kB)
-2026-07-09T07:44:11.8299928Z Downloading requests-2.33.0-py3-none-any.whl (65 kB)
-2026-07-09T07:44:11.8358459Z Downloading google_api_python_client-2.188.0-py3-none-any.whl (14.9 MB)
-2026-07-09T07:44:11.9132643Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.9/14.9 MB 202.4 MB/s  0:00:00
-2026-07-09T07:44:11.9189547Z Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl (19 kB)
-2026-07-09T07:44:11.9249563Z Downloading google_genai-1.65.0-py3-none-any.whl (724 kB)
-2026-07-09T07:44:11.9319947Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 724.4/724.4 kB 124.1 MB/s  0:00:00
-2026-07-09T07:44:11.9354814Z Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
-2026-07-09T07:44:11.9420047Z Downloading groq-1.0.0-py3-none-any.whl (138 kB)
-2026-07-09T07:44:11.9482470Z Downloading InquirerPy-0.3.4-py3-none-any.whl (67 kB)
-2026-07-09T07:44:11.9540751Z Downloading markdownify-1.2.2-py3-none-any.whl (15 kB)
-2026-07-09T07:44:11.9595049Z Downloading mcp-1.26.0-py3-none-any.whl (233 kB)
-2026-07-09T07:44:11.9661633Z Downloading ollama-0.6.1-py3-none-any.whl (14 kB)
-2026-07-09T07:44:11.9726533Z Downloading openai-2.16.0-py3-none-any.whl (1.1 MB)
-2026-07-09T07:44:11.9803456Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 193.5 MB/s  0:00:00
-2026-07-09T07:44:11.9838837Z Downloading pillow-12.2.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
-2026-07-09T07:44:12.0224403Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 195.8 MB/s  0:00:00
-2026-07-09T07:44:12.0259654Z Downloading posthog-7.7.0-py3-none-any.whl (185 kB)
-2026-07-09T07:44:12.0321361Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
-2026-07-09T07:44:12.0373721Z Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
-2026-07-09T07:44:12.0462821Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 267.1 MB/s  0:00:00
-2026-07-09T07:44:12.0498273Z Downloading pyotp-2.9.0-py3-none-any.whl (13 kB)
-2026-07-09T07:44:12.0545252Z Downloading pypdf-6.10.2-py3-none-any.whl (336 kB)
-2026-07-09T07:44:12.0644134Z Downloading python_docx-1.2.0-py3-none-any.whl (252 kB)
-2026-07-09T07:44:12.0701721Z Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
-2026-07-09T07:44:12.0764226Z Downloading reportlab-4.4.9-py3-none-any.whl (2.0 MB)
-2026-07-09T07:44:12.0893696Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 200.5 MB/s  0:00:00
-2026-07-09T07:44:12.0928169Z Downloading rich-14.3.1-py3-none-any.whl (309 kB)
-2026-07-09T07:44:12.0994707Z Downloading screeninfo-0.8.1-py3-none-any.whl (12 kB)
-2026-07-09T07:44:12.1045881Z Downloading uuid7-0.1.0-py2.py3-none-any.whl (7.5 kB)
-2026-07-09T07:44:12.1098642Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
-2026-07-09T07:44:12.1159378Z Downloading charset_normalizer-3.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (221 kB)
-2026-07-09T07:44:12.1216064Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
-2026-07-09T07:44:12.1268795Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
-2026-07-09T07:44:12.1318854Z Downloading google_auth_httplib2-0.4.0-py3-none-any.whl (9.5 kB)
-2026-07-09T07:44:12.1366707Z Downloading googleapis_common_protos-1.75.0-py3-none-any.whl (300 kB)
-2026-07-09T07:44:12.1429290Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
-2026-07-09T07:44:12.1487194Z Downloading httplib2-0.32.0-py3-none-any.whl (93 kB)
-2026-07-09T07:44:12.1545167Z Downloading idna-3.18-py3-none-any.whl (65 kB)
-2026-07-09T07:44:12.1607724Z Downloading jiter-0.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (347 kB)
-2026-07-09T07:44:12.1689729Z Downloading multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (246 kB)
-2026-07-09T07:44:12.1779450Z Downloading pfzy-0.3.4-py3-none-any.whl (8.5 kB)
-2026-07-09T07:44:12.1831753Z Downloading prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
-2026-07-09T07:44:12.1892536Z Downloading proto_plus-1.28.1-py3-none-any.whl (50 kB)
-2026-07-09T07:44:12.1974569Z Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
-2026-07-09T07:44:12.2052875Z Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
-2026-07-09T07:44:12.2145365Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 160.9 MB/s  0:00:00
-2026-07-09T07:44:12.2178858Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
-2026-07-09T07:44:12.2234475Z Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
-2026-07-09T07:44:12.2289330Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-2026-07-09T07:44:12.2341655Z Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
-2026-07-09T07:44:12.2396894Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
-2026-07-09T07:44:12.2446646Z Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
-2026-07-09T07:44:12.2532241Z Downloading yarl-1.24.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (106 kB)
-2026-07-09T07:44:12.2588382Z Downloading aiofiles-25.1.0-py3-none-any.whl (14 kB)
-2026-07-09T07:44:12.2637511Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
-2026-07-09T07:44:12.2687710Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
-2026-07-09T07:44:12.2742936Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
-2026-07-09T07:44:12.2796353Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
-2026-07-09T07:44:12.2851170Z Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
-2026-07-09T07:44:12.2900578Z Downloading certifi-2026.6.17-py3-none-any.whl (133 kB)
-2026-07-09T07:44:12.2954465Z Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
-2026-07-09T07:44:12.3138399Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 281.4 MB/s  0:00:00
-2026-07-09T07:44:12.3172453Z Downloading cffi-2.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
-2026-07-09T07:44:12.3237737Z Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
-2026-07-09T07:44:12.3299281Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
-2026-07-09T07:44:12.3348688Z Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
-2026-07-09T07:44:12.3397280Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-2026-07-09T07:44:12.3452645Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
-2026-07-09T07:44:12.3505810Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
-2026-07-09T07:44:12.3560648Z Downloading lxml-6.1.1-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
-2026-07-09T07:44:12.3753396Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 293.1 MB/s  0:00:00
-2026-07-09T07:44:12.3791578Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
-2026-07-09T07:44:12.3846092Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
-2026-07-09T07:44:12.3902513Z Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
-2026-07-09T07:44:12.3952622Z Downloading portalocker-3.2.0-py3-none-any.whl (22 kB)
-2026-07-09T07:44:12.4005959Z Downloading propcache-0.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (58 kB)
-2026-07-09T07:44:12.4055768Z Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
-2026-07-09T07:44:12.4114480Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
-2026-07-09T07:44:12.4168929Z Downloading pydantic_settings-2.14.2-py3-none-any.whl (61 kB)
-2026-07-09T07:44:12.4231032Z Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
-2026-07-09T07:44:12.4282869Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-2026-07-09T07:44:12.4337911Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
-2026-07-09T07:44:12.4390642Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
-2026-07-09T07:44:12.4453414Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 138.7 MB/s  0:00:00
-2026-07-09T07:44:12.4485830Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
-2026-07-09T07:44:12.4540284Z Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
-2026-07-09T07:44:12.4596325Z Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
-2026-07-09T07:44:12.4659247Z Downloading rpds_py-2026.6.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
-2026-07-09T07:44:12.4750601Z Downloading soupsieve-2.8.4-py3-none-any.whl (37 kB)
-2026-07-09T07:44:12.4807979Z Downloading sse_starlette-3.4.5-py3-none-any.whl (16 kB)
-2026-07-09T07:44:12.4871604Z Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
-2026-07-09T07:44:12.4926988Z Downloading tqdm-4.68.4-py3-none-any.whl (676 kB)
-2026-07-09T07:44:12.4983298Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 676.6/676.6 kB 121.4 MB/s  0:00:00
-2026-07-09T07:44:12.5016058Z Downloading typer-0.26.8-py3-none-any.whl (122 kB)
-2026-07-09T07:44:12.5080617Z Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
-2026-07-09T07:44:12.5136141Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
-2026-07-09T07:44:12.5194506Z Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
-2026-07-09T07:44:12.5244503Z Downloading uvicorn-0.51.0-py3-none-any.whl (73 kB)
-2026-07-09T07:44:12.5296270Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
-2026-07-09T07:44:12.5350968Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
-2026-07-09T07:44:12.5400770Z Downloading wcwidth-0.8.2-py3-none-any.whl (323 kB)
-2026-07-09T07:44:12.6585026Z Building wheels for collected packages: reviewpilot
-2026-07-09T07:44:12.6594164Z   Building wheel for reviewpilot (pyproject.toml): started
-2026-07-09T07:44:12.8671113Z   Building wheel for reviewpilot (pyproject.toml): finished with status 'done'
-2026-07-09T07:44:12.8677643Z   Created wheel for reviewpilot: filename=reviewpilot-0.1.0-py3-none-any.whl size=43651 sha256=afb7a4fa445fe659ebb214aada71d6e02ffad8e0dc29e2a17657b35e0fd11640
-2026-07-09T07:44:12.8680256Z   Stored in directory: /tmp/pip-ephem-wheel-cache-dkcrhibi/wheels/00/ff/c9/6cd25ea34ed824121c1ce613d36b57c89f300368cc8a30bf74
-2026-07-09T07:44:12.8713537Z Successfully built reviewpilot
-2026-07-09T07:44:13.0309383Z Installing collected packages: websockets, wcwidth, uuid7, urllib3, uritemplate, typing-extensions, tqdm, tenacity, soupsieve, sniffio, six, shellingham, screeninfo, rpds-py, pyyaml, python-multipart, python-dotenv, pypdf, pyparsing, pyotp, pyjwt, pygments, pycparser, pyasn1, psutil, protobuf, propcache, portalocker, pillow, pfzy, oauthlib, multidict, mdurl, MarkupSafe, lxml, jiter, idna, httpx-sse, h11, frozenlist, fetch-use, docstring-parser, distro, cloudpickle, click, charset_normalizer, certifi, backoff, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, typing-inspection, rsa, requests, reportlab, referencing, python-docx, python-dateutil, pydantic-core, pyasn1-modules, proto-plus, prompt-toolkit, markdown-it-py, jinja2, httplib2, httpcore, googleapis-common-protos, cffi, beautifulsoup4, anyio, aiosignal, starlette, rich, requests-oauthlib, pydantic, posthog, markdownify, jsonschema-specifications, inquirerpy, httpx, cryptography, aiohttp, typer, sse-starlette, pydantic-settings, openai, ollama, jsonschema, groq, google-auth, cdp-use, bubus, browser-use-sdk, anthropic, mcp, google-auth-oauthlib, google-auth-httplib2, google-api-core, browser-harness, google-genai, google-api-python-client, browser-use, reviewpilot
-2026-07-09T07:44:21.9282816Z 
-2026-07-09T07:44:21.9331002Z Successfully installed MarkupSafe-3.0.3 aiofiles-25.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.13.4 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anthropic-0.76.0 anyio-4.12.1 attrs-26.1.0 backoff-2.2.1 beautifulsoup4-4.15.0 browser-harness-0.1.4 browser-use-0.13.3 browser-use-sdk-3.4.2 bubus-1.5.6 cdp-use-1.4.5 certifi-2026.6.17 cffi-2.1.0 charset_normalizer-3.4.9 click-8.3.1 cloudpickle-3.1.2 cryptography-49.0.0 distro-1.9.0 docstring-parser-0.18.0 fetch-use-0.4.0 frozenlist-1.8.0 google-api-core-2.29.0 google-api-python-client-2.188.0 google-auth-2.48.0 google-auth-httplib2-0.4.0 google-auth-oauthlib-1.2.4 google-genai-1.65.0 googleapis-common-protos-1.75.0 groq-1.0.0 h11-0.16.0 httpcore-1.0.9 httplib2-0.32.0 httpx-0.28.1 httpx-sse-0.4.3 idna-3.18 inquirerpy-0.3.4 jinja2-3.1.6 jiter-0.16.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lxml-6.1.1 markdown-it-py-4.2.0 markdownify-1.2.2 mcp-1.26.0 mdurl-0.1.2 multidict-6.7.1 oauthlib-3.3.1 ollama-0.6.1 openai-2.16.0 pfzy-0.3.4 pillow-12.2.0 portalocker-3.2.0 posthog-7.7.0 prompt-toolkit-3.0.52 propcache-0.5.2 proto-plus-1.28.1 protobuf-6.33.6 psutil-7.2.2 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-3.0 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-settings-2.14.2 pygments-2.20.0 pyjwt-2.13.0 pyotp-2.9.0 pyparsing-3.3.2 pypdf-6.10.2 python-dateutil-2.9.0.post0 python-docx-1.2.0 python-dotenv-1.2.2 python-multipart-0.0.32 pyyaml-6.0.3 referencing-0.37.0 reportlab-4.4.9 requests-2.33.0 requests-oauthlib-2.0.0 reviewpilot-0.1.0 rich-14.3.1 rpds-py-2026.6.3 rsa-4.9.1 screeninfo-0.8.1 shellingham-1.5.4 six-1.17.0 sniffio-1.3.1 soupsieve-2.8.4 sse-starlette-3.4.5 starlette-1.3.1 tenacity-9.1.4 tqdm-4.68.4 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 uritemplate-4.2.0 urllib3-2.7.0 uuid7-0.1.0 uvicorn-0.51.0 wcwidth-0.8.2 websockets-15.0.1 yarl-1.24.2
-2026-07-09T07:44:22.6361863Z Collecting playwright
-2026-07-09T07:44:22.7042345Z   Downloading playwright-1.61.0-py3-none-manylinux1_x86_64.whl.metadata (3.3 kB)
-2026-07-09T07:44:22.7200889Z Collecting pyee<14,>=13 (from playwright)
-2026-07-09T07:44:22.7302519Z   Downloading pyee-13.0.1-py3-none-any.whl.metadata (3.0 kB)
-2026-07-09T07:44:22.8694966Z Collecting greenlet<4.0.0,>=3.1.1 (from playwright)
-2026-07-09T07:44:22.8799271Z   Downloading greenlet-3.5.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
-2026-07-09T07:44:22.8849469Z Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages (from pyee<14,>=13->playwright) (4.15.0)
-2026-07-09T07:44:22.8965332Z Downloading playwright-1.61.0-py3-none-manylinux1_x86_64.whl (47.4 MB)
-2026-07-09T07:44:23.1438316Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.4/47.4 MB 217.0 MB/s  0:00:00
-2026-07-09T07:44:23.1547930Z Downloading greenlet-3.5.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (617 kB)
-2026-07-09T07:44:23.1600655Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 617.4/617.4 kB 115.2 MB/s  0:00:00
-2026-07-09T07:44:23.1700591Z Downloading pyee-13.0.1-py3-none-any.whl (15 kB)
-2026-07-09T07:44:23.2881212Z Installing collected packages: pyee, greenlet, playwright
-2026-07-09T07:44:24.0796695Z 
-2026-07-09T07:44:24.0832641Z Successfully installed greenlet-3.5.3 playwright-1.61.0 pyee-13.0.1
-2026-07-09T07:44:24.4970233Z Installing dependencies...
-2026-07-09T07:44:24.5036175Z Switching to root user to install dependencies...
-2026-07-09T07:44:24.6611626Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
-2026-07-09T07:44:24.6818408Z Get:6 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
-2026-07-09T07:44:24.7099704Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
-2026-07-09T07:44:24.7148338Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
-2026-07-09T07:44:24.8153700Z Get:9 https://packages.microsoft.com/repos/azure-cli noble/main amd64 Packages [2314 B]
-2026-07-09T07:44:24.8273231Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
-2026-07-09T07:44:24.8283335Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
-2026-07-09T07:44:24.8355495Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
-2026-07-09T07:44:24.8410657Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
-2026-07-09T07:44:24.8690338Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [11.7 kB]
-2026-07-09T07:44:24.8713663Z Get:11 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [207 kB]
-2026-07-09T07:44:24.8752358Z Get:12 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [174 kB]
-2026-07-09T07:44:24.9408854Z Get:13 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1220 B]
-2026-07-09T07:44:25.0378770Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1079 kB]
-2026-07-09T07:44:25.0435764Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [267 kB]
-2026-07-09T07:44:25.0457888Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [180 kB]
-2026-07-09T07:44:25.0477997Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.7 kB]
-2026-07-09T07:44:25.0498713Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1659 kB]
-2026-07-09T07:44:25.0577116Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [327 kB]
-2026-07-09T07:44:25.0603594Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
-2026-07-09T07:44:25.0667819Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.9 kB]
-2026-07-09T07:44:25.0669240Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1196 kB]
-2026-07-09T07:44:25.0701168Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [271 kB]
-2026-07-09T07:44:25.1128369Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [11.8 kB]
-2026-07-09T07:44:25.1148883Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
-2026-07-09T07:44:25.1150084Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5768 B]
-2026-07-09T07:44:25.1155505Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
-2026-07-09T07:44:25.1484624Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [827 kB]
-2026-07-09T07:44:25.1531491Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [187 kB]
-2026-07-09T07:44:25.1547825Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [44.9 kB]
-2026-07-09T07:44:25.1556622Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.9 kB]
-2026-07-09T07:44:25.1566215Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1173 kB]
-2026-07-09T07:44:25.1625949Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [230 kB]
-2026-07-09T07:44:25.1642981Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
-2026-07-09T07:44:25.1653974Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [24.2 kB]
-2026-07-09T07:44:25.1663158Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1133 kB]
-2026-07-09T07:44:25.1721275Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [259 kB]
-2026-07-09T07:44:25.2167267Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [10.1 kB]
-2026-07-09T07:44:32.9448584Z Fetched 10.2 MB in 1s (7539 kB/s)
-2026-07-09T07:44:33.6134318Z Reading package lists...
-2026-07-09T07:44:33.6373464Z Reading package lists...
-2026-07-09T07:44:33.7980601Z Building dependency tree...
-2026-07-09T07:44:33.7988384Z Reading state information...
-2026-07-09T07:44:33.9381201Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.2).
-2026-07-09T07:44:33.9381801Z libasound2t64 set to manually installed.
-2026-07-09T07:44:33.9382290Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
-2026-07-09T07:44:33.9382845Z libatk-bridge2.0-0t64 set to manually installed.
-2026-07-09T07:44:33.9383314Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
-2026-07-09T07:44:33.9383763Z libatk1.0-0t64 set to manually installed.
-2026-07-09T07:44:33.9384465Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
-2026-07-09T07:44:33.9384937Z libatspi2.0-0t64 set to manually installed.
-2026-07-09T07:44:33.9385828Z libcairo2 is already the newest version (1.18.0-3build1).
-2026-07-09T07:44:33.9386269Z libcairo2 set to manually installed.
-2026-07-09T07:44:33.9386716Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
-2026-07-09T07:44:33.9387643Z libcups2t64 set to manually installed.
-2026-07-09T07:44:33.9388096Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
-2026-07-09T07:44:33.9388568Z libdbus-1-3 set to manually installed.
-2026-07-09T07:44:33.9389015Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
-2026-07-09T07:44:33.9389629Z libdrm2 set to manually installed.
-2026-07-09T07:44:33.9390193Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.2).
-2026-07-09T07:44:33.9390673Z libgbm1 set to manually installed.
-2026-07-09T07:44:33.9391125Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.8).
-2026-07-09T07:44:33.9391567Z libglib2.0-0t64 set to manually installed.
-2026-07-09T07:44:33.9391972Z libnspr4 is already the newest version (2:4.35-1.1build1).
-2026-07-09T07:44:33.9392379Z libnspr4 set to manually installed.
-2026-07-09T07:44:33.9392780Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
-2026-07-09T07:44:33.9393209Z libpango-1.0-0 set to manually installed.
-2026-07-09T07:44:33.9393620Z libx11-6 is already the newest version (2:1.8.7-1build1).
-2026-07-09T07:44:33.9394015Z libx11-6 set to manually installed.
-2026-07-09T07:44:33.9394563Z libxcb1 is already the newest version (1.15-1ubuntu2).
-2026-07-09T07:44:33.9394943Z libxcb1 set to manually installed.
-2026-07-09T07:44:33.9395340Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
-2026-07-09T07:44:33.9395964Z libxcomposite1 set to manually installed.
-2026-07-09T07:44:33.9396369Z libxdamage1 is already the newest version (1:1.1.6-1build1).
-2026-07-09T07:44:33.9397006Z libxdamage1 set to manually installed.
-2026-07-09T07:44:33.9397398Z libxext6 is already the newest version (2:1.3.4-1build2).
-2026-07-09T07:44:33.9397786Z libxext6 set to manually installed.
-2026-07-09T07:44:33.9398169Z libxfixes3 is already the newest version (1:6.0.0-2build1).
-2026-07-09T07:44:33.9398570Z libxfixes3 set to manually installed.
-2026-07-09T07:44:33.9398962Z libxkbcommon0 is already the newest version (1.6.0-1build1).
-2026-07-09T07:44:33.9399378Z libxkbcommon0 set to manually installed.
-2026-07-09T07:44:33.9399781Z libxrandr2 is already the newest version (2:1.5.2-2build1).
-2026-07-09T07:44:33.9400136Z libxrandr2 set to manually installed.
-2026-07-09T07:44:33.9400442Z xvfb is already the newest version (2:21.1.12-1ubuntu1.6).
-2026-07-09T07:44:33.9400883Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
-2026-07-09T07:44:33.9401362Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
-2026-07-09T07:44:33.9401722Z libfontconfig1 set to manually installed.
-2026-07-09T07:44:33.9402081Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.1).
-2026-07-09T07:44:33.9402452Z libfreetype6 set to manually installed.
-2026-07-09T07:44:33.9402791Z fonts-liberation is already the newest version (1:2.1.5-3).
-2026-07-09T07:44:33.9403135Z fonts-liberation set to manually installed.
-2026-07-09T07:44:33.9403464Z The following additional packages will be installed:
-2026-07-09T07:44:33.9403836Z   libnss3-tools xfonts-encodings xfonts-utils
-2026-07-09T07:44:33.9404132Z Recommended packages:
-2026-07-09T07:44:33.9404372Z   fonts-ipafont-mincho fonts-tlwg-loma
-2026-07-09T07:44:33.9838499Z The following NEW packages will be installed:
-2026-07-09T07:44:33.9839321Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
-2026-07-09T07:44:33.9846930Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
-2026-07-09T07:44:33.9848056Z   xfonts-utils
-2026-07-09T07:44:33.9852779Z The following packages will be upgraded:
-2026-07-09T07:44:33.9856674Z   libnss3 libnss3-tools
-2026-07-09T07:44:34.0021506Z 2 upgraded, 9 newly installed, 0 to remove and 50 not upgraded.
-2026-07-09T07:44:34.0022208Z Need to get 23.1 MB of archives.
-2026-07-09T07:44:34.0023191Z After this operation, 79.5 MB of additional disk space will be used.
-2026-07-09T07:44:34.0023962Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
-2026-07-09T07:44:34.0925405Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
-2026-07-09T07:44:34.3826214Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
-2026-07-09T07:44:34.6922035Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
-2026-07-09T07:44:34.7658418Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
-2026-07-09T07:44:35.0563677Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
-2026-07-09T07:44:35.4358136Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libnss3 amd64 2:3.98-1ubuntu0.2 [1445 kB]
-2026-07-09T07:44:35.6548127Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libnss3-tools amd64 2:3.98-1ubuntu0.2 [615 kB]
-2026-07-09T07:44:35.7335505Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
-2026-07-09T07:44:35.9577218Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
-2026-07-09T07:44:36.0364041Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
-2026-07-09T07:44:36.1915743Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
-2026-07-09T07:44:36.5241570Z Fetched 23.1 MB in 2s (10.2 MB/s)
-2026-07-09T07:44:36.5583384Z Selecting previously unselected package fonts-ipafont-gothic.
-2026-07-09T07:44:36.6427951Z (Reading database ... 
-2026-07-09T07:44:36.6428638Z (Reading database ... 5%
-2026-07-09T07:44:36.6429400Z (Reading database ... 10%
-2026-07-09T07:44:36.6429876Z (Reading database ... 15%
-2026-07-09T07:44:36.6430179Z (Reading database ... 20%
-2026-07-09T07:44:36.6430508Z (Reading database ... 25%
-2026-07-09T07:44:36.6430867Z (Reading database ... 30%
-2026-07-09T07:44:36.6431152Z (Reading database ... 35%
-2026-07-09T07:44:36.6431437Z (Reading database ... 40%
-2026-07-09T07:44:36.6431721Z (Reading database ... 45%
-2026-07-09T07:44:36.6432005Z (Reading database ... 50%
-2026-07-09T07:44:36.6973144Z (Reading database ... 55%
-2026-07-09T07:44:37.1133701Z (Reading database ... 60%
-2026-07-09T07:44:37.4110651Z (Reading database ... 65%
-2026-07-09T07:44:37.7088363Z (Reading database ... 70%
-2026-07-09T07:44:37.8271095Z (Reading database ... 75%
-2026-07-09T07:44:38.2335399Z (Reading database ... 80%
-2026-07-09T07:44:38.8758631Z (Reading database ... 85%
-2026-07-09T07:44:39.5095056Z (Reading database ... 90%
-2026-07-09T07:44:39.9875779Z (Reading database ... 95%
-2026-07-09T07:44:39.9876426Z (Reading database ... 100%
-2026-07-09T07:44:39.9877460Z (Reading database ... 202513 files and directories currently installed.)
-2026-07-09T07:44:39.9921198Z Preparing to unpack .../00-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
-2026-07-09T07:44:40.0024599Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
-2026-07-09T07:44:40.2329634Z Selecting previously unselected package fonts-freefont-ttf.
-2026-07-09T07:44:40.2457897Z Preparing to unpack .../01-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
-2026-07-09T07:44:40.2465453Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
-2026-07-09T07:44:40.3302325Z Selecting previously unselected package fonts-tlwg-loma-otf.
-2026-07-09T07:44:40.3431179Z Preparing to unpack .../02-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
-2026-07-09T07:44:40.3440080Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
-2026-07-09T07:44:40.3647489Z Selecting previously unselected package fonts-unifont.
-2026-07-09T07:44:40.3777500Z Preparing to unpack .../03-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
-2026-07-09T07:44:40.3787161Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
-2026-07-09T07:44:40.4900196Z Selecting previously unselected package fonts-wqy-zenhei.
-2026-07-09T07:44:40.5027115Z Preparing to unpack .../04-fonts-wqy-zenhei_0.9.45-8_all.deb ...
-2026-07-09T07:44:40.5184282Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
-2026-07-09T07:44:40.9959018Z Preparing to unpack .../05-libnss3_2%3a3.98-1ubuntu0.2_amd64.deb ...
-2026-07-09T07:44:41.0036479Z Unpacking libnss3:amd64 (2:3.98-1ubuntu0.2) over (2:3.98-1ubuntu0.1) ...
-2026-07-09T07:44:41.0594934Z Preparing to unpack .../06-libnss3-tools_2%3a3.98-1ubuntu0.2_amd64.deb ...
-2026-07-09T07:44:41.0625618Z Unpacking libnss3-tools (2:3.98-1ubuntu0.2) over (2:3.98-1ubuntu0.1) ...
-2026-07-09T07:44:41.1741237Z Selecting previously unselected package xfonts-encodings.
-2026-07-09T07:44:41.1872220Z Preparing to unpack .../07-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
-2026-07-09T07:44:41.1879967Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
-2026-07-09T07:44:41.2179164Z Selecting previously unselected package xfonts-utils.
-2026-07-09T07:44:41.2308489Z Preparing to unpack .../08-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
-2026-07-09T07:44:41.2317188Z Unpacking xfonts-utils (1:7.7+6build3) ...
-2026-07-09T07:44:41.2867388Z Selecting previously unselected package xfonts-cyrillic.
-2026-07-09T07:44:41.2995082Z Preparing to unpack .../09-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
-2026-07-09T07:44:41.3004573Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
-2026-07-09T07:44:41.3381113Z Selecting previously unselected package xfonts-scalable.
-2026-07-09T07:44:41.3510769Z Preparing to unpack .../10-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
-2026-07-09T07:44:41.3520187Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
-2026-07-09T07:44:41.3939246Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
-2026-07-09T07:44:41.4066348Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
-2026-07-09T07:44:41.4089617Z Setting up libnss3:amd64 (2:3.98-1ubuntu0.2) ...
-2026-07-09T07:44:41.4113548Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
-2026-07-09T07:44:41.4168949Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
-2026-07-09T07:44:41.4193682Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
-2026-07-09T07:44:41.4266720Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
-2026-07-09T07:44:41.4283883Z Setting up libnss3-tools (2:3.98-1ubuntu0.2) ...
-2026-07-09T07:44:41.4311760Z Setting up fonts-unifont (1:15.1.01-1build1) ...
-2026-07-09T07:44:41.4337145Z Setting up xfonts-utils (1:7.7+6build3) ...
-2026-07-09T07:44:41.4382542Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
-2026-07-09T07:44:41.4738753Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
-2026-07-09T07:44:41.5038384Z Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
-2026-07-09T07:44:41.5868001Z Processing triggers for man-db (2.12.0-4build2) ...
-2026-07-09T07:44:41.5894452Z Not building database; man-db/auto-update is not 'true'.
-2026-07-09T07:44:41.5907233Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
-2026-07-09T07:44:42.8149351Z 
-2026-07-09T07:44:42.8149948Z Running kernel seems to be up-to-date.
-2026-07-09T07:44:42.8150407Z 
-2026-07-09T07:44:42.8150588Z Restarting services...
-2026-07-09T07:44:42.8226037Z  systemctl restart udisks2.service
-2026-07-09T07:44:42.8756846Z 
-2026-07-09T07:44:42.8758571Z No containers need to be restarted.
-2026-07-09T07:44:42.8758971Z 
-2026-07-09T07:44:42.8759203Z No user sessions are running outdated binaries.
-2026-07-09T07:44:42.8759554Z 
-2026-07-09T07:44:42.8759892Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
-2026-07-09T07:44:43.6851908Z Downloading Chrome for Testing 149.0.7827.55 (playwright chromium v1228) from https://cdn.playwright.dev/builds/cft/149.0.7827.55/linux64/chrome-linux64.zip
-2026-07-09T07:44:44.7162548Z |                                                                                |   0% of 177 MiB
-2026-07-09T07:44:44.8901927Z |■■■■■■■■                                                                        |  10% of 177 MiB
-2026-07-09T07:44:44.9864006Z |■■■■■■■■■■■■■■■■                                                                |  20% of 177 MiB
-2026-07-09T07:44:45.0894041Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 177 MiB
-2026-07-09T07:44:45.1988843Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 177 MiB
-2026-07-09T07:44:45.2859718Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 177 MiB
-2026-07-09T07:44:45.4064061Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 177 MiB
-2026-07-09T07:44:45.4985852Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 177 MiB
-2026-07-09T07:44:45.6069992Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 177 MiB
-2026-07-09T07:44:45.7184094Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 177 MiB
-2026-07-09T07:44:45.8183484Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 177 MiB
-2026-07-09T07:44:49.6184447Z Chrome for Testing 149.0.7827.55 (playwright chromium v1228) downloaded to /home/runner/.cache/ms-playwright/chromium-1228
-2026-07-09T07:44:49.6188450Z Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
-2026-07-09T07:44:50.5884525Z |                                                                                |   0% of 2.3 MiB
-2026-07-09T07:44:50.5931256Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
-2026-07-09T07:44:50.5964094Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
-2026-07-09T07:44:50.5990677Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
-2026-07-09T07:44:50.6008265Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
-2026-07-09T07:44:50.6027272Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
-2026-07-09T07:44:50.6047657Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
-2026-07-09T07:44:50.6069107Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
-2026-07-09T07:44:50.6085794Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
-2026-07-09T07:44:50.6103795Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
-2026-07-09T07:44:50.6116665Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
-2026-07-09T07:44:50.6729494Z FFmpeg (playwright ffmpeg v1011) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
-2026-07-09T07:44:50.6732522Z Downloading Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) from https://cdn.playwright.dev/builds/cft/149.0.7827.55/linux64/chrome-headless-shell-linux64.zip
-2026-07-09T07:44:51.6896976Z |                                                                                |   0% of 114.2 MiB
-2026-07-09T07:44:51.8147708Z |■■■■■■■■                                                                        |  10% of 114.2 MiB
-2026-07-09T07:44:51.8747190Z |■■■■■■■■■■■■■■■■                                                                |  20% of 114.2 MiB
-2026-07-09T07:44:51.9331972Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 114.2 MiB
-2026-07-09T07:44:52.0033699Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 114.2 MiB
-2026-07-09T07:44:52.0654815Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 114.2 MiB
-2026-07-09T07:44:52.1327044Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 114.2 MiB
-2026-07-09T07:44:52.1988260Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 114.2 MiB
-2026-07-09T07:44:52.2574554Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 114.2 MiB
-2026-07-09T07:44:52.3109457Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 114.2 MiB
-2026-07-09T07:44:52.3848109Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.2 MiB
-2026-07-09T07:44:54.7552142Z Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1228
+﻿2026-07-09T08:16:48.5014066Z ##[group]Run pip install "git+https://github.com/aruxyz/reviewpilot-browser-use.git"
+2026-07-09T08:16:48.5015372Z [36;1mpip install "git+https://github.com/aruxyz/reviewpilot-browser-use.git"[0m
+2026-07-09T08:16:48.5016300Z [36;1mpip install playwright[0m
+2026-07-09T08:16:48.5017030Z [36;1mpython -m playwright install chromium --with-deps[0m
+2026-07-09T08:16:48.5250122Z shell: /usr/bin/bash -e {0}
+2026-07-09T08:16:48.5250834Z env:
+2026-07-09T08:16:48.5251435Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:16:48.5252315Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
+2026-07-09T08:16:48.5253235Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:16:48.5254041Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:16:48.5254876Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:16:48.5255671Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
+2026-07-09T08:16:48.5256367Z ##[endgroup]
+2026-07-09T08:16:52.1273799Z Collecting git+https://github.com/aruxyz/reviewpilot-browser-use.git
+2026-07-09T08:16:52.1279100Z   Cloning https://github.com/aruxyz/reviewpilot-browser-use.git to /tmp/pip-req-build-zolg58ad
+2026-07-09T08:16:52.1302026Z   Running command git clone --filter=blob:none --quiet https://github.com/aruxyz/reviewpilot-browser-use.git /tmp/pip-req-build-zolg58ad
+2026-07-09T08:16:52.4343790Z   Resolved https://github.com/aruxyz/reviewpilot-browser-use.git to commit d705870d93cc637593786d607c1f8a732e39099f
+2026-07-09T08:16:52.4389197Z   Installing build dependencies: started
+2026-07-09T08:16:53.9075362Z   Installing build dependencies: finished with status 'done'
+2026-07-09T08:16:53.9080377Z   Getting requirements to build wheel: started
+2026-07-09T08:16:54.5659829Z   Getting requirements to build wheel: finished with status 'done'
+2026-07-09T08:16:54.5670456Z   Preparing metadata (pyproject.toml): started
+2026-07-09T08:16:54.7495927Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2026-07-09T08:16:54.8420202Z Collecting browser-use==0.12.6 (from reviewpilot==0.1.0)
+2026-07-09T08:16:54.9025812Z   Downloading browser_use-0.12.6-py3-none-any.whl.metadata (15 kB)
+2026-07-09T08:16:54.9320039Z Collecting typer>=0.12.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:54.9400701Z   Downloading typer-0.26.8-py3-none-any.whl.metadata (15 kB)
+2026-07-09T08:16:54.9910741Z Collecting rich>=13.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:54.9999104Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-07-09T08:16:55.1090224Z Collecting pydantic>=2.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.1168774Z   Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+2026-07-09T08:16:55.1470449Z Collecting pydantic-settings>=2.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.1554193Z   Downloading pydantic_settings-2.14.2-py3-none-any.whl.metadata (3.4 kB)
+2026-07-09T08:16:55.1945539Z Collecting pyyaml>=6.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.2022725Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-07-09T08:16:55.2198542Z Collecting jinja2>=3.1.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.2276674Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-07-09T08:16:55.2473478Z Collecting httpx>=0.27.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.2556013Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-07-09T08:16:55.2747645Z Collecting python-dotenv>=1.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.2822532Z   Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+2026-07-09T08:16:55.4499653Z Collecting pillow>=10.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:55.4581763Z   Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-07-09T08:16:55.8958634Z Collecting aiohttp==3.13.3 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:55.9047869Z   Downloading aiohttp-3.13.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
+2026-07-09T08:16:55.9321121Z Collecting anthropic==0.76.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:55.9399053Z   Downloading anthropic-0.76.0-py3-none-any.whl.metadata (28 kB)
+2026-07-09T08:16:55.9603846Z Collecting anyio==4.12.1 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:55.9688701Z   Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+2026-07-09T08:16:55.9863969Z Collecting browser-use-sdk==2.0.15 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:55.9953670Z   Downloading browser_use_sdk-2.0.15-py3-none-any.whl.metadata (6.6 kB)
+2026-07-09T08:16:56.0123653Z Collecting bubus==1.5.6 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.0197547Z   Downloading bubus-1.5.6-py3-none-any.whl.metadata (37 kB)
+2026-07-09T08:16:56.0366606Z Collecting cdp-use==1.4.5 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.0443852Z   Downloading cdp_use-1.4.5-py3-none-any.whl.metadata (9.5 kB)
+2026-07-09T08:16:56.0877848Z Collecting click==8.3.1 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.0954774Z   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+2026-07-09T08:16:56.1118596Z Collecting cloudpickle==3.1.2 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.1194844Z   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+2026-07-09T08:16:56.1448413Z Collecting google-api-core==2.29.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.1526868Z   Downloading google_api_core-2.29.0-py3-none-any.whl.metadata (3.3 kB)
+2026-07-09T08:16:56.1885643Z Collecting google-api-python-client==2.188.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.1964891Z   Downloading google_api_python_client-2.188.0-py3-none-any.whl.metadata (7.0 kB)
+2026-07-09T08:16:56.2130836Z Collecting google-auth-oauthlib==1.2.4 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.2214992Z   Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl.metadata (3.1 kB)
+2026-07-09T08:16:56.2485900Z Collecting google-auth==2.48.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.2561171Z   Downloading google_auth-2.48.0-py3-none-any.whl.metadata (6.2 kB)
+2026-07-09T08:16:56.2792681Z Collecting google-genai==1.65.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.2876547Z   Downloading google_genai-1.65.0-py3-none-any.whl.metadata (51 kB)
+2026-07-09T08:16:56.3088383Z Collecting groq==1.0.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.3161605Z   Downloading groq-1.0.0-py3-none-any.whl.metadata (16 kB)
+2026-07-09T08:16:56.3315548Z Collecting inquirerpy==0.3.4 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.3391099Z   Downloading InquirerPy-0.3.4-py3-none-any.whl.metadata (8.1 kB)
+2026-07-09T08:16:56.3565349Z Collecting markdownify==1.2.2 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.3652710Z   Downloading markdownify-1.2.2-py3-none-any.whl.metadata (9.9 kB)
+2026-07-09T08:16:56.3835313Z Collecting mcp==1.26.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.3918650Z   Downloading mcp-1.26.0-py3-none-any.whl.metadata (89 kB)
+2026-07-09T08:16:56.4135887Z Collecting ollama==0.6.1 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.4219440Z   Downloading ollama-0.6.1-py3-none-any.whl.metadata (4.3 kB)
+2026-07-09T08:16:56.4595890Z Collecting openai==2.16.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.4671353Z   Downloading openai-2.16.0-py3-none-any.whl.metadata (29 kB)
+2026-07-09T08:16:56.4734008Z Collecting pillow>=10.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:56.4814567Z   Downloading pillow-12.1.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+2026-07-09T08:16:56.5115803Z Collecting posthog==7.7.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.5208800Z   Downloading posthog-7.7.0-py3-none-any.whl.metadata (6.4 kB)
+2026-07-09T08:16:56.5843983Z Collecting psutil==7.2.2 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.5922957Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+2026-07-09T08:16:56.6004950Z Collecting pydantic>=2.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:56.6082114Z   Downloading pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+2026-07-09T08:16:56.6265031Z Collecting pyotp==2.9.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.6341144Z   Downloading pyotp-2.9.0-py3-none-any.whl.metadata (9.8 kB)
+2026-07-09T08:16:56.6544079Z Collecting pypdf==6.9.1 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.6632784Z   Downloading pypdf-6.9.1-py3-none-any.whl.metadata (7.1 kB)
+2026-07-09T08:16:56.6794577Z Collecting python-docx==1.2.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.6870516Z   Downloading python_docx-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+2026-07-09T08:16:56.6910939Z Collecting python-dotenv>=1.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:56.6988283Z   Downloading python_dotenv-1.2.1-py3-none-any.whl.metadata (25 kB)
+2026-07-09T08:16:56.7915212Z Collecting reportlab==4.4.9 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.8002348Z   Downloading reportlab-4.4.9-py3-none-any.whl.metadata (1.7 kB)
+2026-07-09T08:16:56.8219441Z Collecting requests==2.32.5 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.8298442Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+2026-07-09T08:16:56.8349534Z Collecting rich>=13.0.0 (from reviewpilot==0.1.0)
+2026-07-09T08:16:56.8429754Z   Downloading rich-14.3.1-py3-none-any.whl.metadata (18 kB)
+2026-07-09T08:16:56.8607725Z Collecting screeninfo==0.8.1 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.8682079Z   Downloading screeninfo-0.8.1-py3-none-any.whl.metadata (2.9 kB)
+2026-07-09T08:16:56.8854725Z Collecting typing-extensions==4.15.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.8930132Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+2026-07-09T08:16:56.9073210Z Collecting uuid7==0.1.0 (from browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.9147557Z   Downloading uuid7-0.1.0-py2.py3-none-any.whl.metadata (3.6 kB)
+2026-07-09T08:16:56.9316153Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.9393675Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+2026-07-09T08:16:56.9540577Z Collecting aiosignal>=1.4.0 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.9616857Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+2026-07-09T08:16:56.9781595Z Collecting attrs>=17.3.0 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:56.9857362Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-07-09T08:16:57.0842468Z Collecting frozenlist>=1.1.1 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.0921108Z   Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+2026-07-09T08:16:57.2790165Z Collecting multidict<7.0,>=4.5 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.2866762Z   Downloading multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+2026-07-09T08:16:57.3379443Z Collecting propcache>=0.2.0 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.3456662Z   Downloading propcache-0.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-07-09T08:16:57.5918412Z Collecting yarl<2.0,>=1.17.0 (from aiohttp==3.13.3->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.5999064Z   Downloading yarl-1.24.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (94 kB)
+2026-07-09T08:16:57.6214423Z Collecting distro<2,>=1.7.0 (from anthropic==0.76.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.6286447Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2026-07-09T08:16:57.6435075Z Collecting docstring-parser<1,>=0.15 (from anthropic==0.76.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.6513585Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-07-09T08:16:57.7280914Z Collecting jiter<1,>=0.4.0 (from anthropic==0.76.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.7360123Z   Downloading jiter-0.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2026-07-09T08:16:57.7512713Z Collecting sniffio (from anthropic==0.76.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.7587029Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2026-07-09T08:16:57.7762910Z Collecting idna>=2.8 (from anyio==4.12.1->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:57.7837577Z   Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+2026-07-09T08:16:57.8062286Z Collecting certifi (from httpx>=0.27.0->reviewpilot==0.1.0)
+2026-07-09T08:16:57.8145420Z   Downloading certifi-2026.6.17-py3-none-any.whl.metadata (2.5 kB)
+2026-07-09T08:16:57.8332477Z Collecting httpcore==1.* (from httpx>=0.27.0->reviewpilot==0.1.0)
+2026-07-09T08:16:57.8408780Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-07-09T08:16:57.8577176Z Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->reviewpilot==0.1.0)
+2026-07-09T08:16:57.8650332Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2026-07-09T08:16:58.4985258Z Collecting pydantic-core==2.41.5 (from pydantic>=2.0.0->reviewpilot==0.1.0)
+2026-07-09T08:16:58.5060980Z   Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-07-09T08:16:58.5207467Z Collecting typing-inspection>=0.4.2 (from pydantic>=2.0.0->reviewpilot==0.1.0)
+2026-07-09T08:16:58.5284158Z   Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+2026-07-09T08:16:58.5482559Z Collecting aiofiles>=24.1.0 (from bubus==1.5.6->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.5558261Z   Downloading aiofiles-25.1.0-py3-none-any.whl.metadata (6.3 kB)
+2026-07-09T08:16:58.5726894Z Collecting portalocker>=2.7.0 (from bubus==1.5.6->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.5800875Z   Downloading portalocker-3.2.0-py3-none-any.whl.metadata (8.7 kB)
+2026-07-09T08:16:58.6518569Z Collecting websockets>=15.0.1 (from cdp-use==1.4.5->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.6593749Z   Downloading websockets-16.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB)
+2026-07-09T08:16:58.6798383Z Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core==2.29.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.6871818Z   Downloading googleapis_common_protos-1.75.0-py3-none-any.whl.metadata (8.6 kB)
+2026-07-09T08:16:58.8086341Z Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.19.5 (from google-api-core==2.29.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.8164934Z   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+2026-07-09T08:16:58.8351394Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core==2.29.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.8424246Z   Downloading proto_plus-1.28.1-py3-none-any.whl.metadata (2.2 kB)
+2026-07-09T08:16:58.8657746Z Collecting pyasn1-modules>=0.2.1 (from google-auth==2.48.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:58.8732758Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+2026-07-09T08:16:59.0189619Z Collecting cryptography>=38.0.3 (from google-auth==2.48.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.0264910Z   Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+2026-07-09T08:16:59.0434441Z Collecting rsa<5,>=3.1.4 (from google-auth==2.48.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.0507111Z   Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+2026-07-09T08:16:59.2007423Z Collecting charset_normalizer<4,>=2 (from requests==2.32.5->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.2085604Z   Downloading charset_normalizer-3.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (41 kB)
+2026-07-09T08:16:59.2347710Z Collecting urllib3<3,>=1.21.1 (from requests==2.32.5->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.2422525Z   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+2026-07-09T08:16:59.2637120Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client==2.188.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.2710846Z   Downloading httplib2-0.32.0-py3-none-any.whl.metadata (2.2 kB)
+2026-07-09T08:16:59.2923376Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client==2.188.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.3000754Z   Downloading google_auth_httplib2-0.4.0-py3-none-any.whl.metadata (3.0 kB)
+2026-07-09T08:16:59.3159657Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client==2.188.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.3233018Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+2026-07-09T08:16:59.3407262Z Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib==1.2.4->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.3482560Z   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+2026-07-09T08:16:59.3729619Z Collecting tenacity<9.2.0,>=8.2.3 (from google-genai==1.65.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.3802973Z   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+2026-07-09T08:16:59.3999855Z Collecting pfzy<0.4.0,>=0.3.1 (from inquirerpy==0.3.4->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.4072778Z   Downloading pfzy-0.3.4-py3-none-any.whl.metadata (4.9 kB)
+2026-07-09T08:16:59.4323092Z Collecting prompt-toolkit<4.0.0,>=3.0.1 (from inquirerpy==0.3.4->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.4398990Z   Downloading prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
+2026-07-09T08:16:59.4589471Z Collecting beautifulsoup4<5,>=4.9 (from markdownify==1.2.2->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.4671065Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+2026-07-09T08:16:59.4826101Z Collecting six<2,>=1.15 (from markdownify==1.2.2->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.4899723Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-07-09T08:16:59.5070019Z Collecting httpx-sse>=0.4 (from mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.5143833Z   Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+2026-07-09T08:16:59.5367187Z Collecting jsonschema>=4.20.0 (from mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.5442293Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-07-09T08:16:59.5657451Z Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.5729870Z   Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+2026-07-09T08:16:59.5894677Z Collecting python-multipart>=0.0.9 (from mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.5970667Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-07-09T08:16:59.6157376Z Collecting sse-starlette>=1.6.1 (from mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.6232370Z   Downloading sse_starlette-3.4.5-py3-none-any.whl.metadata (15 kB)
+2026-07-09T08:16:59.6499415Z Collecting starlette>=0.27 (from mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.6578740Z   Downloading starlette-1.3.1-py3-none-any.whl.metadata (6.4 kB)
+2026-07-09T08:16:59.6828935Z Collecting uvicorn>=0.31.1 (from mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.6904214Z   Downloading uvicorn-0.51.0-py3-none-any.whl.metadata (6.6 kB)
+2026-07-09T08:16:59.7273053Z Collecting tqdm>4 (from openai==2.16.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.7347042Z   Downloading tqdm-4.68.4-py3-none-any.whl.metadata (57 kB)
+2026-07-09T08:16:59.7583453Z Collecting python-dateutil>=2.2 (from posthog==7.7.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.7655905Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2026-07-09T08:16:59.7808906Z Collecting backoff>=1.10.0 (from posthog==7.7.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.7880794Z   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+2026-07-09T08:16:59.9735093Z Collecting lxml>=3.1.0 (from python-docx==1.2.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:16:59.9811030Z   Downloading lxml-6.1.1-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+2026-07-09T08:17:00.0052129Z Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.0131473Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-07-09T08:17:00.1190488Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.1266274Z   Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+2026-07-09T08:17:00.1472597Z Collecting soupsieve>=1.6.1 (from beautifulsoup4<5,>=4.9->markdownify==1.2.2->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.1548520Z   Downloading soupsieve-2.8.4-py3-none-any.whl.metadata (4.6 kB)
+2026-07-09T08:17:00.1829412Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.1902369Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-07-09T08:17:00.2146072Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client==2.188.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.2219983Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+2026-07-09T08:17:00.2546497Z Collecting wcwidth (from prompt-toolkit<4.0.0,>=3.0.1->inquirerpy==0.3.4->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.2621981Z   Downloading wcwidth-0.8.2-py3-none-any.whl.metadata (43 kB)
+2026-07-09T08:17:00.3005924Z Collecting pyasn1>=0.1.3 (from rsa<5,>=3.1.4->google-auth==2.48.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.3080981Z   Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+2026-07-09T08:17:00.4127257Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth==2.48.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.4204350Z   Downloading cffi-2.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-07-09T08:17:00.4361852Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth==2.48.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.4437291Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+2026-07-09T08:17:00.4932562Z Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.5013101Z   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-07-09T08:17:00.5188728Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.5263063Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-07-09T08:17:00.5473251Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.5552002Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-07-09T08:17:00.7675568Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.7754220Z   Downloading rpds_py-2026.6.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-07-09T08:17:00.7929295Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.8004331Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-07-09T08:17:00.8405640Z Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib==1.2.4->browser-use==0.12.6->reviewpilot==0.1.0)
+2026-07-09T08:17:00.8483176Z   Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB)
+2026-07-09T08:17:00.8746426Z Collecting shellingham>=1.3.0 (from typer>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.8824557Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-07-09T08:17:00.8975147Z Collecting annotated-doc>=0.0.2 (from typer>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T08:17:00.9051739Z   Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+2026-07-09T08:17:00.9267315Z Downloading browser_use-0.12.6-py3-none-any.whl (689 kB)
+2026-07-09T08:17:00.9459778Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 689.2/689.2 kB 39.7 MB/s  0:00:00
+2026-07-09T08:17:00.9543815Z Downloading aiohttp-3.13.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2026-07-09T08:17:00.9741165Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 90.2 MB/s  0:00:00
+2026-07-09T08:17:00.9815828Z Downloading anthropic-0.76.0-py3-none-any.whl (390 kB)
+2026-07-09T08:17:00.9955018Z Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+2026-07-09T08:17:01.0055399Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-07-09T08:17:01.0150911Z Downloading pydantic-2.12.5-py3-none-any.whl (463 kB)
+2026-07-09T08:17:01.0252941Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-07-09T08:17:01.0353182Z Downloading browser_use_sdk-2.0.15-py3-none-any.whl (127 kB)
+2026-07-09T08:17:01.0450759Z Downloading bubus-1.5.6-py3-none-any.whl (52 kB)
+2026-07-09T08:17:01.0550682Z Downloading cdp_use-1.4.5-py3-none-any.whl (350 kB)
+2026-07-09T08:17:01.0669768Z Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2026-07-09T08:17:01.0769268Z Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+2026-07-09T08:17:01.0863378Z Downloading google_api_core-2.29.0-py3-none-any.whl (173 kB)
+2026-07-09T08:17:01.0963220Z Downloading google_auth-2.48.0-py3-none-any.whl (236 kB)
+2026-07-09T08:17:01.1067171Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2026-07-09T08:17:01.1165894Z Downloading google_api_python_client-2.188.0-py3-none-any.whl (14.9 MB)
+2026-07-09T08:17:01.1941767Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.9/14.9 MB 195.1 MB/s  0:00:00
+2026-07-09T08:17:01.2022373Z Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl (19 kB)
+2026-07-09T08:17:01.2126054Z Downloading google_genai-1.65.0-py3-none-any.whl (724 kB)
+2026-07-09T08:17:01.2232699Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 724.4/724.4 kB 78.1 MB/s  0:00:00
+2026-07-09T08:17:01.2307764Z Downloading groq-1.0.0-py3-none-any.whl (138 kB)
+2026-07-09T08:17:01.2410236Z Downloading InquirerPy-0.3.4-py3-none-any.whl (67 kB)
+2026-07-09T08:17:01.2508223Z Downloading markdownify-1.2.2-py3-none-any.whl (15 kB)
+2026-07-09T08:17:01.2605668Z Downloading mcp-1.26.0-py3-none-any.whl (233 kB)
+2026-07-09T08:17:01.2705269Z Downloading ollama-0.6.1-py3-none-any.whl (14 kB)
+2026-07-09T08:17:01.2796658Z Downloading openai-2.16.0-py3-none-any.whl (1.1 MB)
+2026-07-09T08:17:01.2858256Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 213.3 MB/s  0:00:00
+2026-07-09T08:17:01.2937282Z Downloading pillow-12.1.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+2026-07-09T08:17:01.3234605Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 253.9 MB/s  0:00:00
+2026-07-09T08:17:01.3310510Z Downloading posthog-7.7.0-py3-none-any.whl (185 kB)
+2026-07-09T08:17:01.3416819Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-07-09T08:17:01.3518336Z Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+2026-07-09T08:17:01.3604620Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 289.6 MB/s  0:00:00
+2026-07-09T08:17:01.3678463Z Downloading pyotp-2.9.0-py3-none-any.whl (13 kB)
+2026-07-09T08:17:01.3787019Z Downloading pypdf-6.9.1-py3-none-any.whl (333 kB)
+2026-07-09T08:17:01.3890321Z Downloading python_docx-1.2.0-py3-none-any.whl (252 kB)
+2026-07-09T08:17:01.3990029Z Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+2026-07-09T08:17:01.4089091Z Downloading reportlab-4.4.9-py3-none-any.whl (2.0 MB)
+2026-07-09T08:17:01.4188964Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 237.0 MB/s  0:00:00
+2026-07-09T08:17:01.4263041Z Downloading rich-14.3.1-py3-none-any.whl (309 kB)
+2026-07-09T08:17:01.4380976Z Downloading screeninfo-0.8.1-py3-none-any.whl (12 kB)
+2026-07-09T08:17:01.4483311Z Downloading uuid7-0.1.0-py2.py3-none-any.whl (7.5 kB)
+2026-07-09T08:17:01.4584143Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+2026-07-09T08:17:01.4685330Z Downloading charset_normalizer-3.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (221 kB)
+2026-07-09T08:17:01.4786142Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+2026-07-09T08:17:01.4880797Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-07-09T08:17:01.4976250Z Downloading google_auth_httplib2-0.4.0-py3-none-any.whl (9.5 kB)
+2026-07-09T08:17:01.5073590Z Downloading googleapis_common_protos-1.75.0-py3-none-any.whl (300 kB)
+2026-07-09T08:17:01.5175880Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-07-09T08:17:01.5275645Z Downloading httplib2-0.32.0-py3-none-any.whl (93 kB)
+2026-07-09T08:17:01.5375589Z Downloading idna-3.18-py3-none-any.whl (65 kB)
+2026-07-09T08:17:01.5472764Z Downloading jiter-0.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (347 kB)
+2026-07-09T08:17:01.5585283Z Downloading multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (246 kB)
+2026-07-09T08:17:01.5686725Z Downloading pfzy-0.3.4-py3-none-any.whl (8.5 kB)
+2026-07-09T08:17:01.5783041Z Downloading prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+2026-07-09T08:17:01.5890793Z Downloading proto_plus-1.28.1-py3-none-any.whl (50 kB)
+2026-07-09T08:17:01.6000303Z Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2026-07-09T08:17:01.6119653Z Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+2026-07-09T08:17:01.6187062Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 231.4 MB/s  0:00:00
+2026-07-09T08:17:01.6261384Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+2026-07-09T08:17:01.6355766Z Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+2026-07-09T08:17:01.6448459Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-07-09T08:17:01.6547734Z Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+2026-07-09T08:17:01.6640998Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+2026-07-09T08:17:01.6732184Z Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+2026-07-09T08:17:01.6830472Z Downloading websockets-16.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (184 kB)
+2026-07-09T08:17:01.6929398Z Downloading yarl-1.24.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (106 kB)
+2026-07-09T08:17:01.7026569Z Downloading aiofiles-25.1.0-py3-none-any.whl (14 kB)
+2026-07-09T08:17:01.7119267Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+2026-07-09T08:17:01.7211771Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2026-07-09T08:17:01.7305141Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2026-07-09T08:17:01.7400612Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-07-09T08:17:01.7496447Z Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+2026-07-09T08:17:01.7589820Z Downloading certifi-2026.6.17-py3-none-any.whl (133 kB)
+2026-07-09T08:17:01.7690195Z Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+2026-07-09T08:17:01.7869701Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 295.6 MB/s  0:00:00
+2026-07-09T08:17:01.7946914Z Downloading cffi-2.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
+2026-07-09T08:17:01.8052521Z Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
+2026-07-09T08:17:01.8153194Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-07-09T08:17:01.8245388Z Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+2026-07-09T08:17:01.8338356Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-07-09T08:17:01.8434102Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-07-09T08:17:01.8530295Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-07-09T08:17:01.8626377Z Downloading lxml-6.1.1-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+2026-07-09T08:17:01.8812890Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 309.6 MB/s  0:00:00
+2026-07-09T08:17:01.8888851Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-07-09T08:17:01.8984868Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-07-09T08:17:01.9077731Z Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-07-09T08:17:01.9168807Z Downloading portalocker-3.2.0-py3-none-any.whl (22 kB)
+2026-07-09T08:17:01.9261140Z Downloading propcache-0.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (58 kB)
+2026-07-09T08:17:01.9354262Z Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+2026-07-09T08:17:01.9448454Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+2026-07-09T08:17:01.9558439Z Downloading pydantic_settings-2.14.2-py3-none-any.whl (61 kB)
+2026-07-09T08:17:01.9652699Z Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+2026-07-09T08:17:01.9743732Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-07-09T08:17:01.9838857Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-07-09T08:17:01.9934962Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+2026-07-09T08:17:01.9990705Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 177.0 MB/s  0:00:00
+2026-07-09T08:17:02.0066334Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-07-09T08:17:02.0158805Z Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+2026-07-09T08:17:02.0248856Z Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+2026-07-09T08:17:02.0431432Z Downloading rpds_py-2026.6.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-07-09T08:17:02.0531069Z Downloading soupsieve-2.8.4-py3-none-any.whl (37 kB)
+2026-07-09T08:17:02.0624125Z Downloading sse_starlette-3.4.5-py3-none-any.whl (16 kB)
+2026-07-09T08:17:02.0718191Z Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
+2026-07-09T08:17:02.0818100Z Downloading tqdm-4.68.4-py3-none-any.whl (676 kB)
+2026-07-09T08:17:02.0871386Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 676.6/676.6 kB 148.7 MB/s  0:00:00
+2026-07-09T08:17:02.0947049Z Downloading typer-0.26.8-py3-none-any.whl (122 kB)
+2026-07-09T08:17:02.1043930Z Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+2026-07-09T08:17:02.1137059Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-07-09T08:17:02.1227814Z Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+2026-07-09T08:17:02.1322026Z Downloading uvicorn-0.51.0-py3-none-any.whl (73 kB)
+2026-07-09T08:17:02.1416184Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+2026-07-09T08:17:02.1510763Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2026-07-09T08:17:02.1605942Z Downloading wcwidth-0.8.2-py3-none-any.whl (323 kB)
+2026-07-09T08:17:02.2783247Z Building wheels for collected packages: reviewpilot
+2026-07-09T08:17:02.2792333Z   Building wheel for reviewpilot (pyproject.toml): started
+2026-07-09T08:17:02.5021342Z   Building wheel for reviewpilot (pyproject.toml): finished with status 'done'
+2026-07-09T08:17:02.5027785Z   Created wheel for reviewpilot: filename=reviewpilot-0.1.0-py3-none-any.whl size=43657 sha256=4049b032b5f1a088c69711ff5ecc80114b90cc724c80251c524ab8bb41a92652
+2026-07-09T08:17:02.5030063Z   Stored in directory: /tmp/pip-ephem-wheel-cache-hhkguobc/wheels/00/ff/c9/6cd25ea34ed824121c1ce613d36b57c89f300368cc8a30bf74
+2026-07-09T08:17:02.5064010Z Successfully built reviewpilot
+2026-07-09T08:17:02.7504209Z Installing collected packages: websockets, wcwidth, uuid7, urllib3, uritemplate, typing-extensions, tqdm, tenacity, soupsieve, sniffio, six, shellingham, screeninfo, rpds-py, pyyaml, python-multipart, python-dotenv, pypdf, pyparsing, pyotp, pyjwt, pygments, pycparser, pyasn1, psutil, protobuf, propcache, portalocker, pillow, pfzy, oauthlib, multidict, mdurl, MarkupSafe, lxml, jiter, idna, httpx-sse, h11, frozenlist, docstring-parser, distro, cloudpickle, click, charset_normalizer, certifi, backoff, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, typing-inspection, rsa, requests, reportlab, referencing, python-docx, python-dateutil, pydantic-core, pyasn1-modules, proto-plus, prompt-toolkit, markdown-it-py, jinja2, httplib2, httpcore, googleapis-common-protos, cffi, beautifulsoup4, anyio, aiosignal, starlette, rich, requests-oauthlib, pydantic, posthog, markdownify, jsonschema-specifications, inquirerpy, httpx, cryptography, aiohttp, typer, sse-starlette, pydantic-settings, openai, ollama, jsonschema, groq, google-auth, cdp-use, bubus, browser-use-sdk, anthropic, mcp, google-auth-oauthlib, google-auth-httplib2, google-api-core, google-genai, google-api-python-client, browser-use, reviewpilot
+2026-07-09T08:17:11.9973004Z 
+2026-07-09T08:17:12.0019132Z Successfully installed MarkupSafe-3.0.3 aiofiles-25.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.13.3 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anthropic-0.76.0 anyio-4.12.1 attrs-26.1.0 backoff-2.2.1 beautifulsoup4-4.15.0 browser-use-0.12.6 browser-use-sdk-2.0.15 bubus-1.5.6 cdp-use-1.4.5 certifi-2026.6.17 cffi-2.1.0 charset_normalizer-3.4.9 click-8.3.1 cloudpickle-3.1.2 cryptography-49.0.0 distro-1.9.0 docstring-parser-0.18.0 frozenlist-1.8.0 google-api-core-2.29.0 google-api-python-client-2.188.0 google-auth-2.48.0 google-auth-httplib2-0.4.0 google-auth-oauthlib-1.2.4 google-genai-1.65.0 googleapis-common-protos-1.75.0 groq-1.0.0 h11-0.16.0 httpcore-1.0.9 httplib2-0.32.0 httpx-0.28.1 httpx-sse-0.4.3 idna-3.18 inquirerpy-0.3.4 jinja2-3.1.6 jiter-0.16.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lxml-6.1.1 markdown-it-py-4.2.0 markdownify-1.2.2 mcp-1.26.0 mdurl-0.1.2 multidict-6.7.1 oauthlib-3.3.1 ollama-0.6.1 openai-2.16.0 pfzy-0.3.4 pillow-12.1.1 portalocker-3.2.0 posthog-7.7.0 prompt-toolkit-3.0.52 propcache-0.5.2 proto-plus-1.28.1 protobuf-6.33.6 psutil-7.2.2 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-3.0 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-settings-2.14.2 pygments-2.20.0 pyjwt-2.13.0 pyotp-2.9.0 pyparsing-3.3.2 pypdf-6.9.1 python-dateutil-2.9.0.post0 python-docx-1.2.0 python-dotenv-1.2.1 python-multipart-0.0.32 pyyaml-6.0.3 referencing-0.37.0 reportlab-4.4.9 requests-2.32.5 requests-oauthlib-2.0.0 reviewpilot-0.1.0 rich-14.3.1 rpds-py-2026.6.3 rsa-4.9.1 screeninfo-0.8.1 shellingham-1.5.4 six-1.17.0 sniffio-1.3.1 soupsieve-2.8.4 sse-starlette-3.4.5 starlette-1.3.1 tenacity-9.1.4 tqdm-4.68.4 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 uritemplate-4.2.0 urllib3-2.7.0 uuid7-0.1.0 uvicorn-0.51.0 wcwidth-0.8.2 websockets-16.0 yarl-1.24.2
+2026-07-09T08:17:13.3021152Z Collecting playwright
+2026-07-09T08:17:13.3661051Z   Downloading playwright-1.61.0-py3-none-manylinux1_x86_64.whl.metadata (3.3 kB)
+2026-07-09T08:17:13.3833238Z Collecting pyee<14,>=13 (from playwright)
+2026-07-09T08:17:13.3908746Z   Downloading pyee-13.0.1-py3-none-any.whl.metadata (3.0 kB)
+2026-07-09T08:17:13.5370780Z Collecting greenlet<4.0.0,>=3.1.1 (from playwright)
+2026-07-09T08:17:13.5450399Z   Downloading greenlet-3.5.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-07-09T08:17:13.5493865Z Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages (from pyee<14,>=13->playwright) (4.15.0)
+2026-07-09T08:17:13.5577659Z Downloading playwright-1.61.0-py3-none-manylinux1_x86_64.whl (47.4 MB)
+2026-07-09T08:17:14.0326696Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.4/47.4 MB 105.7 MB/s  0:00:00
+2026-07-09T08:17:14.0404929Z Downloading greenlet-3.5.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (617 kB)
+2026-07-09T08:17:14.0452692Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 617.4/617.4 kB 136.1 MB/s  0:00:00
+2026-07-09T08:17:14.0525765Z Downloading pyee-13.0.1-py3-none-any.whl (15 kB)
+2026-07-09T08:17:14.1629650Z Installing collected packages: pyee, greenlet, playwright
+2026-07-09T08:17:15.0268640Z 
+2026-07-09T08:17:15.0303164Z Successfully installed greenlet-3.5.3 playwright-1.61.0 pyee-13.0.1
+2026-07-09T08:17:15.4379493Z Installing dependencies...
+2026-07-09T08:17:15.4442294Z Switching to root user to install dependencies...
+2026-07-09T08:17:15.5189248Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-07-09T08:17:15.5519732Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-07-09T08:17:15.5520617Z Get:6 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
+2026-07-09T08:17:15.5549292Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-07-09T08:17:15.5559365Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-07-09T08:17:15.5590787Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-07-09T08:17:15.5625825Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-07-09T08:17:15.5942418Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
+2026-07-09T08:17:15.6699335Z Get:9 https://packages.microsoft.com/repos/azure-cli noble/main amd64 Packages [2314 B]
+2026-07-09T08:17:15.7166247Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [174 kB]
+2026-07-09T08:17:15.7215454Z Get:11 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [207 kB]
+2026-07-09T08:17:15.7286292Z Get:12 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [11.7 kB]
+2026-07-09T08:17:15.7707467Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1079 kB]
+2026-07-09T08:17:15.7787716Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [267 kB]
+2026-07-09T08:17:15.7796252Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [180 kB]
+2026-07-09T08:17:15.7839589Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1659 kB]
+2026-07-09T08:17:15.8030680Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+2026-07-09T08:17:15.8124895Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2026-07-09T08:17:15.8295925Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5768 B]
+2026-07-09T08:17:15.8309642Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+2026-07-09T08:17:15.8858509Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [827 kB]
+2026-07-09T08:17:15.8917293Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [187 kB]
+2026-07-09T08:17:15.9370409Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [44.9 kB]
+2026-07-09T08:17:15.9376819Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.9 kB]
+2026-07-09T08:17:15.9385857Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1173 kB]
+2026-07-09T08:17:15.9456806Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [230 kB]
+2026-07-09T08:17:15.9480861Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+2026-07-09T08:17:15.9492588Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [24.2 kB]
+2026-07-09T08:17:15.9718349Z Get:29 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1220 B]
+2026-07-09T08:17:20.8197880Z Fetched 6950 kB in 1s (7092 kB/s)
+2026-07-09T08:17:21.5822259Z Reading package lists...
+2026-07-09T08:17:21.6081619Z Reading package lists...
+2026-07-09T08:17:21.8303857Z Building dependency tree...
+2026-07-09T08:17:21.8311610Z Reading state information...
+2026-07-09T08:17:22.0504438Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.2).
+2026-07-09T08:17:22.0504927Z libasound2t64 set to manually installed.
+2026-07-09T08:17:22.0505322Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-07-09T08:17:22.0505984Z libatk-bridge2.0-0t64 set to manually installed.
+2026-07-09T08:17:22.0506554Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-07-09T08:17:22.0506974Z libatk1.0-0t64 set to manually installed.
+2026-07-09T08:17:22.0507331Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-07-09T08:17:22.0507701Z libatspi2.0-0t64 set to manually installed.
+2026-07-09T08:17:22.0510168Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-07-09T08:17:22.0510722Z libcairo2 set to manually installed.
+2026-07-09T08:17:22.0511246Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-07-09T08:17:22.0511830Z libcups2t64 set to manually installed.
+2026-07-09T08:17:22.0512210Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-07-09T08:17:22.0512552Z libdbus-1-3 set to manually installed.
+2026-07-09T08:17:22.0512968Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-07-09T08:17:22.0513551Z libdrm2 set to manually installed.
+2026-07-09T08:17:22.0514099Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.2).
+2026-07-09T08:17:22.0514660Z libgbm1 set to manually installed.
+2026-07-09T08:17:22.0515097Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.8).
+2026-07-09T08:17:22.0515460Z libglib2.0-0t64 set to manually installed.
+2026-07-09T08:17:22.0515793Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-07-09T08:17:22.0516285Z libnspr4 set to manually installed.
+2026-07-09T08:17:22.0516592Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-07-09T08:17:22.0516915Z libnss3 set to manually installed.
+2026-07-09T08:17:22.0517277Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-07-09T08:17:22.0517630Z libpango-1.0-0 set to manually installed.
+2026-07-09T08:17:22.0518237Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-07-09T08:17:22.0518619Z libx11-6 set to manually installed.
+2026-07-09T08:17:22.0518919Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-07-09T08:17:22.0519616Z libxcb1 set to manually installed.
+2026-07-09T08:17:22.0520039Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-07-09T08:17:22.0520397Z libxcomposite1 set to manually installed.
+2026-07-09T08:17:22.0520727Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-07-09T08:17:22.0521059Z libxdamage1 set to manually installed.
+2026-07-09T08:17:22.0521366Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-07-09T08:17:22.0521675Z libxext6 set to manually installed.
+2026-07-09T08:17:22.0521983Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-07-09T08:17:22.0522312Z libxfixes3 set to manually installed.
+2026-07-09T08:17:22.0522628Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-07-09T08:17:22.0522966Z libxkbcommon0 set to manually installed.
+2026-07-09T08:17:22.0523291Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-07-09T08:17:22.0523628Z libxrandr2 set to manually installed.
+2026-07-09T08:17:22.0524047Z xvfb is already the newest version (2:21.1.12-1ubuntu1.6).
+2026-07-09T08:17:22.0524487Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-07-09T08:17:22.0524957Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-07-09T08:17:22.0525318Z libfontconfig1 set to manually installed.
+2026-07-09T08:17:22.0525676Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.1).
+2026-07-09T08:17:22.0526041Z libfreetype6 set to manually installed.
+2026-07-09T08:17:22.0526458Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-07-09T08:17:22.0526951Z fonts-liberation set to manually installed.
+2026-07-09T08:17:22.0527292Z The following additional packages will be installed:
+2026-07-09T08:17:22.0527626Z   xfonts-encodings xfonts-utils
+2026-07-09T08:17:22.0527890Z Recommended packages:
+2026-07-09T08:17:22.0528330Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-07-09T08:17:22.0739954Z The following NEW packages will be installed:
+2026-07-09T08:17:22.0740771Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-07-09T08:17:22.0750964Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-07-09T08:17:22.0751349Z   xfonts-utils
+2026-07-09T08:17:22.0956586Z 0 upgraded, 9 newly installed, 0 to remove and 20 not upgraded.
+2026-07-09T08:17:22.0957070Z Need to get 21.1 MB of archives.
+2026-07-09T08:17:22.0957433Z After this operation, 79.5 MB of additional disk space will be used.
+2026-07-09T08:17:22.0957859Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-07-09T08:17:22.1183472Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-07-09T08:17:22.3054794Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-07-09T08:17:22.5617331Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-07-09T08:17:22.5679044Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-07-09T08:17:22.6882670Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-07-09T08:17:22.9908853Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-07-09T08:17:23.0169354Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-07-09T08:17:23.0229220Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-07-09T08:17:23.0417054Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-07-09T08:17:23.3395152Z Fetched 21.1 MB in 1s (21.7 MB/s)
+2026-07-09T08:17:23.3629908Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-07-09T08:17:23.3857755Z (Reading database ... 
+2026-07-09T08:17:23.3858772Z (Reading database ... 5%
+2026-07-09T08:17:23.3859137Z (Reading database ... 10%
+2026-07-09T08:17:23.3859450Z (Reading database ... 15%
+2026-07-09T08:17:23.3859678Z (Reading database ... 20%
+2026-07-09T08:17:23.3859915Z (Reading database ... 25%
+2026-07-09T08:17:23.3860134Z (Reading database ... 30%
+2026-07-09T08:17:23.3860378Z (Reading database ... 35%
+2026-07-09T08:17:23.3860600Z (Reading database ... 40%
+2026-07-09T08:17:23.3860828Z (Reading database ... 45%
+2026-07-09T08:17:23.3861061Z (Reading database ... 50%
+2026-07-09T08:17:23.3893787Z (Reading database ... 55%
+2026-07-09T08:17:23.5407536Z (Reading database ... 60%
+2026-07-09T08:17:23.7445169Z (Reading database ... 65%
+2026-07-09T08:17:23.9343495Z (Reading database ... 70%
+2026-07-09T08:17:23.9553816Z (Reading database ... 75%
+2026-07-09T08:17:24.0961267Z (Reading database ... 80%
+2026-07-09T08:17:24.3311809Z (Reading database ... 85%
+2026-07-09T08:17:24.5400912Z (Reading database ... 90%
+2026-07-09T08:17:24.7532206Z (Reading database ... 95%
+2026-07-09T08:17:24.7532612Z (Reading database ... 100%
+2026-07-09T08:17:24.7532968Z (Reading database ... 202701 files and directories currently installed.)
+2026-07-09T08:17:24.7580280Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-07-09T08:17:24.7677276Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-07-09T08:17:25.0110007Z Selecting previously unselected package fonts-freefont-ttf.
+2026-07-09T08:17:25.0243500Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-07-09T08:17:25.0252017Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-07-09T08:17:25.1158863Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-07-09T08:17:25.1292595Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-07-09T08:17:25.1301362Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-07-09T08:17:25.1527014Z Selecting previously unselected package fonts-unifont.
+2026-07-09T08:17:25.1661569Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-07-09T08:17:25.1671043Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-07-09T08:17:25.2800827Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-07-09T08:17:25.2976738Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-07-09T08:17:25.3095755Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-07-09T08:17:25.7872142Z Selecting previously unselected package xfonts-encodings.
+2026-07-09T08:17:25.8006608Z Preparing to unpack .../5-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-07-09T08:17:25.8013205Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-07-09T08:17:25.8317465Z Selecting previously unselected package xfonts-utils.
+2026-07-09T08:17:25.8451725Z Preparing to unpack .../6-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-07-09T08:17:25.8458557Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-07-09T08:17:26.0157552Z Selecting previously unselected package xfonts-cyrillic.
+2026-07-09T08:17:26.0291812Z Preparing to unpack .../7-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-07-09T08:17:26.0300662Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-07-09T08:17:26.0674744Z Selecting previously unselected package xfonts-scalable.
+2026-07-09T08:17:26.0808779Z Preparing to unpack .../8-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-07-09T08:17:26.0816227Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-07-09T08:17:26.1263526Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-07-09T08:17:26.1387864Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-07-09T08:17:26.1405161Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-07-09T08:17:26.1421433Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-07-09T08:17:26.1438232Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-07-09T08:17:26.1508104Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-07-09T08:17:26.1580350Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-07-09T08:17:26.1597662Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-07-09T08:17:26.1642619Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-07-09T08:17:26.1999272Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-07-09T08:17:26.2516858Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-07-09T08:17:26.2537515Z Not building database; man-db/auto-update is not 'true'.
+2026-07-09T08:17:26.2553849Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-07-09T08:17:27.0859239Z 
+2026-07-09T08:17:27.0859883Z Running kernel seems to be up-to-date.
+2026-07-09T08:17:27.0860284Z 
+2026-07-09T08:17:27.0860473Z No services need to be restarted.
+2026-07-09T08:17:27.0860662Z 
+2026-07-09T08:17:27.0860786Z No containers need to be restarted.
+2026-07-09T08:17:27.0860973Z 
+2026-07-09T08:17:27.0861109Z No user sessions are running outdated binaries.
+2026-07-09T08:17:28.2191537Z 
+2026-07-09T08:17:28.2192173Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-07-09T08:17:28.2193114Z Downloading Chrome for Testing 149.0.7827.55 (playwright chromium v1228) from https://cdn.playwright.dev/builds/cft/149.0.7827.55/linux64/chrome-linux64.zip
+2026-07-09T08:17:29.3727650Z |                                                                                |   0% of 177 MiB
+2026-07-09T08:17:29.5521819Z |■■■■■■■■                                                                        |  10% of 177 MiB
+2026-07-09T08:17:29.6635978Z |■■■■■■■■■■■■■■■■                                                                |  20% of 177 MiB
+2026-07-09T08:17:29.7585904Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 177 MiB
+2026-07-09T08:17:29.8502788Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 177 MiB
+2026-07-09T08:17:29.9208179Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 177 MiB
+2026-07-09T08:17:29.9992469Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 177 MiB
+2026-07-09T08:17:30.0661055Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 177 MiB
+2026-07-09T08:17:30.1433051Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 177 MiB
+2026-07-09T08:17:30.2063132Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 177 MiB
+2026-07-09T08:17:30.2889684Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 177 MiB
+2026-07-09T08:17:33.3343462Z Chrome for Testing 149.0.7827.55 (playwright chromium v1228) downloaded to /home/runner/.cache/ms-playwright/chromium-1228
+2026-07-09T08:17:33.3347771Z Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-07-09T08:17:34.3298709Z |                                                                                |   0% of 2.3 MiB
+2026-07-09T08:17:34.3613019Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-07-09T08:17:34.3750982Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-07-09T08:17:34.3842419Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-07-09T08:17:34.3930538Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-07-09T08:17:34.3983547Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-07-09T08:17:34.4037457Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-07-09T08:17:34.4070289Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-07-09T08:17:34.4136700Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-07-09T08:17:34.4149608Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-07-09T08:17:34.4177186Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-07-09T08:17:34.4783634Z FFmpeg (playwright ffmpeg v1011) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-07-09T08:17:34.4786693Z Downloading Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) from https://cdn.playwright.dev/builds/cft/149.0.7827.55/linux64/chrome-headless-shell-linux64.zip
+2026-07-09T08:17:35.4653029Z |                                                                                |   0% of 114.2 MiB
+2026-07-09T08:17:35.6238630Z |■■■■■■■■                                                                        |  10% of 114.2 MiB
+2026-07-09T08:17:35.6854293Z |■■■■■■■■■■■■■■■■                                                                |  20% of 114.2 MiB
+2026-07-09T08:17:35.7416103Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 114.2 MiB
+2026-07-09T08:17:35.8091006Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 114.2 MiB
+2026-07-09T08:17:35.8604630Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 114.2 MiB
+2026-07-09T08:17:35.9102169Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 114.2 MiB
+2026-07-09T08:17:35.9726698Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 114.2 MiB
+2026-07-09T08:17:36.0176150Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 114.2 MiB
+2026-07-09T08:17:36.0620097Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 114.2 MiB
+2026-07-09T08:17:36.1166305Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.2 MiB
+2026-07-09T08:17:38.2845869Z Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1228

@@ -1,0 +1,20 @@
+﻿2026-07-09T08:18:17.7349472Z ##[group]Run TAG="reviewpilot-evidence-pr-2"
+2026-07-09T08:18:17.7349912Z [36;1mTAG="reviewpilot-evidence-pr-2"[0m
+2026-07-09T08:18:17.7350217Z [36;1mgh release create "$TAG" \[0m
+2026-07-09T08:18:17.7350536Z [36;1m  --title "ReviewPilot evidence PR #2" \[0m
+2026-07-09T08:18:17.7350947Z [36;1m  --notes "Auto-generated screenshots from ReviewPilot review." \[0m
+2026-07-09T08:18:17.7351376Z [36;1m  --target main 2>/dev/null || true[0m
+2026-07-09T08:18:17.7352106Z [36;1mgh release upload "$TAG" reviewpilot-output/screenshots/*.png --clobber[0m
+2026-07-09T08:18:17.7389745Z shell: /usr/bin/bash -e {0}
+2026-07-09T08:18:17.7390011Z env:
+2026-07-09T08:18:17.7390284Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:18:17.7390726Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
+2026-07-09T08:18:17.7391148Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:18:17.7391526Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:18:17.7391973Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T08:18:17.7392352Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
+2026-07-09T08:18:17.7394889Z   GH_TOKEN: ***
+2026-07-09T08:18:17.7395126Z ##[endgroup]
+2026-07-09T08:18:22.6651028Z https://github.com/aruxyz/review-pilot-demo/releases/tag/reviewpilot-evidence-pr-2
+2026-07-09T08:18:22.6950470Z no matches found for `reviewpilot-output/screenshots/*.png`
+2026-07-09T08:18:22.6981233Z ##[error]Process completed with exit code 1.
