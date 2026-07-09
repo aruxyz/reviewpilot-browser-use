@@ -47,9 +47,9 @@ dev = [
 reviewpilot = "reviewpilot.cli.main:app"
 
 [project.urls]
-Homepage = "https://github.com/browser-use/reviewpilot"
-Repository = "https://github.com/browser-use/reviewpilot"
-Documentation = "https://github.com/browser-use/reviewpilot#readme"
+Homepage = "https://github.com/aruxyz/reviewpilot-browser-use"
+Repository = "https://github.com/aruxyz/reviewpilot-browser-use"
+Documentation = "https://github.com/aruxyz/reviewpilot-browser-use#readme"
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -816,7 +816,9 @@ This is strongly discouraged for PR reviews. Only disable safe mode for local te
 
 ## Demo
 
-The `examples/nextjs-demo/` directory contains a Next.js 14 app with five intentional UX bugs. ReviewPilot should detect several of them when run against the demo.
+ReviewPilot has a dedicated demo app in a separate repository: [aruxyz/review-pilot-demo](https://github.com/aruxyz/review-pilot-demo).
+
+It is a minimal Next.js 14 app with five intentional UX bugs. ReviewPilot should detect several of them when run against the demo.
 
 ### The five intentional bugs
 
@@ -832,10 +834,35 @@ The `examples/nextjs-demo/` directory contains a Next.js 14 app with five intent
 
 ### Run the demo
 
-Start the demo app:
+You have two options.
+
+**Option A: Deploy the demo to Vercel, then run ReviewPilot against the URL.**
+
+Clone and deploy the demo repo:
 
 ```bash
-cd examples/nextjs-demo
+git clone https://github.com/aruxyz/review-pilot-demo.git
+cd review-pilot-demo
+npm install
+vercel --prod
+```
+
+Copy the production URL Vercel gives you (for example `https://review-pilot-demo.vercel.app`).
+
+Run ReviewPilot against it:
+
+```bash
+cd ..
+reviewpilot run --url https://review-pilot-demo.vercel.app
+```
+
+**Option B: Run the demo locally.**
+
+Clone and start the demo app:
+
+```bash
+git clone https://github.com/aruxyz/review-pilot-demo.git
+cd review-pilot-demo
 npm install
 npm run dev
 ```
@@ -845,7 +872,6 @@ The app starts on `http://localhost:3000`.
 In another terminal, run ReviewPilot against it:
 
 ```bash
-cd ../..
 reviewpilot run --url http://localhost:3000
 ```
 
@@ -868,7 +894,7 @@ The demo app is a minimal Next.js 14 App Router project with TypeScript and Tail
 - `/pricing` (pricing section)
 - `/_not-found` (Next.js default 404, triggered by the broken footer link)
 
-See `examples/nextjs-demo/README.md` for more details on the demo app.
+See the [review-pilot-demo README](https://github.com/aruxyz/review-pilot-demo#readme) for more details on the demo app.
 
 ---
 
@@ -910,9 +936,6 @@ reviewpilot/
     html.py                     HTML report for local review
     templates/
       review.html.j2            Jinja2 template for HTML report
-
-  examples/                     Demo apps
-    nextjs-demo/                Next.js app with 5 intentional bugs
 
   .github/
     actions/reviewpilot/        Docker action
@@ -1134,8 +1157,8 @@ Contributions are welcome. The project follows these principles:
 ### Development setup
 
 ```bash
-git clone https://github.com/browser-use/reviewpilot.git
-cd reviewpilot
+git clone https://github.com/aruxyz/reviewpilot-browser-use.git
+cd reviewpilot-browser-use
 pip install -e ".[dev]"
 playwright install chromium
 pytest
