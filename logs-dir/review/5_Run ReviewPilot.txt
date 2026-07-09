@@ -1,0 +1,151 @@
+﻿2026-07-09T07:44:54.7816511Z ##[group]Run reviewpilot run --max-steps 10
+2026-07-09T07:44:54.7817103Z [36;1mreviewpilot run --max-steps 10[0m
+2026-07-09T07:44:54.7851511Z shell: /usr/bin/bash -e {0}
+2026-07-09T07:44:54.7851765Z env:
+2026-07-09T07:44:54.7852033Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7852469Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
+2026-07-09T07:44:54.7852896Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7853272Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7853651Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7854067Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
+2026-07-09T07:44:54.7854638Z   BROWSER_USE_API_KEY: ***
+2026-07-09T07:44:54.7854892Z ##[endgroup]
+2026-07-09T07:44:57.8618214Z ReviewPilot — reviewing https://review-pilot-demo.vercel.app
+2026-07-09T07:44:57.8620154Z Journeys: 3 · Viewports: 2
+2026-07-09T07:44:57.8621248Z 
+2026-07-09T07:44:57.9043776Z INFO     [service] Using anonymized telemetry, see https://docs.browser-use.com/development/monitoring/telemetry.
+2026-07-09T07:44:57.9264203Z INFO     [Agent] 🔗 Found URL in task: https://review-pilot-demo.vercel.app, adding as initial action...
+2026-07-09T07:44:57.9271192Z INFO     [Agent] 💬 Saving conversation to ~/work/review-pilot-demo/review-pilot-demo/reviewpilot-output/runs/homepage-review-desktop
+2026-07-09T07:44:57.9275691Z INFO     [Agent] [34m🎯 Task: You are a senior QA engineer reviewing a live web application.
+2026-07-09T07:44:57.9276386Z 
+2026-07-09T07:44:57.9276668Z Target URL: https://review-pilot-demo.vercel.app
+2026-07-09T07:44:57.9277528Z Viewport: desktop (1440x900)
+2026-07-09T07:44:57.9277813Z 
+2026-07-09T07:44:57.9277988Z Journey: Homepage review
+2026-07-09T07:44:57.9279168Z Goal: Open the homepage and check whether the primary navigation, hero section, and main CTA are visible and usable. Check for layout overflow on mobile.
+2026-07-09T07:44:57.9280175Z 
+2026-07-09T07:44:57.9280311Z Safety rules:
+2026-07-09T07:44:57.9280687Z - Do NOT submit any form (read-only review).
+2026-07-09T07:44:57.9281241Z - Do NOT create, update, or delete real data.
+2026-07-09T07:44:57.9281778Z - Do NOT make purchases or payments.
+2026-07-09T07:44:57.9282294Z - Do NOT authenticate with real credentials.
+2026-07-09T07:44:57.9282889Z - Do NOT click destructive buttons (delete, remove, reset).
+2026-07-09T07:44:57.9283561Z - If a form is present, inspect it but do not submit.
+2026-07-09T07:44:57.9284104Z Observation requirements:
+2026-07-09T07:44:57.9284677Z - Report broken UI, confusing UX, missing elements, layout overflow.
+2026-07-09T07:44:57.9285464Z - Report buttons that are disabled or do nothing when clicked.
+2026-07-09T07:44:57.9286248Z - Report forms with unclear validation or missing error indicators.
+2026-07-09T07:44:57.9287570Z - Report links that lead to 404 or broken pages.
+2026-07-09T07:44:57.9288215Z - Report elements hidden below the fold on small viewports.
+2026-07-09T07:44:57.9288847Z - Report any console errors you observe.
+2026-07-09T07:44:57.9289485Z - For every issue, note the page URL and a short reproduction hint.
+2026-07-09T07:44:57.9290192Z - Capture a screenshot whenever you observe an issue.
+2026-07-09T07:44:57.9290603Z 
+2026-07-09T07:44:57.9290970Z Return a concise summary of what you found, including which checks passed.
+2026-07-09T07:44:57.9291714Z [0m
+2026-07-09T07:44:57.9667542Z INFO     [Agent] Starting a browser-use agent with version 0.13.3, with provider=browser-use and model=bu-2-0
+2026-07-09T07:44:57.9953028Z INFO     [utils] 📦 Downloading uBlock Origin Lite extension...
+2026-07-09T07:44:58.2148764Z INFO     [utils] 📂 Extracting uBlock Origin Lite extension...
+2026-07-09T07:44:58.4372115Z INFO     [utils] 📦 Downloading I still don't care about cookies extension...
+2026-07-09T07:44:58.5506716Z INFO     [utils] 📂 Extracting I still don't care about cookies extension...
+2026-07-09T07:44:58.5656889Z INFO     [utils] 📦 Downloading Force Background Tab extension...
+2026-07-09T07:44:58.6792709Z INFO     [utils] 📂 Extracting Force Background Tab extension...
+2026-07-09T07:44:58.6913125Z INFO     [utils] [BrowserProfile] ✅ Cookie extension: nature.com, qatarairways.com pre-populated in storage
+2026-07-09T07:45:12.9681384Z WARNING  [bubus] ⚠️ EventBus_292ca40f🟢(⏳ 0 | ▶️ 2 | ✅ 0 ➡️ 31 👂) handler browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent() has been running for >15s on event. Possible slow processing or deadlock.
+2026-07-09T07:45:12.9683360Z (handler could be trying to await its own result or could be blocked by another async task).
+2026-07-09T07:45:12.9684717Z browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent(?▶ BrowserStartEvent#09c8 🏃)
+2026-07-09T07:45:12.9955562Z WARNING  [bubus] ⚠️ EventBus_292ca40f🟢(⏳ 0 | ▶️ 2 | ✅ 0 ➡️ 31 👂) handler browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent() has been running for >15s on event. Possible slow processing or deadlock.
+2026-07-09T07:45:12.9957973Z (handler could be trying to await its own result or could be blocked by another async task).
+2026-07-09T07:45:12.9959350Z browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent(?▶ BrowserLaunchEvent#547b 🏃)
+2026-07-09T07:45:27.9686424Z WARNING  [bubus] ================================================================================
+2026-07-09T07:45:27.9689191Z WARNING  [bubus] ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_292ca40f.browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent(?▶ BrowserStartEvent#09c8 ✅)
+2026-07-09T07:45:27.9690391Z WARNING  [bubus] ================================================================================
+2026-07-09T07:45:27.9691233Z WARNING  [bubus] 📣 BrowserStartEvent#09c8                                              [91m30s[0m
+2026-07-09T07:45:27.9692506Z WARNING  [bubus]    ⏰ browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent(#09c8) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2026-07-09T07:45:27.9693678Z WARNING  [bubus]       📣 BrowserLaunchEvent#547b                                       [93m30s[0m
+2026-07-09T07:45:27.9694759Z WARNING  [bubus]          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserLaunchEvent(#547b)    [92m 0s[0m/30s   ✓
+2026-07-09T07:45:27.9696170Z WARNING  [bubus]          ➡️ browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent(#547b) ⏳ [93m30s[0m/30s   ⬅️ [93mINTERRUPTED[0m ✂️
+2026-07-09T07:45:27.9697271Z WARNING  [bubus] 
+2026-07-09T07:45:27.9697592Z ================================================================================
+2026-07-09T07:45:27.9697899Z 
+2026-07-09T07:45:27.9804933Z ERROR    [Agent] Agent run failed with exception: Event handler browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent#9696(?▶ BrowserStartEvent#09c8 🏃) timed out after 30.0s and interrupted any processing of 1 child events
+2026-07-09T07:45:27.9807086Z Traceback (most recent call last):
+2026-07-09T07:45:27.9814490Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1128, in execute_handler
+2026-07-09T07:45:27.9815530Z     result_value: Any = await asyncio.wait_for(handler_task, timeout=event_result.timeout)
+2026-07-09T07:45:27.9816158Z                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9817238Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/tasks.py", line 476, in wait_for
+2026-07-09T07:45:27.9818176Z     await waiter
+2026-07-09T07:45:27.9818478Z asyncio.exceptions.CancelledError
+2026-07-09T07:45:27.9818723Z 
+2026-07-09T07:45:27.9818966Z The above exception was the direct cause of the following exception:
+2026-07-09T07:45:27.9819346Z 
+2026-07-09T07:45:27.9819486Z Traceback (most recent call last):
+2026-07-09T07:45:27.9820160Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/tasks.py", line 500, in wait_for
+2026-07-09T07:45:27.9820808Z     return fut.result()
+2026-07-09T07:45:27.9821324Z            ^^^^^^^^^^^^
+2026-07-09T07:45:27.9822110Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/browser/watchdog_base.py", line 153, in unique_handler
+2026-07-09T07:45:27.9822952Z     result = await actual_handler(event)
+2026-07-09T07:45:27.9823292Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9823886Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/observability.py", line 73, in async_wrapper
+2026-07-09T07:45:27.9824472Z     return await func(*args, **kwargs)
+2026-07-09T07:45:27.9824728Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9825335Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/browser/session.py", line 809, in on_BrowserStartEvent
+2026-07-09T07:45:27.9825944Z     await launch_event
+2026-07-09T07:45:27.9826568Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 313, in wait_for_handlers_to_complete_then_return_event
+2026-07-09T07:45:27.9827538Z     await bus.process_event(event)
+2026-07-09T07:45:27.9828111Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 976, in process_event
+2026-07-09T07:45:27.9828802Z     await self._execute_handlers(event, handlers=applicable_handlers, timeout=timeout)
+2026-07-09T07:45:27.9829556Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1070, in _execute_handlers
+2026-07-09T07:45:27.9830178Z     await self.execute_handler(event, handler, timeout=timeout)
+2026-07-09T07:45:27.9830813Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1174, in execute_handler
+2026-07-09T07:45:27.9831397Z     raise handler_interrupted_error from e
+2026-07-09T07:45:27.9832474Z asyncio.exceptions.CancelledError: Event handler browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent#9456(?▶ BrowserLaunchEvent#547b 🏃) was interrupted because of a parent timeout
+2026-07-09T07:45:27.9833296Z 
+2026-07-09T07:45:27.9833492Z The above exception was the direct cause of the following exception:
+2026-07-09T07:45:27.9833772Z 
+2026-07-09T07:45:27.9833873Z Traceback (most recent call last):
+2026-07-09T07:45:27.9834447Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1128, in execute_handler
+2026-07-09T07:45:27.9835152Z     result_value: Any = await asyncio.wait_for(handler_task, timeout=event_result.timeout)
+2026-07-09T07:45:27.9835631Z                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9836183Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/tasks.py", line 502, in wait_for
+2026-07-09T07:45:27.9837232Z     raise exceptions.TimeoutError() from exc
+2026-07-09T07:45:27.9837708Z TimeoutError
+2026-07-09T07:45:27.9837909Z 
+2026-07-09T07:45:27.9838234Z The above exception was the direct cause of the following exception:
+2026-07-09T07:45:27.9838739Z 
+2026-07-09T07:45:27.9838901Z Traceback (most recent call last):
+2026-07-09T07:45:27.9839918Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/agent/service.py", line 2552, in run
+2026-07-09T07:45:27.9840960Z     await self.browser_session.start()
+2026-07-09T07:45:27.9842210Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/observability.py", line 73, in async_wrapper
+2026-07-09T07:45:27.9843316Z     return await func(*args, **kwargs)
+2026-07-09T07:45:27.9843776Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9844840Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/browser/session.py", line 724, in start
+2026-07-09T07:45:27.9846087Z     await start_event.event_result(raise_if_any=True, raise_if_none=False)
+2026-07-09T07:45:27.9847567Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 574, in event_result
+2026-07-09T07:45:27.9848866Z     valid_results = await self.event_results_filtered(
+2026-07-09T07:45:27.9849298Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9849922Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 516, in event_results_filtered
+2026-07-09T07:45:27.9850512Z     raise original_error
+2026-07-09T07:45:27.9851080Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 490, in event_results_filtered
+2026-07-09T07:45:27.9851637Z     await event_result
+2026-07-09T07:45:27.9852253Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 889, in wait_for_handler_to_complete_and_return_result
+2026-07-09T07:45:27.9853462Z     raise self.error if isinstance(self.error, BaseException) else Exception(self.error)  # pyright: ignore[reportUnnecessaryIsInstance]
+2026-07-09T07:45:27.9854711Z     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9855509Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1070, in _execute_handlers
+2026-07-09T07:45:27.9856152Z     await self.execute_handler(event, handler, timeout=timeout)
+2026-07-09T07:45:27.9857101Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1194, in execute_handler
+2026-07-09T07:45:27.9857789Z     raise handler_timeout_error from e
+2026-07-09T07:45:27.9858830Z TimeoutError: Event handler browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent#9696(?▶ BrowserStartEvent#09c8 🏃) timed out after 30.0s and interrupted any processing of 1 child events
+2026-07-09T07:45:27.9924075Z INFO     [Agent] 
+2026-07-09T07:45:27.9924692Z INFO     [Agent] Did the Agent not work as expected? Let us fix this!
+2026-07-09T07:45:27.9925704Z INFO     [Agent]    Open a short issue on GitHub: https://github.com/browser-use/browser-use/issues
+2026-07-09T07:45:27.9944199Z INFO     [BrowserSession] 📢 on_BrowserStopEvent - Calling reset() (force=True, keep_alive=False)
+2026-07-09T07:45:27.9949633Z INFO     [BrowserSession] ✅ Browser session reset complete
+2026-07-09T07:45:32.9989474Z WARNING  [bubus] ⌛️ EventBus_292ca40f🟢(⏳ 0 | ▶️ 0 | ✅ 5 ➡️ 31 👂) Timeout waiting for event bus to be idle after 5s (processing: 0)
+2026-07-09T07:45:33.0003020Z INFO     [BrowserSession] ✅ Browser session reset complete
+2026-07-09T07:45:33.1182631Z INFO     [BrowserSession] ✅ Browser session reset complete
+2026-07-09T07:45:33.1199870Z Review failed: Event handler 
+2026-07-09T07:45:33.1200760Z browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent#9696(?▶ 
+2026-07-09T07:45:33.1201676Z BrowserStartEvent#09c8 🏃) timed out after 30.0s and interrupted any processing 
+2026-07-09T07:45:33.1202676Z of 1 child events
+2026-07-09T07:45:33.8466633Z ##[error]Process completed with exit code 1.

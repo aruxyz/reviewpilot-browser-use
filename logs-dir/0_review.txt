@@ -1,0 +1,949 @@
+﻿2026-07-09T07:43:56.0546478Z Current runner version: '2.335.1'
+2026-07-09T07:43:56.0571780Z ##[group]Runner Image Provisioner
+2026-07-09T07:43:56.0572728Z Hosted Compute Agent
+2026-07-09T07:43:56.0573352Z Version: 20260624.560
+2026-07-09T07:43:56.0573984Z Commit: 925d229a51159bc391ae97e54a2dd1fe20af789d
+2026-07-09T07:43:56.0574789Z Build Date: 2026-06-24T18:26:47Z
+2026-07-09T07:43:56.0575509Z Worker ID: {1fa891a6-1efd-41aa-bc4a-95353a4dd3bf}
+2026-07-09T07:43:56.0576209Z Azure Region: westus
+2026-07-09T07:43:56.0577054Z ##[endgroup]
+2026-07-09T07:43:56.0578572Z ##[group]Operating System
+2026-07-09T07:43:56.0579301Z Ubuntu
+2026-07-09T07:43:56.0579895Z 24.04.4
+2026-07-09T07:43:56.0580452Z LTS
+2026-07-09T07:43:56.0581024Z ##[endgroup]
+2026-07-09T07:43:56.0581637Z ##[group]Runner Image
+2026-07-09T07:43:56.0582367Z Image: ubuntu-24.04
+2026-07-09T07:43:56.0582993Z Version: 20260628.225.1
+2026-07-09T07:43:56.0584299Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260628.225/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-09T07:43:56.0585849Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260628.225
+2026-07-09T07:43:56.0587382Z ##[endgroup]
+2026-07-09T07:43:56.0588785Z ##[group]GITHUB_TOKEN Permissions
+2026-07-09T07:43:56.0590801Z Contents: write
+2026-07-09T07:43:56.0591444Z Metadata: read
+2026-07-09T07:43:56.0592024Z PullRequests: write
+2026-07-09T07:43:56.0592685Z ##[endgroup]
+2026-07-09T07:43:56.0595124Z Secret source: Actions
+2026-07-09T07:43:56.0595887Z Prepare workflow directory
+2026-07-09T07:43:56.0941866Z Prepare all required actions
+2026-07-09T07:43:56.0982032Z Getting action download info
+2026-07-09T07:43:56.4749557Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-07-09T07:43:56.5669501Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-07-09T07:43:56.6456041Z Download action repository 'actions/github-script@v7' (SHA:f28e40c7f34bde8b3046d885e986cb6290c5673b)
+2026-07-09T07:43:56.9843162Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-07-09T07:43:57.2462656Z Complete job name: review
+2026-07-09T07:43:57.3228411Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-09T07:43:57.3236765Z ##[group]Run actions/checkout@v4
+2026-07-09T07:43:57.3237808Z with:
+2026-07-09T07:43:57.3238279Z   repository: aruxyz/review-pilot-demo
+2026-07-09T07:43:57.3242043Z   token: ***
+2026-07-09T07:43:57.3242474Z   ssh-strict: true
+2026-07-09T07:43:57.3242905Z   ssh-user: git
+2026-07-09T07:43:57.3243348Z   persist-credentials: true
+2026-07-09T07:43:57.3243889Z   clean: true
+2026-07-09T07:43:57.3244347Z   sparse-checkout-cone-mode: true
+2026-07-09T07:43:57.3244868Z   fetch-depth: 1
+2026-07-09T07:43:57.3245318Z   fetch-tags: false
+2026-07-09T07:43:57.3245763Z   show-progress: true
+2026-07-09T07:43:57.3246215Z   lfs: false
+2026-07-09T07:43:57.3246653Z   submodules: false
+2026-07-09T07:43:57.3247270Z   set-safe-directory: true
+2026-07-09T07:43:57.3248037Z ##[endgroup]
+2026-07-09T07:43:57.4266164Z Syncing repository: aruxyz/review-pilot-demo
+2026-07-09T07:43:57.4268543Z ##[group]Getting Git version info
+2026-07-09T07:43:57.4269577Z Working directory is '/home/runner/work/review-pilot-demo/review-pilot-demo'
+2026-07-09T07:43:57.4270748Z [command]/usr/bin/git version
+2026-07-09T07:43:57.4353620Z git version 2.54.0
+2026-07-09T07:43:57.4375606Z ##[endgroup]
+2026-07-09T07:43:57.4392628Z Temporarily overriding HOME='/home/runner/work/_temp/0b1d7541-381b-460b-a5f6-dfaf64e0f939' before making global git config changes
+2026-07-09T07:43:57.4395274Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-09T07:43:57.4399493Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/review-pilot-demo/review-pilot-demo
+2026-07-09T07:43:57.4459369Z Deleting the contents of '/home/runner/work/review-pilot-demo/review-pilot-demo'
+2026-07-09T07:43:57.4463007Z ##[group]Initializing the repository
+2026-07-09T07:43:57.4467814Z [command]/usr/bin/git init /home/runner/work/review-pilot-demo/review-pilot-demo
+2026-07-09T07:43:57.4600230Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-09T07:43:57.4602015Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-09T07:43:57.4603628Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-09T07:43:57.4604925Z hint: call:
+2026-07-09T07:43:57.4605872Z hint:
+2026-07-09T07:43:57.4607119Z hint: 	git config --global init.defaultBranch <name>
+2026-07-09T07:43:57.4608511Z hint:
+2026-07-09T07:43:57.4609830Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-09T07:43:57.4612848Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-09T07:43:57.4614342Z hint:
+2026-07-09T07:43:57.4615245Z hint: 	git branch -m <name>
+2026-07-09T07:43:57.4616218Z hint:
+2026-07-09T07:43:57.4617645Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-09T07:43:57.4620060Z Initialized empty Git repository in /home/runner/work/review-pilot-demo/review-pilot-demo/.git/
+2026-07-09T07:43:57.4623576Z [command]/usr/bin/git remote add origin https://github.com/aruxyz/review-pilot-demo
+2026-07-09T07:43:57.4702308Z ##[endgroup]
+2026-07-09T07:43:57.4703628Z ##[group]Disabling automatic garbage collection
+2026-07-09T07:43:57.4711973Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-09T07:43:57.4743410Z ##[endgroup]
+2026-07-09T07:43:57.4744458Z ##[group]Setting up auth
+2026-07-09T07:43:57.4752421Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-09T07:43:57.4797838Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-09T07:43:57.5188926Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-09T07:43:57.5226508Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-09T07:43:57.5448658Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-09T07:43:57.5484593Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-09T07:43:57.5708632Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-09T07:43:57.5748268Z ##[endgroup]
+2026-07-09T07:43:57.5749738Z ##[group]Fetching the repository
+2026-07-09T07:43:57.5759325Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +190c77da2c513b3177043e6312402e3e60be33fd:refs/remotes/pull/2/merge
+2026-07-09T07:43:57.9669130Z From https://github.com/aruxyz/review-pilot-demo
+2026-07-09T07:43:57.9671535Z  * [new ref]         190c77da2c513b3177043e6312402e3e60be33fd -> pull/2/merge
+2026-07-09T07:43:57.9718534Z ##[endgroup]
+2026-07-09T07:43:57.9722315Z ##[group]Determining the checkout info
+2026-07-09T07:43:57.9723778Z ##[endgroup]
+2026-07-09T07:43:57.9724572Z [command]/usr/bin/git sparse-checkout disable
+2026-07-09T07:43:57.9772769Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-09T07:43:57.9805552Z ##[group]Checking out the ref
+2026-07-09T07:43:57.9808423Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2/merge
+2026-07-09T07:43:57.9872428Z Note: switching to 'refs/remotes/pull/2/merge'.
+2026-07-09T07:43:57.9874074Z 
+2026-07-09T07:43:57.9875797Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-07-09T07:43:57.9878672Z changes and commit them, and you can discard any commits you make in this
+2026-07-09T07:43:57.9880541Z state without impacting any branches by switching back to a branch.
+2026-07-09T07:43:57.9881741Z 
+2026-07-09T07:43:57.9882744Z If you want to create a new branch to retain commits you create, you may
+2026-07-09T07:43:57.9952543Z do so (now or later) by using -c with the switch command. Example:
+2026-07-09T07:43:57.9953694Z 
+2026-07-09T07:43:57.9954166Z   git switch -c <new-branch-name>
+2026-07-09T07:43:57.9955069Z 
+2026-07-09T07:43:57.9955570Z Or undo this operation with:
+2026-07-09T07:43:57.9956272Z 
+2026-07-09T07:43:57.9956702Z   git switch -
+2026-07-09T07:43:57.9957757Z 
+2026-07-09T07:43:57.9959363Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-07-09T07:43:57.9961568Z 
+2026-07-09T07:43:57.9963459Z HEAD is now at 190c77d Merge ae26757a61b51330a38d3bb24f20d085a305bec9 into 2502e53fd826568852874276de8d9123613a55c4
+2026-07-09T07:43:57.9968405Z ##[endgroup]
+2026-07-09T07:43:57.9970738Z [command]/usr/bin/git log -1 --format=%H
+2026-07-09T07:43:57.9976575Z 190c77da2c513b3177043e6312402e3e60be33fd
+2026-07-09T07:43:58.0352980Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-09T07:43:58.0358857Z ##[group]Run actions/setup-python@v5
+2026-07-09T07:43:58.0359935Z with:
+2026-07-09T07:43:58.0360707Z   python-version: 3.11
+2026-07-09T07:43:58.0361610Z   check-latest: false
+2026-07-09T07:43:58.0371232Z   token: ***
+2026-07-09T07:43:58.0372064Z   update-environment: true
+2026-07-09T07:43:58.0373061Z   allow-prereleases: false
+2026-07-09T07:43:58.0374016Z   freethreaded: false
+2026-07-09T07:43:58.0374880Z ##[endgroup]
+2026-07-09T07:43:58.1828462Z ##[group]Installed versions
+2026-07-09T07:43:58.1924312Z (node:2295) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-09T07:43:58.1929110Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-09T07:43:58.1931866Z Successfully set up CPython (3.11.15)
+2026-07-09T07:43:58.1934522Z ##[endgroup]
+2026-07-09T07:43:58.2122398Z ##[group]Run pip install "git+https://github.com/aruxyz/reviewpilot-browser-use.git"
+2026-07-09T07:43:58.2124848Z [36;1mpip install "git+https://github.com/aruxyz/reviewpilot-browser-use.git"[0m
+2026-07-09T07:43:58.2126606Z [36;1mpip install playwright[0m
+2026-07-09T07:43:58.2128154Z [36;1mpython -m playwright install chromium --with-deps[0m
+2026-07-09T07:43:58.2357562Z shell: /usr/bin/bash -e {0}
+2026-07-09T07:43:58.2358609Z env:
+2026-07-09T07:43:58.2359603Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:43:58.2361329Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
+2026-07-09T07:43:58.2363087Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:43:58.2364631Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:43:58.2366186Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:43:58.2368040Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
+2026-07-09T07:43:58.2369406Z ##[endgroup]
+2026-07-09T07:44:01.0472935Z Collecting git+https://github.com/aruxyz/reviewpilot-browser-use.git
+2026-07-09T07:44:01.0477602Z   Cloning https://github.com/aruxyz/reviewpilot-browser-use.git to /tmp/pip-req-build-jz3415k4
+2026-07-09T07:44:01.0498677Z   Running command git clone --filter=blob:none --quiet https://github.com/aruxyz/reviewpilot-browser-use.git /tmp/pip-req-build-jz3415k4
+2026-07-09T07:44:01.7608922Z   Resolved https://github.com/aruxyz/reviewpilot-browser-use.git to commit 69455f297ae2be933693e8e2a4f151af0b60548d
+2026-07-09T07:44:01.7644495Z   Installing build dependencies: started
+2026-07-09T07:44:03.1450595Z   Installing build dependencies: finished with status 'done'
+2026-07-09T07:44:03.1456108Z   Getting requirements to build wheel: started
+2026-07-09T07:44:03.6690741Z   Getting requirements to build wheel: finished with status 'done'
+2026-07-09T07:44:03.6699889Z   Preparing metadata (pyproject.toml): started
+2026-07-09T07:44:03.8411729Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2026-07-09T07:44:03.9870209Z Collecting browser-use>=0.12.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.0377202Z   Downloading browser_use-0.13.3-py3-none-any.whl.metadata (17 kB)
+2026-07-09T07:44:04.0841626Z Collecting typer>=0.12.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.0873449Z   Downloading typer-0.26.8-py3-none-any.whl.metadata (15 kB)
+2026-07-09T07:44:04.1507334Z Collecting rich>=13.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.1541482Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-07-09T07:44:04.2903775Z Collecting pydantic>=2.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.2938324Z   Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+2026-07-09T07:44:04.3409506Z Collecting pydantic-settings>=2.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.3447807Z   Downloading pydantic_settings-2.14.2-py3-none-any.whl.metadata (3.4 kB)
+2026-07-09T07:44:04.3982572Z Collecting pyyaml>=6.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.4018581Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-07-09T07:44:04.4343065Z Collecting jinja2>=3.1.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.4383389Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-07-09T07:44:04.4720772Z Collecting httpx>=0.27.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.4755277Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-07-09T07:44:04.5088325Z Collecting python-dotenv>=1.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.5121744Z   Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+2026-07-09T07:44:04.7099246Z Collecting pillow>=10.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:04.7133634Z   Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-07-09T07:44:05.1911968Z Collecting aiohttp==3.13.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.1961499Z   Downloading aiohttp-3.13.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
+2026-07-09T07:44:05.2394164Z Collecting anthropic==0.76.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.2433283Z   Downloading anthropic-0.76.0-py3-none-any.whl.metadata (28 kB)
+2026-07-09T07:44:05.2782007Z Collecting anyio==4.12.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.2814290Z   Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+2026-07-09T07:44:05.3122827Z Collecting browser-harness==0.1.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.3163439Z   Downloading browser_harness-0.1.4-py3-none-any.whl.metadata (5.8 kB)
+2026-07-09T07:44:05.3494881Z Collecting browser-use-sdk==3.4.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.3538126Z   Downloading browser_use_sdk-3.4.2-py3-none-any.whl.metadata (1.0 kB)
+2026-07-09T07:44:05.3850850Z Collecting bubus==1.5.6 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.3892773Z   Downloading bubus-1.5.6-py3-none-any.whl.metadata (37 kB)
+2026-07-09T07:44:05.4398241Z Collecting cdp-use==1.4.5 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.4443797Z   Downloading cdp_use-1.4.5-py3-none-any.whl.metadata (9.5 kB)
+2026-07-09T07:44:05.4774372Z Collecting click==8.3.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.4809133Z   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+2026-07-09T07:44:05.5113153Z Collecting cloudpickle==3.1.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.5144768Z   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+2026-07-09T07:44:05.5535854Z Collecting google-api-core==2.29.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.5570128Z   Downloading google_api_core-2.29.0-py3-none-any.whl.metadata (3.3 kB)
+2026-07-09T07:44:05.6073492Z Collecting google-api-python-client==2.188.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.6115108Z   Downloading google_api_python_client-2.188.0-py3-none-any.whl.metadata (7.0 kB)
+2026-07-09T07:44:05.6444693Z Collecting google-auth-oauthlib==1.2.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.6486889Z   Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl.metadata (3.1 kB)
+2026-07-09T07:44:05.6917787Z Collecting google-auth==2.48.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.6950780Z   Downloading google_auth-2.48.0-py3-none-any.whl.metadata (6.2 kB)
+2026-07-09T07:44:05.7341054Z Collecting google-genai==1.65.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.7377463Z   Downloading google_genai-1.65.0-py3-none-any.whl.metadata (51 kB)
+2026-07-09T07:44:05.7752054Z Collecting groq==1.0.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.7792428Z   Downloading groq-1.0.0-py3-none-any.whl.metadata (16 kB)
+2026-07-09T07:44:05.8094572Z Collecting inquirerpy==0.3.4 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.8125373Z   Downloading InquirerPy-0.3.4-py3-none-any.whl.metadata (8.1 kB)
+2026-07-09T07:44:05.8434789Z Collecting markdownify==1.2.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.8474846Z   Downloading markdownify-1.2.2-py3-none-any.whl.metadata (9.9 kB)
+2026-07-09T07:44:05.8810674Z Collecting mcp==1.26.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.8843809Z   Downloading mcp-1.26.0-py3-none-any.whl.metadata (89 kB)
+2026-07-09T07:44:05.9195395Z Collecting ollama==0.6.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.9234524Z   Downloading ollama-0.6.1-py3-none-any.whl.metadata (4.3 kB)
+2026-07-09T07:44:05.9771335Z Collecting openai==2.16.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:05.9815860Z   Downloading openai-2.16.0-py3-none-any.whl.metadata (29 kB)
+2026-07-09T07:44:05.9890618Z Collecting pillow>=10.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:05.9929756Z   Downloading pillow-12.2.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+2026-07-09T07:44:06.0398994Z Collecting posthog==7.7.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.0444021Z   Downloading posthog-7.7.0-py3-none-any.whl.metadata (6.4 kB)
+2026-07-09T07:44:06.1224301Z Collecting psutil==7.2.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.1264128Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+2026-07-09T07:44:06.1346446Z Collecting pydantic>=2.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:06.1378730Z   Downloading pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+2026-07-09T07:44:06.1712032Z Collecting pyotp==2.9.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.1742263Z   Downloading pyotp-2.9.0-py3-none-any.whl.metadata (9.8 kB)
+2026-07-09T07:44:06.2093316Z Collecting pypdf==6.10.2 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.2135540Z   Downloading pypdf-6.10.2-py3-none-any.whl.metadata (7.1 kB)
+2026-07-09T07:44:06.2441859Z Collecting python-docx==1.2.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.2471412Z   Downloading python_docx-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+2026-07-09T07:44:06.3578869Z Collecting reportlab==4.4.9 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.3637711Z   Downloading reportlab-4.4.9-py3-none-any.whl.metadata (1.7 kB)
+2026-07-09T07:44:06.4019907Z Collecting requests==2.33.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.4052823Z   Downloading requests-2.33.0-py3-none-any.whl.metadata (5.1 kB)
+2026-07-09T07:44:06.4112169Z Collecting rich>=13.0.0 (from reviewpilot==0.1.0)
+2026-07-09T07:44:06.4165821Z   Downloading rich-14.3.1-py3-none-any.whl.metadata (18 kB)
+2026-07-09T07:44:06.4471327Z Collecting screeninfo==0.8.1 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.4513541Z   Downloading screeninfo-0.8.1-py3-none-any.whl.metadata (2.9 kB)
+2026-07-09T07:44:06.4831609Z Collecting typing-extensions==4.15.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.4865660Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+2026-07-09T07:44:06.5309233Z Collecting uuid7==0.1.0 (from browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.5351766Z   Downloading uuid7-0.1.0-py2.py3-none-any.whl.metadata (3.6 kB)
+2026-07-09T07:44:06.5682277Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.5713524Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+2026-07-09T07:44:06.5995151Z Collecting aiosignal>=1.4.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.6026041Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+2026-07-09T07:44:06.6342687Z Collecting attrs>=17.3.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.6372150Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-07-09T07:44:06.7361845Z Collecting frozenlist>=1.1.1 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.7398061Z   Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+2026-07-09T07:44:06.9490035Z Collecting multidict<7.0,>=4.5 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:06.9525011Z   Downloading multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+2026-07-09T07:44:07.0216130Z Collecting propcache>=0.2.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.0253682Z   Downloading propcache-0.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-07-09T07:44:07.2944191Z Collecting yarl<2.0,>=1.17.0 (from aiohttp==3.13.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.2984635Z   Downloading yarl-1.24.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (94 kB)
+2026-07-09T07:44:07.3348377Z Collecting distro<2,>=1.7.0 (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.3380672Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2026-07-09T07:44:07.3687914Z Collecting docstring-parser<1,>=0.15 (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.3719907Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-07-09T07:44:07.4682548Z Collecting jiter<1,>=0.4.0 (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.4715867Z   Downloading jiter-0.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2026-07-09T07:44:07.5011803Z Collecting sniffio (from anthropic==0.76.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.5044331Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2026-07-09T07:44:07.5367530Z Collecting idna>=2.8 (from anyio==4.12.1->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.5400872Z   Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+2026-07-09T07:44:07.5767866Z Collecting certifi (from httpx>=0.27.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.5799477Z   Downloading certifi-2026.6.17-py3-none-any.whl.metadata (2.5 kB)
+2026-07-09T07:44:07.6134053Z Collecting httpcore==1.* (from httpx>=0.27.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.6169483Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-07-09T07:44:07.6471605Z Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->reviewpilot==0.1.0)
+2026-07-09T07:44:07.6504890Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2026-07-09T07:44:08.3250174Z Collecting pydantic-core==2.41.5 (from pydantic>=2.0.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.3290090Z   Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-07-09T07:44:08.3582623Z Collecting typing-inspection>=0.4.2 (from pydantic>=2.0.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.3640927Z   Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+2026-07-09T07:44:08.3940836Z Collecting fetch-use==0.4.0 (from browser-harness==0.1.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.3979308Z   Downloading fetch_use-0.4.0-py3-none-any.whl.metadata (7.3 kB)
+2026-07-09T07:44:08.4865636Z Collecting websockets==15.0.1 (from browser-harness==0.1.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.4902739Z   Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2026-07-09T07:44:08.5216399Z Collecting aiofiles>=24.1.0 (from bubus==1.5.6->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.5246569Z   Downloading aiofiles-25.1.0-py3-none-any.whl.metadata (6.3 kB)
+2026-07-09T07:44:08.5563265Z Collecting portalocker>=2.7.0 (from bubus==1.5.6->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.5596499Z   Downloading portalocker-3.2.0-py3-none-any.whl.metadata (8.7 kB)
+2026-07-09T07:44:08.6006851Z Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core==2.29.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.6039585Z   Downloading googleapis_common_protos-1.75.0-py3-none-any.whl.metadata (8.6 kB)
+2026-07-09T07:44:08.7519849Z Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.19.5 (from google-api-core==2.29.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.7556412Z   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+2026-07-09T07:44:08.7890025Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core==2.29.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.7924874Z   Downloading proto_plus-1.28.1-py3-none-any.whl.metadata (2.2 kB)
+2026-07-09T07:44:08.8336707Z Collecting pyasn1-modules>=0.2.1 (from google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:08.8369669Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+2026-07-09T07:44:09.0094841Z Collecting cryptography>=38.0.3 (from google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.0130797Z   Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+2026-07-09T07:44:09.0452150Z Collecting rsa<5,>=3.1.4 (from google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.0483275Z   Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+2026-07-09T07:44:09.2000082Z Collecting charset_normalizer<4,>=2 (from requests==2.33.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.2049183Z   Downloading charset_normalizer-3.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (41 kB)
+2026-07-09T07:44:09.2457120Z Collecting urllib3<3,>=1.26 (from requests==2.33.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.2489863Z   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+2026-07-09T07:44:09.2835537Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.2867182Z   Downloading httplib2-0.32.0-py3-none-any.whl.metadata (2.2 kB)
+2026-07-09T07:44:09.3169280Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.3198493Z   Downloading google_auth_httplib2-0.4.0-py3-none-any.whl.metadata (3.0 kB)
+2026-07-09T07:44:09.3496430Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.3531572Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+2026-07-09T07:44:09.3863108Z Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib==1.2.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.3894044Z   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+2026-07-09T07:44:09.4275443Z Collecting tenacity<9.2.0,>=8.2.3 (from google-genai==1.65.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.4307137Z   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+2026-07-09T07:44:09.4657931Z Collecting pfzy<0.4.0,>=0.3.1 (from inquirerpy==0.3.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.4691242Z   Downloading pfzy-0.3.4-py3-none-any.whl.metadata (4.9 kB)
+2026-07-09T07:44:09.5102371Z Collecting prompt-toolkit<4.0.0,>=3.0.1 (from inquirerpy==0.3.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.5134190Z   Downloading prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
+2026-07-09T07:44:09.5472661Z Collecting beautifulsoup4<5,>=4.9 (from markdownify==1.2.2->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.5504235Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+2026-07-09T07:44:09.5815149Z Collecting six<2,>=1.15 (from markdownify==1.2.2->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.5858179Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-07-09T07:44:09.6151140Z Collecting httpx-sse>=0.4 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.6183056Z   Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+2026-07-09T07:44:09.6561832Z Collecting jsonschema>=4.20.0 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.6593325Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-07-09T07:44:09.6961134Z Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.6993226Z   Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+2026-07-09T07:44:09.7304061Z Collecting python-multipart>=0.0.9 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.7337346Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-07-09T07:44:09.7669922Z Collecting sse-starlette>=1.6.1 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.7700304Z   Downloading sse_starlette-3.4.5-py3-none-any.whl.metadata (15 kB)
+2026-07-09T07:44:09.8115855Z Collecting starlette>=0.27 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.8153203Z   Downloading starlette-1.3.1-py3-none-any.whl.metadata (6.4 kB)
+2026-07-09T07:44:09.8575806Z Collecting uvicorn>=0.31.1 (from mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.8611097Z   Downloading uvicorn-0.51.0-py3-none-any.whl.metadata (6.6 kB)
+2026-07-09T07:44:09.9114503Z Collecting tqdm>4 (from openai==2.16.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.9147493Z   Downloading tqdm-4.68.4-py3-none-any.whl.metadata (57 kB)
+2026-07-09T07:44:09.9528288Z Collecting python-dateutil>=2.2 (from posthog==7.7.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.9572344Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2026-07-09T07:44:09.9884818Z Collecting backoff>=1.10.0 (from posthog==7.7.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:09.9916019Z   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+2026-07-09T07:44:10.2094848Z Collecting lxml>=3.1.0 (from python-docx==1.2.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.2132975Z   Downloading lxml-6.1.1-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+2026-07-09T07:44:10.5488896Z Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.5522686Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-07-09T07:44:10.6432332Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.6481896Z   Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+2026-07-09T07:44:10.6854626Z Collecting soupsieve>=1.6.1 (from beautifulsoup4<5,>=4.9->markdownify==1.2.2->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.6884614Z   Downloading soupsieve-2.8.4-py3-none-any.whl.metadata (4.6 kB)
+2026-07-09T07:44:10.7327888Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.7359606Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-07-09T07:44:10.7776705Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client==2.188.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.7811103Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+2026-07-09T07:44:10.8186728Z Collecting wcwidth (from prompt-toolkit<4.0.0,>=3.0.1->inquirerpy==0.3.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.8226811Z   Downloading wcwidth-0.8.2-py3-none-any.whl.metadata (43 kB)
+2026-07-09T07:44:10.8683868Z Collecting pyasn1>=0.1.3 (from rsa<5,>=3.1.4->google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:10.8714163Z   Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+2026-07-09T07:44:10.9994787Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.0033380Z   Downloading cffi-2.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-07-09T07:44:11.0349829Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth==2.48.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.0380729Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+2026-07-09T07:44:11.1037968Z Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.1072372Z   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-07-09T07:44:11.1389410Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.1425935Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-07-09T07:44:11.1795103Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.1826831Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-07-09T07:44:11.4266074Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp==1.26.0->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.4310862Z   Downloading rpds_py-2026.6.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-07-09T07:44:11.4634354Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.4665463Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-07-09T07:44:11.5792078Z Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib==1.2.4->browser-use>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.5827354Z   Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB)
+2026-07-09T07:44:11.6243860Z Collecting shellingham>=1.3.0 (from typer>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.6278331Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-07-09T07:44:11.6570980Z Collecting annotated-doc>=0.0.2 (from typer>=0.12.0->reviewpilot==0.1.0)
+2026-07-09T07:44:11.6602643Z   Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+2026-07-09T07:44:11.6769210Z Downloading browser_use-0.13.3-py3-none-any.whl (706 kB)
+2026-07-09T07:44:11.6857559Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 707.0/707.0 kB 96.7 MB/s  0:00:00
+2026-07-09T07:44:11.6900632Z Downloading aiohttp-3.13.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+2026-07-09T07:44:11.7390863Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 51.6 MB/s  0:00:00
+2026-07-09T07:44:11.7431107Z Downloading anthropic-0.76.0-py3-none-any.whl (390 kB)
+2026-07-09T07:44:11.7503337Z Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+2026-07-09T07:44:11.7556299Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-07-09T07:44:11.7609307Z Downloading pydantic-2.12.5-py3-none-any.whl (463 kB)
+2026-07-09T07:44:11.7672438Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-07-09T07:44:11.7736126Z Downloading browser_harness-0.1.4-py3-none-any.whl (47 kB)
+2026-07-09T07:44:11.7801030Z Downloading browser_use_sdk-3.4.2-py3-none-any.whl (57 kB)
+2026-07-09T07:44:11.7854401Z Downloading bubus-1.5.6-py3-none-any.whl (52 kB)
+2026-07-09T07:44:11.7910435Z Downloading cdp_use-1.4.5-py3-none-any.whl (350 kB)
+2026-07-09T07:44:11.7987803Z Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2026-07-09T07:44:11.8043917Z Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+2026-07-09T07:44:11.8115661Z Downloading fetch_use-0.4.0-py3-none-any.whl (9.5 kB)
+2026-07-09T07:44:11.8166684Z Downloading google_api_core-2.29.0-py3-none-any.whl (173 kB)
+2026-07-09T07:44:11.8238538Z Downloading google_auth-2.48.0-py3-none-any.whl (236 kB)
+2026-07-09T07:44:11.8299964Z Downloading requests-2.33.0-py3-none-any.whl (65 kB)
+2026-07-09T07:44:11.8358472Z Downloading google_api_python_client-2.188.0-py3-none-any.whl (14.9 MB)
+2026-07-09T07:44:11.9132699Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.9/14.9 MB 202.4 MB/s  0:00:00
+2026-07-09T07:44:11.9189558Z Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl (19 kB)
+2026-07-09T07:44:11.9249575Z Downloading google_genai-1.65.0-py3-none-any.whl (724 kB)
+2026-07-09T07:44:11.9319964Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 724.4/724.4 kB 124.1 MB/s  0:00:00
+2026-07-09T07:44:11.9354841Z Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2026-07-09T07:44:11.9420062Z Downloading groq-1.0.0-py3-none-any.whl (138 kB)
+2026-07-09T07:44:11.9482486Z Downloading InquirerPy-0.3.4-py3-none-any.whl (67 kB)
+2026-07-09T07:44:11.9540767Z Downloading markdownify-1.2.2-py3-none-any.whl (15 kB)
+2026-07-09T07:44:11.9595349Z Downloading mcp-1.26.0-py3-none-any.whl (233 kB)
+2026-07-09T07:44:11.9661649Z Downloading ollama-0.6.1-py3-none-any.whl (14 kB)
+2026-07-09T07:44:11.9726549Z Downloading openai-2.16.0-py3-none-any.whl (1.1 MB)
+2026-07-09T07:44:11.9803473Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 193.5 MB/s  0:00:00
+2026-07-09T07:44:11.9838863Z Downloading pillow-12.2.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-07-09T07:44:12.0224447Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 195.8 MB/s  0:00:00
+2026-07-09T07:44:12.0259673Z Downloading posthog-7.7.0-py3-none-any.whl (185 kB)
+2026-07-09T07:44:12.0321377Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-07-09T07:44:12.0373734Z Downloading pydantic_core-2.41.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+2026-07-09T07:44:12.0462843Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 267.1 MB/s  0:00:00
+2026-07-09T07:44:12.0498322Z Downloading pyotp-2.9.0-py3-none-any.whl (13 kB)
+2026-07-09T07:44:12.0545264Z Downloading pypdf-6.10.2-py3-none-any.whl (336 kB)
+2026-07-09T07:44:12.0644170Z Downloading python_docx-1.2.0-py3-none-any.whl (252 kB)
+2026-07-09T07:44:12.0701738Z Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+2026-07-09T07:44:12.0764241Z Downloading reportlab-4.4.9-py3-none-any.whl (2.0 MB)
+2026-07-09T07:44:12.0893714Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 200.5 MB/s  0:00:00
+2026-07-09T07:44:12.0928181Z Downloading rich-14.3.1-py3-none-any.whl (309 kB)
+2026-07-09T07:44:12.0994720Z Downloading screeninfo-0.8.1-py3-none-any.whl (12 kB)
+2026-07-09T07:44:12.1045894Z Downloading uuid7-0.1.0-py2.py3-none-any.whl (7.5 kB)
+2026-07-09T07:44:12.1098656Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+2026-07-09T07:44:12.1159394Z Downloading charset_normalizer-3.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (221 kB)
+2026-07-09T07:44:12.1216076Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+2026-07-09T07:44:12.1268828Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-07-09T07:44:12.1318867Z Downloading google_auth_httplib2-0.4.0-py3-none-any.whl (9.5 kB)
+2026-07-09T07:44:12.1366719Z Downloading googleapis_common_protos-1.75.0-py3-none-any.whl (300 kB)
+2026-07-09T07:44:12.1429302Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-07-09T07:44:12.1487211Z Downloading httplib2-0.32.0-py3-none-any.whl (93 kB)
+2026-07-09T07:44:12.1545180Z Downloading idna-3.18-py3-none-any.whl (65 kB)
+2026-07-09T07:44:12.1607737Z Downloading jiter-0.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (347 kB)
+2026-07-09T07:44:12.1689742Z Downloading multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (246 kB)
+2026-07-09T07:44:12.1779467Z Downloading pfzy-0.3.4-py3-none-any.whl (8.5 kB)
+2026-07-09T07:44:12.1831765Z Downloading prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+2026-07-09T07:44:12.1892578Z Downloading proto_plus-1.28.1-py3-none-any.whl (50 kB)
+2026-07-09T07:44:12.1974581Z Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2026-07-09T07:44:12.2052890Z Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+2026-07-09T07:44:12.2145383Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 160.9 MB/s  0:00:00
+2026-07-09T07:44:12.2178884Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+2026-07-09T07:44:12.2234491Z Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+2026-07-09T07:44:12.2289346Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-07-09T07:44:12.2341670Z Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+2026-07-09T07:44:12.2396909Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+2026-07-09T07:44:12.2446661Z Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+2026-07-09T07:44:12.2532256Z Downloading yarl-1.24.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (106 kB)
+2026-07-09T07:44:12.2588398Z Downloading aiofiles-25.1.0-py3-none-any.whl (14 kB)
+2026-07-09T07:44:12.2637810Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+2026-07-09T07:44:12.2687726Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2026-07-09T07:44:12.2742951Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2026-07-09T07:44:12.2796367Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-07-09T07:44:12.2851185Z Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+2026-07-09T07:44:12.2900593Z Downloading certifi-2026.6.17-py3-none-any.whl (133 kB)
+2026-07-09T07:44:12.2954481Z Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+2026-07-09T07:44:12.3138435Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 281.4 MB/s  0:00:00
+2026-07-09T07:44:12.3172469Z Downloading cffi-2.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
+2026-07-09T07:44:12.3237754Z Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
+2026-07-09T07:44:12.3299338Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-07-09T07:44:12.3348705Z Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+2026-07-09T07:44:12.3397296Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-07-09T07:44:12.3452660Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-07-09T07:44:12.3505826Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-07-09T07:44:12.3560663Z Downloading lxml-6.1.1-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+2026-07-09T07:44:12.3753445Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 293.1 MB/s  0:00:00
+2026-07-09T07:44:12.3791595Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-07-09T07:44:12.3846108Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-07-09T07:44:12.3902530Z Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-07-09T07:44:12.3952638Z Downloading portalocker-3.2.0-py3-none-any.whl (22 kB)
+2026-07-09T07:44:12.4006001Z Downloading propcache-0.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (58 kB)
+2026-07-09T07:44:12.4055783Z Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+2026-07-09T07:44:12.4114495Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+2026-07-09T07:44:12.4168943Z Downloading pydantic_settings-2.14.2-py3-none-any.whl (61 kB)
+2026-07-09T07:44:12.4231047Z Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+2026-07-09T07:44:12.4282884Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-07-09T07:44:12.4337928Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-07-09T07:44:12.4390658Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+2026-07-09T07:44:12.4453432Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 138.7 MB/s  0:00:00
+2026-07-09T07:44:12.4485846Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-07-09T07:44:12.4540328Z Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+2026-07-09T07:44:12.4596341Z Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+2026-07-09T07:44:12.4659265Z Downloading rpds_py-2026.6.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-07-09T07:44:12.4750616Z Downloading soupsieve-2.8.4-py3-none-any.whl (37 kB)
+2026-07-09T07:44:12.4807998Z Downloading sse_starlette-3.4.5-py3-none-any.whl (16 kB)
+2026-07-09T07:44:12.4871625Z Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
+2026-07-09T07:44:12.4927004Z Downloading tqdm-4.68.4-py3-none-any.whl (676 kB)
+2026-07-09T07:44:12.4983314Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 676.6/676.6 kB 121.4 MB/s  0:00:00
+2026-07-09T07:44:12.5016074Z Downloading typer-0.26.8-py3-none-any.whl (122 kB)
+2026-07-09T07:44:12.5080680Z Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+2026-07-09T07:44:12.5136156Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-07-09T07:44:12.5194799Z Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+2026-07-09T07:44:12.5244524Z Downloading uvicorn-0.51.0-py3-none-any.whl (73 kB)
+2026-07-09T07:44:12.5296285Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+2026-07-09T07:44:12.5350984Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2026-07-09T07:44:12.5400786Z Downloading wcwidth-0.8.2-py3-none-any.whl (323 kB)
+2026-07-09T07:44:12.6585063Z Building wheels for collected packages: reviewpilot
+2026-07-09T07:44:12.6594179Z   Building wheel for reviewpilot (pyproject.toml): started
+2026-07-09T07:44:12.8671156Z   Building wheel for reviewpilot (pyproject.toml): finished with status 'done'
+2026-07-09T07:44:12.8677659Z   Created wheel for reviewpilot: filename=reviewpilot-0.1.0-py3-none-any.whl size=43651 sha256=afb7a4fa445fe659ebb214aada71d6e02ffad8e0dc29e2a17657b35e0fd11640
+2026-07-09T07:44:12.8680270Z   Stored in directory: /tmp/pip-ephem-wheel-cache-dkcrhibi/wheels/00/ff/c9/6cd25ea34ed824121c1ce613d36b57c89f300368cc8a30bf74
+2026-07-09T07:44:12.8713554Z Successfully built reviewpilot
+2026-07-09T07:44:13.0309465Z Installing collected packages: websockets, wcwidth, uuid7, urllib3, uritemplate, typing-extensions, tqdm, tenacity, soupsieve, sniffio, six, shellingham, screeninfo, rpds-py, pyyaml, python-multipart, python-dotenv, pypdf, pyparsing, pyotp, pyjwt, pygments, pycparser, pyasn1, psutil, protobuf, propcache, portalocker, pillow, pfzy, oauthlib, multidict, mdurl, MarkupSafe, lxml, jiter, idna, httpx-sse, h11, frozenlist, fetch-use, docstring-parser, distro, cloudpickle, click, charset_normalizer, certifi, backoff, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, typing-inspection, rsa, requests, reportlab, referencing, python-docx, python-dateutil, pydantic-core, pyasn1-modules, proto-plus, prompt-toolkit, markdown-it-py, jinja2, httplib2, httpcore, googleapis-common-protos, cffi, beautifulsoup4, anyio, aiosignal, starlette, rich, requests-oauthlib, pydantic, posthog, markdownify, jsonschema-specifications, inquirerpy, httpx, cryptography, aiohttp, typer, sse-starlette, pydantic-settings, openai, ollama, jsonschema, groq, google-auth, cdp-use, bubus, browser-use-sdk, anthropic, mcp, google-auth-oauthlib, google-auth-httplib2, google-api-core, browser-harness, google-genai, google-api-python-client, browser-use, reviewpilot
+2026-07-09T07:44:21.9282882Z 
+2026-07-09T07:44:21.9331268Z Successfully installed MarkupSafe-3.0.3 aiofiles-25.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.13.4 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anthropic-0.76.0 anyio-4.12.1 attrs-26.1.0 backoff-2.2.1 beautifulsoup4-4.15.0 browser-harness-0.1.4 browser-use-0.13.3 browser-use-sdk-3.4.2 bubus-1.5.6 cdp-use-1.4.5 certifi-2026.6.17 cffi-2.1.0 charset_normalizer-3.4.9 click-8.3.1 cloudpickle-3.1.2 cryptography-49.0.0 distro-1.9.0 docstring-parser-0.18.0 fetch-use-0.4.0 frozenlist-1.8.0 google-api-core-2.29.0 google-api-python-client-2.188.0 google-auth-2.48.0 google-auth-httplib2-0.4.0 google-auth-oauthlib-1.2.4 google-genai-1.65.0 googleapis-common-protos-1.75.0 groq-1.0.0 h11-0.16.0 httpcore-1.0.9 httplib2-0.32.0 httpx-0.28.1 httpx-sse-0.4.3 idna-3.18 inquirerpy-0.3.4 jinja2-3.1.6 jiter-0.16.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lxml-6.1.1 markdown-it-py-4.2.0 markdownify-1.2.2 mcp-1.26.0 mdurl-0.1.2 multidict-6.7.1 oauthlib-3.3.1 ollama-0.6.1 openai-2.16.0 pfzy-0.3.4 pillow-12.2.0 portalocker-3.2.0 posthog-7.7.0 prompt-toolkit-3.0.52 propcache-0.5.2 proto-plus-1.28.1 protobuf-6.33.6 psutil-7.2.2 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-3.0 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-settings-2.14.2 pygments-2.20.0 pyjwt-2.13.0 pyotp-2.9.0 pyparsing-3.3.2 pypdf-6.10.2 python-dateutil-2.9.0.post0 python-docx-1.2.0 python-dotenv-1.2.2 python-multipart-0.0.32 pyyaml-6.0.3 referencing-0.37.0 reportlab-4.4.9 requests-2.33.0 requests-oauthlib-2.0.0 reviewpilot-0.1.0 rich-14.3.1 rpds-py-2026.6.3 rsa-4.9.1 screeninfo-0.8.1 shellingham-1.5.4 six-1.17.0 sniffio-1.3.1 soupsieve-2.8.4 sse-starlette-3.4.5 starlette-1.3.1 tenacity-9.1.4 tqdm-4.68.4 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 uritemplate-4.2.0 urllib3-2.7.0 uuid7-0.1.0 uvicorn-0.51.0 wcwidth-0.8.2 websockets-15.0.1 yarl-1.24.2
+2026-07-09T07:44:22.6361903Z Collecting playwright
+2026-07-09T07:44:22.7042368Z   Downloading playwright-1.61.0-py3-none-manylinux1_x86_64.whl.metadata (3.3 kB)
+2026-07-09T07:44:22.7200910Z Collecting pyee<14,>=13 (from playwright)
+2026-07-09T07:44:22.7302550Z   Downloading pyee-13.0.1-py3-none-any.whl.metadata (3.0 kB)
+2026-07-09T07:44:22.8695008Z Collecting greenlet<4.0.0,>=3.1.1 (from playwright)
+2026-07-09T07:44:22.8799285Z   Downloading greenlet-3.5.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-07-09T07:44:22.8849487Z Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages (from pyee<14,>=13->playwright) (4.15.0)
+2026-07-09T07:44:22.8965348Z Downloading playwright-1.61.0-py3-none-manylinux1_x86_64.whl (47.4 MB)
+2026-07-09T07:44:23.1438392Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.4/47.4 MB 217.0 MB/s  0:00:00
+2026-07-09T07:44:23.1547960Z Downloading greenlet-3.5.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (617 kB)
+2026-07-09T07:44:23.1600687Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 617.4/617.4 kB 115.2 MB/s  0:00:00
+2026-07-09T07:44:23.1700612Z Downloading pyee-13.0.1-py3-none-any.whl (15 kB)
+2026-07-09T07:44:23.2881253Z Installing collected packages: pyee, greenlet, playwright
+2026-07-09T07:44:24.0796749Z 
+2026-07-09T07:44:24.0832662Z Successfully installed greenlet-3.5.3 playwright-1.61.0 pyee-13.0.1
+2026-07-09T07:44:24.4970275Z Installing dependencies...
+2026-07-09T07:44:24.5036194Z Switching to root user to install dependencies...
+2026-07-09T07:44:24.6611667Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-07-09T07:44:24.6818447Z Get:6 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
+2026-07-09T07:44:24.7099745Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-07-09T07:44:24.7148396Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
+2026-07-09T07:44:24.8153740Z Get:9 https://packages.microsoft.com/repos/azure-cli noble/main amd64 Packages [2314 B]
+2026-07-09T07:44:24.8273259Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-07-09T07:44:24.8283349Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-07-09T07:44:24.8355510Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-07-09T07:44:24.8410674Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-07-09T07:44:24.8690376Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [11.7 kB]
+2026-07-09T07:44:24.8713680Z Get:11 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [207 kB]
+2026-07-09T07:44:24.8752374Z Get:12 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [174 kB]
+2026-07-09T07:44:24.9409147Z Get:13 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1220 B]
+2026-07-09T07:44:25.0378807Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1079 kB]
+2026-07-09T07:44:25.0435793Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [267 kB]
+2026-07-09T07:44:25.0457903Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [180 kB]
+2026-07-09T07:44:25.0478012Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.7 kB]
+2026-07-09T07:44:25.0498724Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1659 kB]
+2026-07-09T07:44:25.0577150Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [327 kB]
+2026-07-09T07:44:25.0603609Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+2026-07-09T07:44:25.0667859Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.9 kB]
+2026-07-09T07:44:25.0669245Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1196 kB]
+2026-07-09T07:44:25.0701181Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [271 kB]
+2026-07-09T07:44:25.1128409Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [11.8 kB]
+2026-07-09T07:44:25.1148898Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2026-07-09T07:44:25.1150089Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5768 B]
+2026-07-09T07:44:25.1155517Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+2026-07-09T07:44:25.1484650Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [827 kB]
+2026-07-09T07:44:25.1531505Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [187 kB]
+2026-07-09T07:44:25.1547868Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [44.9 kB]
+2026-07-09T07:44:25.1556634Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.9 kB]
+2026-07-09T07:44:25.1566225Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1173 kB]
+2026-07-09T07:44:25.1625961Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [230 kB]
+2026-07-09T07:44:25.1642994Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+2026-07-09T07:44:25.1653986Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [24.2 kB]
+2026-07-09T07:44:25.1663170Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1133 kB]
+2026-07-09T07:44:25.1721290Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [259 kB]
+2026-07-09T07:44:25.2167307Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [10.1 kB]
+2026-07-09T07:44:32.9448625Z Fetched 10.2 MB in 1s (7539 kB/s)
+2026-07-09T07:44:33.6134355Z Reading package lists...
+2026-07-09T07:44:33.6373503Z Reading package lists...
+2026-07-09T07:44:33.7980648Z Building dependency tree...
+2026-07-09T07:44:33.7988403Z Reading state information...
+2026-07-09T07:44:33.9381251Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.2).
+2026-07-09T07:44:33.9381804Z libasound2t64 set to manually installed.
+2026-07-09T07:44:33.9382294Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-07-09T07:44:33.9382848Z libatk-bridge2.0-0t64 set to manually installed.
+2026-07-09T07:44:33.9383317Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-07-09T07:44:33.9383766Z libatk1.0-0t64 set to manually installed.
+2026-07-09T07:44:33.9384470Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-07-09T07:44:33.9385363Z libatspi2.0-0t64 set to manually installed.
+2026-07-09T07:44:33.9385831Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-07-09T07:44:33.9386272Z libcairo2 set to manually installed.
+2026-07-09T07:44:33.9386719Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-07-09T07:44:33.9387649Z libcups2t64 set to manually installed.
+2026-07-09T07:44:33.9388099Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-07-09T07:44:33.9388570Z libdbus-1-3 set to manually installed.
+2026-07-09T07:44:33.9389018Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-07-09T07:44:33.9389635Z libdrm2 set to manually installed.
+2026-07-09T07:44:33.9390196Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.2).
+2026-07-09T07:44:33.9390676Z libgbm1 set to manually installed.
+2026-07-09T07:44:33.9391126Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.8).
+2026-07-09T07:44:33.9391569Z libglib2.0-0t64 set to manually installed.
+2026-07-09T07:44:33.9391981Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-07-09T07:44:33.9392382Z libnspr4 set to manually installed.
+2026-07-09T07:44:33.9392782Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-07-09T07:44:33.9393211Z libpango-1.0-0 set to manually installed.
+2026-07-09T07:44:33.9393630Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-07-09T07:44:33.9394017Z libx11-6 set to manually installed.
+2026-07-09T07:44:33.9394566Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-07-09T07:44:33.9394945Z libxcb1 set to manually installed.
+2026-07-09T07:44:33.9395342Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-07-09T07:44:33.9395966Z libxcomposite1 set to manually installed.
+2026-07-09T07:44:33.9396371Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-07-09T07:44:33.9397009Z libxdamage1 set to manually installed.
+2026-07-09T07:44:33.9397400Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-07-09T07:44:33.9397794Z libxext6 set to manually installed.
+2026-07-09T07:44:33.9398171Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-07-09T07:44:33.9398573Z libxfixes3 set to manually installed.
+2026-07-09T07:44:33.9398964Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-07-09T07:44:33.9399390Z libxkbcommon0 set to manually installed.
+2026-07-09T07:44:33.9399783Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-07-09T07:44:33.9400138Z libxrandr2 set to manually installed.
+2026-07-09T07:44:33.9400444Z xvfb is already the newest version (2:21.1.12-1ubuntu1.6).
+2026-07-09T07:44:33.9400886Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-07-09T07:44:33.9401365Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-07-09T07:44:33.9401724Z libfontconfig1 set to manually installed.
+2026-07-09T07:44:33.9402084Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.1).
+2026-07-09T07:44:33.9402459Z libfreetype6 set to manually installed.
+2026-07-09T07:44:33.9402793Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-07-09T07:44:33.9403137Z fonts-liberation set to manually installed.
+2026-07-09T07:44:33.9403466Z The following additional packages will be installed:
+2026-07-09T07:44:33.9403839Z   libnss3-tools xfonts-encodings xfonts-utils
+2026-07-09T07:44:33.9404134Z Recommended packages:
+2026-07-09T07:44:33.9404375Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-07-09T07:44:33.9838548Z The following NEW packages will be installed:
+2026-07-09T07:44:33.9839328Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-07-09T07:44:33.9846949Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-07-09T07:44:33.9848062Z   xfonts-utils
+2026-07-09T07:44:33.9852790Z The following packages will be upgraded:
+2026-07-09T07:44:33.9856682Z   libnss3 libnss3-tools
+2026-07-09T07:44:34.0021527Z 2 upgraded, 9 newly installed, 0 to remove and 50 not upgraded.
+2026-07-09T07:44:34.0022518Z Need to get 23.1 MB of archives.
+2026-07-09T07:44:34.0023198Z After this operation, 79.5 MB of additional disk space will be used.
+2026-07-09T07:44:34.0023967Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-07-09T07:44:34.0925445Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-07-09T07:44:34.3826256Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-07-09T07:44:34.6922076Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-07-09T07:44:34.7658451Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-07-09T07:44:35.0563751Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-07-09T07:44:35.4358195Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libnss3 amd64 2:3.98-1ubuntu0.2 [1445 kB]
+2026-07-09T07:44:35.6548167Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libnss3-tools amd64 2:3.98-1ubuntu0.2 [615 kB]
+2026-07-09T07:44:35.7335526Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-07-09T07:44:35.9577243Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-07-09T07:44:36.0364067Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-07-09T07:44:36.1915782Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-07-09T07:44:36.5241608Z Fetched 23.1 MB in 2s (10.2 MB/s)
+2026-07-09T07:44:36.5583456Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-07-09T07:44:36.6427982Z (Reading database ... 
+2026-07-09T07:44:36.6428644Z (Reading database ... 5%
+2026-07-09T07:44:36.6429448Z (Reading database ... 10%
+2026-07-09T07:44:36.6429880Z (Reading database ... 15%
+2026-07-09T07:44:36.6430182Z (Reading database ... 20%
+2026-07-09T07:44:36.6430510Z (Reading database ... 25%
+2026-07-09T07:44:36.6430868Z (Reading database ... 30%
+2026-07-09T07:44:36.6431154Z (Reading database ... 35%
+2026-07-09T07:44:36.6431439Z (Reading database ... 40%
+2026-07-09T07:44:36.6431723Z (Reading database ... 45%
+2026-07-09T07:44:36.6432007Z (Reading database ... 50%
+2026-07-09T07:44:36.6973166Z (Reading database ... 55%
+2026-07-09T07:44:37.1133745Z (Reading database ... 60%
+2026-07-09T07:44:37.4110689Z (Reading database ... 65%
+2026-07-09T07:44:37.7088401Z (Reading database ... 70%
+2026-07-09T07:44:37.8271133Z (Reading database ... 75%
+2026-07-09T07:44:38.2335438Z (Reading database ... 80%
+2026-07-09T07:44:38.8758672Z (Reading database ... 85%
+2026-07-09T07:44:39.5095101Z (Reading database ... 90%
+2026-07-09T07:44:39.9875818Z (Reading database ... 95%
+2026-07-09T07:44:39.9876431Z (Reading database ... 100%
+2026-07-09T07:44:39.9877505Z (Reading database ... 202513 files and directories currently installed.)
+2026-07-09T07:44:39.9921219Z Preparing to unpack .../00-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-07-09T07:44:40.0024614Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-07-09T07:44:40.2329670Z Selecting previously unselected package fonts-freefont-ttf.
+2026-07-09T07:44:40.2457933Z Preparing to unpack .../01-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-07-09T07:44:40.2465467Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-07-09T07:44:40.3302360Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-07-09T07:44:40.3431206Z Preparing to unpack .../02-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-07-09T07:44:40.3440093Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-07-09T07:44:40.3647506Z Selecting previously unselected package fonts-unifont.
+2026-07-09T07:44:40.3777522Z Preparing to unpack .../03-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-07-09T07:44:40.3787519Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-07-09T07:44:40.4900231Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-07-09T07:44:40.5027145Z Preparing to unpack .../04-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-07-09T07:44:40.5184302Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-07-09T07:44:40.9959052Z Preparing to unpack .../05-libnss3_2%3a3.98-1ubuntu0.2_amd64.deb ...
+2026-07-09T07:44:41.0036491Z Unpacking libnss3:amd64 (2:3.98-1ubuntu0.2) over (2:3.98-1ubuntu0.1) ...
+2026-07-09T07:44:41.0594977Z Preparing to unpack .../06-libnss3-tools_2%3a3.98-1ubuntu0.2_amd64.deb ...
+2026-07-09T07:44:41.0625633Z Unpacking libnss3-tools (2:3.98-1ubuntu0.2) over (2:3.98-1ubuntu0.1) ...
+2026-07-09T07:44:41.1741274Z Selecting previously unselected package xfonts-encodings.
+2026-07-09T07:44:41.1872256Z Preparing to unpack .../07-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-07-09T07:44:41.1879980Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-07-09T07:44:41.2179209Z Selecting previously unselected package xfonts-utils.
+2026-07-09T07:44:41.2308514Z Preparing to unpack .../08-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-07-09T07:44:41.2317212Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-07-09T07:44:41.2867420Z Selecting previously unselected package xfonts-cyrillic.
+2026-07-09T07:44:41.2995115Z Preparing to unpack .../09-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-07-09T07:44:41.3004589Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-07-09T07:44:41.3381134Z Selecting previously unselected package xfonts-scalable.
+2026-07-09T07:44:41.3510785Z Preparing to unpack .../10-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-07-09T07:44:41.3520203Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-07-09T07:44:41.3939291Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-07-09T07:44:41.4066367Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-07-09T07:44:41.4089629Z Setting up libnss3:amd64 (2:3.98-1ubuntu0.2) ...
+2026-07-09T07:44:41.4113592Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-07-09T07:44:41.4168960Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-07-09T07:44:41.4193693Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-07-09T07:44:41.4266735Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-07-09T07:44:41.4283894Z Setting up libnss3-tools (2:3.98-1ubuntu0.2) ...
+2026-07-09T07:44:41.4311771Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-07-09T07:44:41.4337159Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-07-09T07:44:41.4382555Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-07-09T07:44:41.4738766Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-07-09T07:44:41.5038401Z Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+2026-07-09T07:44:41.5868027Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-07-09T07:44:41.5894467Z Not building database; man-db/auto-update is not 'true'.
+2026-07-09T07:44:41.5907273Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-07-09T07:44:42.8149397Z 
+2026-07-09T07:44:42.8149960Z Running kernel seems to be up-to-date.
+2026-07-09T07:44:42.8150411Z 
+2026-07-09T07:44:42.8150593Z Restarting services...
+2026-07-09T07:44:42.8226051Z  systemctl restart udisks2.service
+2026-07-09T07:44:42.8756891Z 
+2026-07-09T07:44:42.8758581Z No containers need to be restarted.
+2026-07-09T07:44:42.8758975Z 
+2026-07-09T07:44:42.8759208Z No user sessions are running outdated binaries.
+2026-07-09T07:44:42.8759557Z 
+2026-07-09T07:44:42.8759898Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-07-09T07:44:43.6851944Z Downloading Chrome for Testing 149.0.7827.55 (playwright chromium v1228) from https://cdn.playwright.dev/builds/cft/149.0.7827.55/linux64/chrome-linux64.zip
+2026-07-09T07:44:44.7162583Z |                                                                                |   0% of 177 MiB
+2026-07-09T07:44:44.8902253Z |■■■■■■■■                                                                        |  10% of 177 MiB
+2026-07-09T07:44:44.9864043Z |■■■■■■■■■■■■■■■■                                                                |  20% of 177 MiB
+2026-07-09T07:44:45.0894103Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 177 MiB
+2026-07-09T07:44:45.1988883Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 177 MiB
+2026-07-09T07:44:45.2859757Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 177 MiB
+2026-07-09T07:44:45.4064102Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 177 MiB
+2026-07-09T07:44:45.4985888Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 177 MiB
+2026-07-09T07:44:45.6070032Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 177 MiB
+2026-07-09T07:44:45.7184161Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 177 MiB
+2026-07-09T07:44:45.8183521Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 177 MiB
+2026-07-09T07:44:49.6184490Z Chrome for Testing 149.0.7827.55 (playwright chromium v1228) downloaded to /home/runner/.cache/ms-playwright/chromium-1228
+2026-07-09T07:44:49.6188463Z Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-07-09T07:44:50.5884564Z |                                                                                |   0% of 2.3 MiB
+2026-07-09T07:44:50.5931276Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-07-09T07:44:50.5964111Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-07-09T07:44:50.5990722Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-07-09T07:44:50.6008281Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-07-09T07:44:50.6027287Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-07-09T07:44:50.6047670Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-07-09T07:44:50.6069121Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-07-09T07:44:50.6085808Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-07-09T07:44:50.6103811Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-07-09T07:44:50.6116678Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-07-09T07:44:50.6729818Z FFmpeg (playwright ffmpeg v1011) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-07-09T07:44:50.6732529Z Downloading Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) from https://cdn.playwright.dev/builds/cft/149.0.7827.55/linux64/chrome-headless-shell-linux64.zip
+2026-07-09T07:44:51.6897024Z |                                                                                |   0% of 114.2 MiB
+2026-07-09T07:44:51.8147829Z |■■■■■■■■                                                                        |  10% of 114.2 MiB
+2026-07-09T07:44:51.8747229Z |■■■■■■■■■■■■■■■■                                                                |  20% of 114.2 MiB
+2026-07-09T07:44:51.9332030Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 114.2 MiB
+2026-07-09T07:44:52.0033742Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 114.2 MiB
+2026-07-09T07:44:52.0654852Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 114.2 MiB
+2026-07-09T07:44:52.1327131Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 114.2 MiB
+2026-07-09T07:44:52.1988329Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 114.2 MiB
+2026-07-09T07:44:52.2574603Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 114.2 MiB
+2026-07-09T07:44:52.3109502Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 114.2 MiB
+2026-07-09T07:44:52.3848145Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.2 MiB
+2026-07-09T07:44:54.7552183Z Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1228
+2026-07-09T07:44:54.7816524Z ##[group]Run reviewpilot run --max-steps 10
+2026-07-09T07:44:54.7817107Z [36;1mreviewpilot run --max-steps 10[0m
+2026-07-09T07:44:54.7851517Z shell: /usr/bin/bash -e {0}
+2026-07-09T07:44:54.7851768Z env:
+2026-07-09T07:44:54.7852036Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7852472Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
+2026-07-09T07:44:54.7852898Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7853274Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7853653Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:44:54.7854069Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
+2026-07-09T07:44:54.7854641Z   BROWSER_USE_API_KEY: ***
+2026-07-09T07:44:54.7854895Z ##[endgroup]
+2026-07-09T07:44:57.8618261Z ReviewPilot — reviewing https://review-pilot-demo.vercel.app
+2026-07-09T07:44:57.8620407Z Journeys: 3 · Viewports: 2
+2026-07-09T07:44:57.8621258Z 
+2026-07-09T07:44:57.9043796Z INFO     [service] Using anonymized telemetry, see https://docs.browser-use.com/development/monitoring/telemetry.
+2026-07-09T07:44:57.9264222Z INFO     [Agent] 🔗 Found URL in task: https://review-pilot-demo.vercel.app, adding as initial action...
+2026-07-09T07:44:57.9271210Z INFO     [Agent] 💬 Saving conversation to ~/work/review-pilot-demo/review-pilot-demo/reviewpilot-output/runs/homepage-review-desktop
+2026-07-09T07:44:57.9275706Z INFO     [Agent] [34m🎯 Task: You are a senior QA engineer reviewing a live web application.
+2026-07-09T07:44:57.9276392Z 
+2026-07-09T07:44:57.9276672Z Target URL: https://review-pilot-demo.vercel.app
+2026-07-09T07:44:57.9277533Z Viewport: desktop (1440x900)
+2026-07-09T07:44:57.9277826Z 
+2026-07-09T07:44:57.9277991Z Journey: Homepage review
+2026-07-09T07:44:57.9279192Z Goal: Open the homepage and check whether the primary navigation, hero section, and main CTA are visible and usable. Check for layout overflow on mobile.
+2026-07-09T07:44:57.9280180Z 
+2026-07-09T07:44:57.9280316Z Safety rules:
+2026-07-09T07:44:57.9280692Z - Do NOT submit any form (read-only review).
+2026-07-09T07:44:57.9281245Z - Do NOT create, update, or delete real data.
+2026-07-09T07:44:57.9281789Z - Do NOT make purchases or payments.
+2026-07-09T07:44:57.9282298Z - Do NOT authenticate with real credentials.
+2026-07-09T07:44:57.9282893Z - Do NOT click destructive buttons (delete, remove, reset).
+2026-07-09T07:44:57.9283567Z - If a form is present, inspect it but do not submit.
+2026-07-09T07:44:57.9284108Z Observation requirements:
+2026-07-09T07:44:57.9284681Z - Report broken UI, confusing UX, missing elements, layout overflow.
+2026-07-09T07:44:57.9285468Z - Report buttons that are disabled or do nothing when clicked.
+2026-07-09T07:44:57.9286254Z - Report forms with unclear validation or missing error indicators.
+2026-07-09T07:44:57.9287577Z - Report links that lead to 404 or broken pages.
+2026-07-09T07:44:57.9288227Z - Report elements hidden below the fold on small viewports.
+2026-07-09T07:44:57.9288852Z - Report any console errors you observe.
+2026-07-09T07:44:57.9289490Z - For every issue, note the page URL and a short reproduction hint.
+2026-07-09T07:44:57.9290197Z - Capture a screenshot whenever you observe an issue.
+2026-07-09T07:44:57.9290607Z 
+2026-07-09T07:44:57.9290974Z Return a concise summary of what you found, including which checks passed.
+2026-07-09T07:44:57.9291720Z [0m
+2026-07-09T07:44:57.9667561Z INFO     [Agent] Starting a browser-use agent with version 0.13.3, with provider=browser-use and model=bu-2-0
+2026-07-09T07:44:57.9953052Z INFO     [utils] 📦 Downloading uBlock Origin Lite extension...
+2026-07-09T07:44:58.2148803Z INFO     [utils] 📂 Extracting uBlock Origin Lite extension...
+2026-07-09T07:44:58.4372158Z INFO     [utils] 📦 Downloading I still don't care about cookies extension...
+2026-07-09T07:44:58.5506758Z INFO     [utils] 📂 Extracting I still don't care about cookies extension...
+2026-07-09T07:44:58.5657628Z INFO     [utils] 📦 Downloading Force Background Tab extension...
+2026-07-09T07:44:58.6792746Z INFO     [utils] 📂 Extracting Force Background Tab extension...
+2026-07-09T07:44:58.6913144Z INFO     [utils] [BrowserProfile] ✅ Cookie extension: nature.com, qatarairways.com pre-populated in storage
+2026-07-09T07:45:12.9681424Z WARNING  [bubus] ⚠️ EventBus_292ca40f🟢(⏳ 0 | ▶️ 2 | ✅ 0 ➡️ 31 👂) handler browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent() has been running for >15s on event. Possible slow processing or deadlock.
+2026-07-09T07:45:12.9683364Z (handler could be trying to await its own result or could be blocked by another async task).
+2026-07-09T07:45:12.9684722Z browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent(?▶ BrowserStartEvent#09c8 🏃)
+2026-07-09T07:45:12.9955648Z WARNING  [bubus] ⚠️ EventBus_292ca40f🟢(⏳ 0 | ▶️ 2 | ✅ 0 ➡️ 31 👂) handler browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent() has been running for >15s on event. Possible slow processing or deadlock.
+2026-07-09T07:45:12.9957980Z (handler could be trying to await its own result or could be blocked by another async task).
+2026-07-09T07:45:12.9959354Z browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent(?▶ BrowserLaunchEvent#547b 🏃)
+2026-07-09T07:45:27.9686469Z WARNING  [bubus] ================================================================================
+2026-07-09T07:45:27.9689201Z WARNING  [bubus] ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_292ca40f.browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent(?▶ BrowserStartEvent#09c8 ✅)
+2026-07-09T07:45:27.9690402Z WARNING  [bubus] ================================================================================
+2026-07-09T07:45:27.9691237Z WARNING  [bubus] 📣 BrowserStartEvent#09c8                                              [91m30s[0m
+2026-07-09T07:45:27.9692528Z WARNING  [bubus]    ⏰ browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent(#09c8) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2026-07-09T07:45:27.9693682Z WARNING  [bubus]       📣 BrowserLaunchEvent#547b                                       [93m30s[0m
+2026-07-09T07:45:27.9694763Z WARNING  [bubus]          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserLaunchEvent(#547b)    [92m 0s[0m/30s   ✓
+2026-07-09T07:45:27.9696174Z WARNING  [bubus]          ➡️ browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent(#547b) ⏳ [93m30s[0m/30s   ⬅️ [93mINTERRUPTED[0m ✂️
+2026-07-09T07:45:27.9697276Z WARNING  [bubus] 
+2026-07-09T07:45:27.9697596Z ================================================================================
+2026-07-09T07:45:27.9697905Z 
+2026-07-09T07:45:27.9804951Z ERROR    [Agent] Agent run failed with exception: Event handler browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent#9696(?▶ BrowserStartEvent#09c8 🏃) timed out after 30.0s and interrupted any processing of 1 child events
+2026-07-09T07:45:27.9807106Z Traceback (most recent call last):
+2026-07-09T07:45:27.9814503Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1128, in execute_handler
+2026-07-09T07:45:27.9815533Z     result_value: Any = await asyncio.wait_for(handler_task, timeout=event_result.timeout)
+2026-07-09T07:45:27.9816159Z                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9817244Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/tasks.py", line 476, in wait_for
+2026-07-09T07:45:27.9818181Z     await waiter
+2026-07-09T07:45:27.9818480Z asyncio.exceptions.CancelledError
+2026-07-09T07:45:27.9818726Z 
+2026-07-09T07:45:27.9818969Z The above exception was the direct cause of the following exception:
+2026-07-09T07:45:27.9819348Z 
+2026-07-09T07:45:27.9819489Z Traceback (most recent call last):
+2026-07-09T07:45:27.9820163Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/tasks.py", line 500, in wait_for
+2026-07-09T07:45:27.9821041Z     return fut.result()
+2026-07-09T07:45:27.9821326Z            ^^^^^^^^^^^^
+2026-07-09T07:45:27.9822113Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/browser/watchdog_base.py", line 153, in unique_handler
+2026-07-09T07:45:27.9822955Z     result = await actual_handler(event)
+2026-07-09T07:45:27.9823294Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9823888Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/observability.py", line 73, in async_wrapper
+2026-07-09T07:45:27.9824481Z     return await func(*args, **kwargs)
+2026-07-09T07:45:27.9824730Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9825338Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/browser/session.py", line 809, in on_BrowserStartEvent
+2026-07-09T07:45:27.9825947Z     await launch_event
+2026-07-09T07:45:27.9826577Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 313, in wait_for_handlers_to_complete_then_return_event
+2026-07-09T07:45:27.9827542Z     await bus.process_event(event)
+2026-07-09T07:45:27.9828114Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 976, in process_event
+2026-07-09T07:45:27.9828804Z     await self._execute_handlers(event, handlers=applicable_handlers, timeout=timeout)
+2026-07-09T07:45:27.9829558Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1070, in _execute_handlers
+2026-07-09T07:45:27.9830183Z     await self.execute_handler(event, handler, timeout=timeout)
+2026-07-09T07:45:27.9830815Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1174, in execute_handler
+2026-07-09T07:45:27.9831400Z     raise handler_interrupted_error from e
+2026-07-09T07:45:27.9832484Z asyncio.exceptions.CancelledError: Event handler browser_use.browser.watchdog_base.LocalBrowserWatchdog.on_BrowserLaunchEvent#9456(?▶ BrowserLaunchEvent#547b 🏃) was interrupted because of a parent timeout
+2026-07-09T07:45:27.9833299Z 
+2026-07-09T07:45:27.9833495Z The above exception was the direct cause of the following exception:
+2026-07-09T07:45:27.9833774Z 
+2026-07-09T07:45:27.9833876Z Traceback (most recent call last):
+2026-07-09T07:45:27.9834449Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1128, in execute_handler
+2026-07-09T07:45:27.9835155Z     result_value: Any = await asyncio.wait_for(handler_task, timeout=event_result.timeout)
+2026-07-09T07:45:27.9835633Z                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9836186Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/tasks.py", line 502, in wait_for
+2026-07-09T07:45:27.9837239Z     raise exceptions.TimeoutError() from exc
+2026-07-09T07:45:27.9837721Z TimeoutError
+2026-07-09T07:45:27.9837912Z 
+2026-07-09T07:45:27.9838253Z The above exception was the direct cause of the following exception:
+2026-07-09T07:45:27.9838743Z 
+2026-07-09T07:45:27.9838904Z Traceback (most recent call last):
+2026-07-09T07:45:27.9839924Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/agent/service.py", line 2552, in run
+2026-07-09T07:45:27.9840969Z     await self.browser_session.start()
+2026-07-09T07:45:27.9842218Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/observability.py", line 73, in async_wrapper
+2026-07-09T07:45:27.9843322Z     return await func(*args, **kwargs)
+2026-07-09T07:45:27.9843780Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9844847Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/browser_use/browser/session.py", line 724, in start
+2026-07-09T07:45:27.9846094Z     await start_event.event_result(raise_if_any=True, raise_if_none=False)
+2026-07-09T07:45:27.9847775Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 574, in event_result
+2026-07-09T07:45:27.9848872Z     valid_results = await self.event_results_filtered(
+2026-07-09T07:45:27.9849300Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9849925Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 516, in event_results_filtered
+2026-07-09T07:45:27.9850523Z     raise original_error
+2026-07-09T07:45:27.9851083Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 490, in event_results_filtered
+2026-07-09T07:45:27.9851639Z     await event_result
+2026-07-09T07:45:27.9852256Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/models.py", line 889, in wait_for_handler_to_complete_and_return_result
+2026-07-09T07:45:27.9853477Z     raise self.error if isinstance(self.error, BaseException) else Exception(self.error)  # pyright: ignore[reportUnnecessaryIsInstance]
+2026-07-09T07:45:27.9854716Z     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-09T07:45:27.9855513Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1070, in _execute_handlers
+2026-07-09T07:45:27.9856154Z     await self.execute_handler(event, handler, timeout=timeout)
+2026-07-09T07:45:27.9857107Z   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bubus/service.py", line 1194, in execute_handler
+2026-07-09T07:45:27.9857792Z     raise handler_timeout_error from e
+2026-07-09T07:45:27.9858835Z TimeoutError: Event handler browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent#9696(?▶ BrowserStartEvent#09c8 🏃) timed out after 30.0s and interrupted any processing of 1 child events
+2026-07-09T07:45:27.9924091Z INFO     [Agent] 
+2026-07-09T07:45:27.9924699Z INFO     [Agent] Did the Agent not work as expected? Let us fix this!
+2026-07-09T07:45:27.9925730Z INFO     [Agent]    Open a short issue on GitHub: https://github.com/browser-use/browser-use/issues
+2026-07-09T07:45:27.9944215Z INFO     [BrowserSession] 📢 on_BrowserStopEvent - Calling reset() (force=True, keep_alive=False)
+2026-07-09T07:45:27.9949647Z INFO     [BrowserSession] ✅ Browser session reset complete
+2026-07-09T07:45:32.9989519Z WARNING  [bubus] ⌛️ EventBus_292ca40f🟢(⏳ 0 | ▶️ 0 | ✅ 5 ➡️ 31 👂) Timeout waiting for event bus to be idle after 5s (processing: 0)
+2026-07-09T07:45:33.0003034Z INFO     [BrowserSession] ✅ Browser session reset complete
+2026-07-09T07:45:33.1182663Z INFO     [BrowserSession] ✅ Browser session reset complete
+2026-07-09T07:45:33.1199885Z Review failed: Event handler 
+2026-07-09T07:45:33.1200765Z browser_use.browser.watchdog_base.BrowserSession.on_BrowserStartEvent#9696(?▶ 
+2026-07-09T07:45:33.1201679Z BrowserStartEvent#09c8 🏃) timed out after 30.0s and interrupted any processing 
+2026-07-09T07:45:33.1202680Z of 1 child events
+2026-07-09T07:45:33.8466686Z ##[error]Process completed with exit code 1.
+2026-07-09T07:45:33.8587545Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-09T07:45:33.8588851Z ##[group]Run actions/upload-artifact@v4
+2026-07-09T07:45:33.8589119Z with:
+2026-07-09T07:45:33.8589327Z   name: reviewpilot-report-pr-2
+2026-07-09T07:45:33.8589592Z   path: reviewpilot-output/
+2026-07-09T07:45:33.8589844Z   retention-days: 14
+2026-07-09T07:45:33.8590072Z   if-no-files-found: warn
+2026-07-09T07:45:33.8590301Z   compression-level: 6
+2026-07-09T07:45:33.8590511Z   overwrite: false
+2026-07-09T07:45:33.8590725Z   include-hidden-files: false
+2026-07-09T07:45:33.8590972Z env:
+2026-07-09T07:45:33.8591217Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:45:33.8591679Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib/pkgconfig
+2026-07-09T07:45:33.8592111Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:45:33.8592500Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:45:33.8592884Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.15/x64
+2026-07-09T07:45:33.8593271Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.15/x64/lib
+2026-07-09T07:45:33.8593594Z ##[endgroup]
+2026-07-09T07:45:34.0199930Z (node:3213) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-09T07:45:34.0201005Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-09T07:45:34.0342030Z ##[warning]No files were found with the provided path: reviewpilot-output/. No artifacts will be uploaded.
+2026-07-09T07:45:34.0541069Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-09T07:45:34.0543303Z Post job cleanup.
+2026-07-09T07:45:34.1447586Z [command]/usr/bin/git version
+2026-07-09T07:45:34.1483241Z git version 2.54.0
+2026-07-09T07:45:34.1558391Z Temporarily overriding HOME='/home/runner/work/_temp/b05a328f-d8c6-4ee8-9f0e-4c2e31b27708' before making global git config changes
+2026-07-09T07:45:34.1560090Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-09T07:45:34.1565129Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/review-pilot-demo/review-pilot-demo
+2026-07-09T07:45:34.1611827Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-09T07:45:34.1649375Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-09T07:45:34.1958110Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-09T07:45:34.1978732Z http.https://github.com/.extraheader
+2026-07-09T07:45:34.1998886Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-09T07:45:34.2027567Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-09T07:45:34.2301261Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-09T07:45:34.2339287Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-09T07:45:34.2738796Z Cleaning up orphan processes
+2026-07-09T07:45:34.3042999Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,9 @@
+2026-07-09T07:43:50.9800000Z Requested labels: ubuntu-latest
+2026-07-09T07:43:50.9800000Z Job defined at: aruxyz/review-pilot-demo/.github/workflows/reviewpilot.yml@refs/pull/2/merge
+2026-07-09T07:43:50.9800000Z Waiting for a runner to pick up this job...
+2026-07-09T07:43:50.9840000Z Evaluating review.if
+2026-07-09T07:43:50.9840000Z Evaluating: (success() && ((github.event.pull_request.head.repo.full_name == github.repository)))
+2026-07-09T07:43:50.9840000Z Expanded: (true && ('aruxyz/review-pilot-demo' == 'aruxyz/review-pilot-demo'))
+2026-07-09T07:43:50.9840000Z Result: true
+2026-07-09T07:43:51.6880000Z Job is waiting for a hosted runner to come online.
+2026-07-09T07:43:51.6860000Z Job is about to start running on the hosted runner: GitHub Actions 1000000189
