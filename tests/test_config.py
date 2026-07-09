@@ -4,13 +4,14 @@ from reviewpilot.core.severity import Severity
 
 def test_default_config_validates():
     config = ReviewPilotConfig()
-    assert config.app.name == "My App"
-    assert config.app.url == "http://localhost:3000"
+    assert config.app.name == "ReviewPilot Demo"
+    assert config.app.url == "https://review-pilot-demo.vercel.app"
     assert len(config.viewports) == 2
     assert config.viewports[0].name == "desktop"
     assert config.viewports[1].name == "mobile"
     assert config.review.max_steps == 30
     assert config.safety.safe_mode is True
+    assert config.browser_use.task_model == "bu-latest"
 
 
 def test_config_from_yaml_string():
