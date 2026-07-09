@@ -82,6 +82,17 @@ async def _run_single_journey(
         f.journey = journey.name
         if not f.viewport:
             f.viewport = viewport.name
+        if screenshots:
+            valid_evidence = []
+            for ev in f.evidence:
+                ev_path = ev.replace("\\", "/")
+                if any(ev_path.endswith(s.replace("\\", "/").split("/")[-1]) for s in screenshots):
+                    valid_evidence.append(ev)
+                else:
+                    continue
+            if not valid_evidence:
+                valid_evidence = [screenshots[0]]
+            f.evidence = valid_evidence
 
     status = judgement_to_status(judgement)
     if browser_result.get("errors") and status == ReviewStatus.PASSED:

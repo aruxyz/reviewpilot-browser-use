@@ -1,12 +1,25 @@
 from __future__ import annotations
 
+import os
+import sys
+
 import typer
+from dotenv import load_dotenv
 from rich.console import Console
 
 from reviewpilot.cli.commands.doctor import run_doctor
 from reviewpilot.cli.commands.init import run_init
 from reviewpilot.cli.commands.report import run_report
 from reviewpilot.cli.commands.run import run_run
+
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+load_dotenv()
 
 app = typer.Typer(
     name="reviewpilot",
@@ -28,7 +41,11 @@ def init(
 
 @app.command()
 def run(
-    url: str = typer.Option(None, "--url", help="App URL to review (overrides config)."),
+    url: str = typer.Option(
+        None,
+        "--url",
+        help="App URL to review. Falls back to REVIEWPILOT_URL env var, then .reviewpilot.yml.",
+    ),
     config: str = typer.Option(
         ".reviewpilot.yml", "--config", help="Path to config file."
     ),
@@ -42,8 +59,9 @@ def run(
         True, "--headless/--headed", help="Run browser in headless or headed mode."
     ),
 ) -> None:
+    resolved_url = url or os.environ.get("REVIEWPILOT_URL")
     run_run(
-        url=url,
+        url=resolved_url,
         config_path=config,
         output_dir=output_dir,
         max_steps=max_steps,

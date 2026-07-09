@@ -46,5 +46,27 @@ def build_judge_prompt(journey_name: str, journey_goal: str, viewport: str, brow
         f"- List every user-facing issue as a finding with severity, expected vs actual behavior, why it matters, reproduction steps, and a suggested fix.\n"
         f"- Reference screenshot paths in the evidence field when relevant.\n"
         f"- If the agent did not actually observe a real issue, do not invent one. Only report issues backed by the run evidence.\n"
-        f"- List passed_checks for sub-flows that worked correctly.\n"
+        f"- List passed_checks for sub-flows that worked correctly.\n\n"
+        f"Respond with ONLY a single JSON object. No prose, no code, no markdown fences.\n"
+        f"The JSON MUST use this exact schema:\n"
+        f"{{\n"
+        f'  "summary": "one or two sentence summary",\n'
+        f'  "status": "passed | failed | errored",\n'
+        f'  "findings": [\n'
+        f"    {{\n"
+        f'      "severity": "critical | high | medium | low",\n'
+        f'      "title": "short title",\n'
+        f'      "page": "/path",\n'
+        f'      "viewport": "desktop | mobile",\n'
+        f'      "expected": "what should happen",\n'
+        f'      "actual": "what actually happened",\n'
+        f'      "why_it_matters": "user impact",\n'
+        f'      "reproduction_steps": ["step 1", "step 2"],\n'
+        f'      "evidence": ["screenshots/x.png"],\n'
+        f'      "suggested_fix": "how to fix"\n'
+        f"    }}\n"
+        f"  ],\n"
+        f'  "passed_checks": ["check that worked"]\n'
+        f"}}\n"
+        f"Start your response with {{ and end with }}. Do not include any other text.\n"
     )

@@ -46,7 +46,7 @@ class SafetyConfig(BaseModel):
 
 class BrowserUseConfig(BaseModel):
     enabled: bool = True
-    task_model: str = "gpt-4.1-mini"
+    task_model: str = "bu-latest"
     planner_model: str | None = None
     headless: bool = True
     use_vision: bool | Literal["auto"] = True
@@ -60,8 +60,8 @@ class ReviewConfig(BaseModel):
 
 
 class AppConfig(BaseModel):
-    name: str = "My App"
-    url: str = "http://localhost:3000"
+    name: str = "ReviewPilot Demo"
+    url: str = "https://review-pilot-demo.vercel.app"
 
 
 class ReviewPilotConfig(BaseModel):
@@ -117,8 +117,8 @@ class ReviewPilotConfig(BaseModel):
 
 DEFAULT_CONFIG_YAML = """\
 app:
-  name: "My App"
-  url: "http://localhost:3000"
+  name: "ReviewPilot Demo"
+  url: "https://review-pilot-demo.vercel.app"
 
 review:
   mode: "local"
@@ -127,8 +127,8 @@ review:
 
 browser_use:
   enabled: true
-  task_model: "gpt-4.1-mini"
-  planner_model: "gpt-4.1-mini"
+  task_model: "bu-latest"
+  planner_model: "bu-latest"
   headless: true
 
 viewports:

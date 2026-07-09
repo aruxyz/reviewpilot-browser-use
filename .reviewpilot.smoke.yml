@@ -4,8 +4,8 @@ app:
 
 review:
   mode: "local"
-  max_steps: 30
-  timeout_seconds: 180
+  max_steps: 10
+  timeout_seconds: 120
 
 browser_use:
   enabled: true
@@ -17,25 +17,16 @@ viewports:
   - name: "desktop"
     width: 1440
     height: 900
-  - name: "mobile"
-    width: 390
-    height: 844
 
 journeys:
-  - name: "Homepage review"
-    goal: "Open the homepage and check whether the primary navigation, hero section, and main CTA are visible and usable."
-
   - name: "Login flow"
-    goal: "Open the login page, inspect the form, test basic validation behavior, and verify that the user can understand what to do."
-
-  - name: "Navigation flow"
-    goal: "Explore the main navigation and check whether important links are reachable and not broken."
+    goal: "Open the login page at /login. Inspect the form. Try entering a valid email (test@example.com) and a password. Check whether the Sign In button becomes enabled and whether any error message clears. Report what you find."
 
 checks:
   ux: true
   broken_links: true
   forms: true
-  mobile_layout: true
+  mobile_layout: false
   accessibility_basic: true
   console_errors: true
 
@@ -44,7 +35,7 @@ output:
   html: true
   screenshots: true
   github_comment: false
-  output_dir: ".reviewpilot-output"
+  output_dir: ".reviewpilot-output-smoke"
 
 safety:
   safe_mode: true

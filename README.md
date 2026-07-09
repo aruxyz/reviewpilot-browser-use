@@ -91,73 +91,82 @@ ReviewPilot v1 is deliberately narrow. It is **not**:
 
 It is a high-quality developer tool that should feel like a thoughtful senior QA engineer reviewed your Pull Request, not an unfinished platform.
 
+### Current limitations
+
+Being honest about what v0.1 does not do yet:
+
+- **No framework-specific selectors.** ReviewPilot uses Browser Use to explore the DOM like a human. It does not know whether your app is Next.js, CRA, or a static site. This is a feature (framework agnostic) and a limitation (no framework-aware assertions).
+- **No post-submit form testing.** Safe mode is on by default. The agent will not submit forms, so it cannot catch issues that only appear after a submit (for example, a post-submit error message or a redirect loop). You can disable safe mode in the config, but only against staging with fake data.
+- **No inline PR review comments.** v0.1 posts a single top-level PR comment with findings grouped by severity. Inline comments on specific lines of the diff are coming in v0.2.
+- **No test history.** Each run writes a fresh report to `.reviewpilot-output/`. There is no dashboard showing trends across runs.
+- **No fork PR support out of the box.** Fork PRs cannot post comments with the default `GITHUB_TOKEN`. You need a split-workflow pattern with `workflow_run` (documented in the GitHub Action section).
+- **Single LLM for agent and judge.** v0.1 uses the same `task_model` for Browser Use and for the judge. v0.2 will let you configure a cheaper model for the agent and a stronger model for the judge.
+
+### Framework support
+
+| Status | Framework |
+|---|---|
+| Works | Next.js, React, plain HTML, any static site |
+| Works | Vue (tested manually, no demo yet) |
+| Coming soon | Angular, Svelte demo apps |
+| Coming soon | Inline diff comments |
+| Coming soon | Split workflow for fork PRs |
+
+If your framework renders HTML in a browser, ReviewPilot can review it. The agent does not need framework-specific bindings.
+
 ---
 
 ## Quickstart
 
-### 1. Install
+### 1. Clone and install
 
 ```bash
-pip install reviewpilot
-playwright install chromium
+git clone https://github.com/aruxyz/reviewpilot-browser-use.git
+cd reviewpilot-browser-use
+
+uv sync
+playwright install
 ```
 
-ReviewPilot requires Python 3.10 or newer. The `playwright install chromium` command downloads the Chromium binary that Browser Use will drive. This is a one-time download of approximately 150 MB.
+ReviewPilot requires Python 3.10 or newer. `uv sync` installs all Python dependencies from `pyproject.toml` into a local virtualenv. `playwright install` downloads the Chromium binary that Browser Use will drive (one-time download, approximately 150 MB).
 
-### 2. Set an LLM API key
-
-ReviewPilot needs an LLM to drive Browser Use and to judge the results. Set one environment variable:
+### 2. Configure environment
 
 ```bash
-# Pick one provider:
-export OPENAI_API_KEY=sk-...
-# or
-export ANTHROPIC_API_KEY=sk-ant-...
-# or
-export GOOGLE_API_KEY=...
-# or
-export BROWSER_USE_API_KEY=bu-...
+cp .env.example .env
 ```
 
-The default config uses `gpt-4.1-mini` from OpenAI because it is cheap and fast for QA work. You can switch providers in the config file.
-
-### 3. Initialize config
+Open `.env` and set your API key. ReviewPilot defaults to the Browser Use cloud model (`bu-latest`) because it is optimized for browser automation and gives 5 free tasks to new users:
 
 ```bash
-reviewpilot init
+BROWSER_USE_API_KEY=bu-...
 ```
 
-This creates `.reviewpilot.yml` in your current directory with sensible defaults. Edit it to set your app URL, journeys, and viewports.
-
-### 4. Run a review
-
-Start your local dev server in one terminal:
+Alternatively, set any of these in `.env` and update `browser_use.task_model` in `.reviewpilot.yml`:
 
 ```bash
-npm run dev   # or yarn dev, pnpm dev, etc.
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+GOOGLE_API_KEY=...
 ```
 
-Run ReviewPilot in another terminal:
+### 3. Run
 
 ```bash
-reviewpilot run --url http://localhost:3000
+reviewpilot run
 ```
 
-Or use your config file:
+That is it. With no arguments, ReviewPilot reads `.env`, loads `.reviewpilot.yml`, and reviews the URL set in `REVIEWPILOT_URL` (defaults to the live demo at `https://review-pilot-demo.vercel.app`).
 
-```bash
-reviewpilot run --config .reviewpilot.yml
-```
-
-### 5. View the report
+### 4. View the report
 
 ```bash
 reviewpilot report
 ```
 
-This opens the HTML report in your default browser. You will also find `review.md`, `review.json`, and a `screenshots/` directory inside `.reviewpilot-output/`.
+Opens the HTML report in your default browser. You will also find `review.md`, `review.json`, and a `screenshots/` directory inside `.reviewpilot-output/`.
 
-### 6. Check your environment
+### 5. Check your environment
 
 If anything feels off, run the doctor command:
 
@@ -344,8 +353,8 @@ review:
 
 browser_use:
   enabled: true                     # set false to skip browser runs (debugging)
-  task_model: "gpt-4.1-mini"        # model that drives the browser agent
-  planner_model: "gpt-4.1-mini"     # optional secondary model for page extraction
+  task_model: "bu-latest"           # Browser Use cloud model, optimized for browser automation
+  planner_model: "bu-latest"        # optional secondary model for page extraction
   headless: true                    # set false to watch the browser locally
   use_vision: true                  # send screenshots to the LLM (true | false | "auto")
 
@@ -415,7 +424,7 @@ safety:
 | Field | Type | Default | Description |
 |---|---|---|---|
 | `enabled` | bool | `true` | Set `false` to skip browser runs (useful for debugging reports). |
-| `task_model` | string | `"gpt-4.1-mini"` | LLM that drives the Browser Use agent. |
+| `task_model` | string | `"bu-latest"` | LLM that drives the Browser Use agent. |
 | `planner_model` | string | `null` | Optional secondary LLM for page extraction. |
 | `headless` | bool | `true` | Run browser without UI. Set `false` to watch locally. |
 | `use_vision` | bool or `"auto"` | `true` | Send screenshots to the LLM. `"auto"` uses vision only when the model asks. |
@@ -479,12 +488,12 @@ Boolean toggles for which categories the agent should look for. These are passed
 
 Any model supported by Browser Use works. Set the model name in `browser_use.task_model`. The provider prefix in the model name decides which chat class is used.
 
-| Provider | Example models | Env var |
-|---|---|---|
-| OpenAI | `gpt-4.1-mini`, `gpt-4o`, `gpt-4.1` | `OPENAI_API_KEY` |
-| Anthropic | `claude-sonnet-4-5`, `claude-opus-4-1`, `claude-haiku-3-5` | `ANTHROPIC_API_KEY` |
-| Google | `gemini-2.5-flash`, `gemini-2.5-pro` | `GOOGLE_API_KEY` |
-| Browser Use | `bu-2-0`, `bu-latest` | `BROWSER_USE_API_KEY` |
+| Provider | Example models | Env var | Notes |
+|---|---|---|---|
+| Browser Use | `bu-latest`, `bu-2-0` | `BROWSER_USE_API_KEY` | Default. Optimized for browser automation. 5 free tasks for new users. |
+| OpenAI | `gpt-4.1-mini`, `gpt-4o`, `gpt-4.1` | `OPENAI_API_KEY` | Cheapest non-Browser-Use option. |
+| Anthropic | `claude-sonnet-4-5`, `claude-opus-4-1`, `claude-haiku-3-5` | `ANTHROPIC_API_KEY` | Strongest reasoning, higher cost. |
+| Google | `gemini-2.5-flash`, `gemini-2.5-pro` | `GOOGLE_API_KEY` | Free tier available. |
 
 ReviewPilot maps the model name to the right chat class automatically. If the model name does not match any known prefix, it falls back to `ChatOpenAI` (which works with any OpenAI-compatible endpoint).
 
@@ -1020,7 +1029,7 @@ playwright install chromium
 
 ### `ValueError: You need to set the BROWSER_USE_API_KEY environment variable`
 
-You set `task_model: "bu-2-0"` (or any `bu-*` model) but did not set `BROWSER_USE_API_KEY`. Either set the env var or switch to a different provider in the config.
+You set `task_model` to a `bu-*` model but did not set `BROWSER_USE_API_KEY`. Either set the env var or switch to a different provider in the config.
 
 ### Browser Use agent does nothing or loops
 
@@ -1058,7 +1067,7 @@ review:
   max_steps: 15            # fewer steps per journey
 
 browser_use:
-  task_model: "gpt-4.1-mini"  # cheaper model
+  task_model: "bu-latest"        # Browser Use cloud model, optimized for this
   use_vision: false           # skip screenshots (cheaper, less accurate)
 ```
 
@@ -1094,7 +1103,7 @@ $env:OPENAI_API_KEY = "sk-..."
 
 ### Is ReviewPilot free?
 
-Yes. ReviewPilot is open source under the MIT license. You pay only for the LLM API calls that Browser Use makes. A typical review with `gpt-4.1-mini` and 3 journeys on 2 viewports costs less than $0.10.
+Yes. ReviewPilot is open source under the MIT license. You pay only for the LLM API calls that Browser Use makes. With `bu-latest` and 3 journeys on 2 viewports, a typical review costs a few cents. New Browser Use accounts get 5 free tasks.
 
 ### Does ReviewPilot replace Playwright or Cypress?
 
