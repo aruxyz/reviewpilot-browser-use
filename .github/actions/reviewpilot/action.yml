@@ -1,0 +1,37 @@
+name: 'ReviewPilot'
+description: 'AI browser QA for every Pull Request, powered by Browser Use. Opens your preview deployment, explores the app like a user, detects UX and functional issues, captures screenshots, and leaves a human-readable review comment.'
+author: 'ReviewPilot'
+branding:
+  icon: 'eye'
+  color: 'blue'
+
+inputs:
+  preview-url:
+    description: 'Preview URL of the deployed application to review (e.g. from Vercel/Netlify preview deploy).'
+    required: true
+  github-token:
+    description: 'GitHub token for posting PR comments. Defaults to the workflow github.token.'
+    required: false
+    default: ${{ github.token }}
+  config-path:
+    description: 'Path to ReviewPilot config file (relative to repo root). Used for journeys, viewports, and checks.'
+    required: false
+    default: '.reviewpilot.yml'
+  max-steps:
+    description: 'Maximum browser steps per journey (caps LLM cost).'
+    required: false
+    default: '30'
+  timeout-seconds:
+    description: 'Per-journey timeout in seconds.'
+    required: false
+    default: '180'
+
+outputs:
+  status:
+    description: 'Review status: passed, failed, errored, or skipped.'
+  findings-count:
+    description: 'Total number of findings across all journeys.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

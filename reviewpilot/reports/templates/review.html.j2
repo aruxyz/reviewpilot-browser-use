@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReviewPilot Report — {{ report.app_name }}</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --critical: #f85149;
+    --high: #db6d28;
+    --medium: #d29922;
+    --low: #58a6ff;
+    --passed: #3fb950;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+  }
+  h1 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+  h2 { margin: 2rem 0 1rem; font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+  h3 { margin: 1.5rem 0 0.75rem; font-size: 1.1rem; }
+  h4 { margin: 1rem 0 0.5rem; font-size: 1rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--muted); font-size: 0.9rem; }
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge.passed { background: rgba(63,185,80,0.15); color: var(--passed); }
+  .badge.failed { background: rgba(248,81,73,0.15); color: var(--critical); }
+  .badge.errored { background: rgba(210,153,34,0.15); color: var(--medium); }
+  .badge.skipped { background: rgba(139,148,158,0.15); color: var(--muted); }
+  .counts { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .count-pill { font-size: 0.85rem; }
+  .count-pill .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
+  .dot.critical { background: var(--critical); }
+  .dot.high { background: var(--high); }
+  .dot.medium { background: var(--medium); }
+  .dot.low { background: var(--low); }
+  .finding {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--muted);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .finding.critical { border-left-color: var(--critical); }
+  .finding.high { border-left-color: var(--high); }
+  .finding.medium { border-left-color: var(--medium); }
+  .finding.low { border-left-color: var(--low); }
+  .finding-title { font-weight: 600; margin-bottom: 0.5rem; }
+  .finding-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .finding-section { margin: 0.5rem 0; }
+  .finding-label { font-weight: 600; color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .evidence { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 0.5rem 0.75rem; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.85rem; margin-top: 0.25rem; word-break: break-all; }
+  .steps { padding-left: 1.5rem; margin: 0.25rem 0; }
+  .passed-list { list-style: none; padding: 0; }
+  .passed-list li { padding: 0.3rem 0; color: var(--passed); }
+  .passed-list li::before { content: '✓ '; }
+  .journeys { display: grid; gap: 0.75rem; }
+  .journey { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; }
+  .journey-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+  .journey-name { font-weight: 600; }
+  .journey-meta { font-size: 0.8rem; color: var(--muted); }
+  footer { margin-top: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>ReviewPilot Browser QA Report</h1>
+    <div class="meta">
+      <span><strong>App:</strong> {{ report.app_name }}</span>
+      <span><strong>URL:</strong> {{ report.app_url }}</span>
+      <span><strong>Status:</strong> <span class="badge {{ report.status.value }}">{{ report.status.value | upper }}</span></span>
+      <span><strong>Duration:</strong> {{ "%.1f"|format(report.total_duration_seconds) }}s</span>
+    </div>
+    <div class="counts">
+      {% for sev, count in counts.items() %}
+        {% if count > 0 %}
+          <span class="count-pill"><span class="dot {{ sev.value }}"></span>{{ count }} {{ sev.value }}</span>
+        {% endif %}
+      {% endfor %}
+      {% if not any_findings %}
+        <span class="count-pill" style="color: var(--passed);">No issues found</span>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if any_findings %}
+    {% for sev, findings in findings_by_severity.items() %}
+      {% if findings %}
+        <h2>{{ sev.value | title }} Priority</h2>
+        {% for finding in findings %}
+          <div class="finding {{ sev.value }}">
+            <div class="finding-title">{{ loop.index }}. {{ finding.title }}</div>
+            <div class="finding-meta">
+              {% if finding.journey %}Journey: {{ finding.journey }} · {% endif %}
+              {% if finding.page %}Page: <code>{{ finding.page }}</code> · {% endif %}
+              {% if finding.viewport %}Viewport: {{ finding.viewport }}{% endif %}
+            </div>
+            {% if finding.expected %}
+              <div class="finding-section"><div class="finding-label">Expected</div>{{ finding.expected }}</div>
+            {% endif %}
+            {% if finding.actual %}
+              <div class="finding-section"><div class="finding-label">Actual</div>{{ finding.actual }}</div>
+            {% endif %}
+            {% if finding.why_it_matters %}
+              <div class="finding-section"><div class="finding-label">Why it matters</div>{{ finding.why_it_matters }}</div>
+            {% endif %}
+            {% if finding.reproduction_steps %}
+              <div class="finding-section"><div class="finding-label">Reproduction steps</div>
+                <ol class="steps">
+                  {% for step in finding.reproduction_steps %}<li>{{ step }}</li>{% endfor %}
+                </ol>
+              </div>
+            {% endif %}
+            {% if finding.evidence %}
+              <div class="finding-section"><div class="finding-label">Evidence</div>
+                {% for ev in finding.evidence %}<div class="evidence">{{ ev }}</div>{% endfor %}
+              </div>
+            {% endif %}
+            {% if finding.suggested_fix %}
+              <div class="finding-section"><div class="finding-label">Suggested fix</div>{{ finding.suggested_fix }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if passed_checks %}
+    <h2>Passed Checks</h2>
+    <ul class="passed-list">
+      {% for item in passed_checks %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+
+  <h2>Journeys</h2>
+  <div class="journeys">
+    {% for journey in report.journeys %}
+      <div class="journey">
+        <div class="journey-header">
+          <span class="journey-name">{{ journey.name }}</span>
+          <span class="badge {{ journey.status.value }}">{{ journey.status.value | upper }}</span>
+        </div>
+        <div class="journey-meta">
+          {{ journey.viewport }} · {{ journey.steps }} steps · {{ "%.1f"|format(journey.duration_seconds) }}s
+          {% if journey.findings %} · {{ journey.findings|length }} findings{% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <footer>Generated by ReviewPilot, powered by Browser Use.</footer>
+</div>
+</body>
+</html>

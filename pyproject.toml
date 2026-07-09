@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reviewpilot"
+version = "0.1.0"
+description = "AI browser QA for every Pull Request, powered by Browser Use."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ReviewPilot Contributors" }]
+keywords = ["browser-use", "qa", "pull-request", "github-action", "ai", "review", "testing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "browser-use>=0.12.0",
+    "typer>=0.12.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "pyyaml>=6.0",
+    "jinja2>=3.1.0",
+    "httpx>=0.27.0",
+    "python-dotenv>=1.0.0",
+    "pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+github = ["PyGithub>=2.0.0"]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+reviewpilot = "reviewpilot.cli.main:app"
+
+[project.urls]
+Homepage = "https://github.com/browser-use/reviewpilot"
+Repository = "https://github.com/browser-use/reviewpilot"
+Documentation = "https://github.com/browser-use/reviewpilot#readme"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["reviewpilot*"]
+
+[tool.setuptools.package-data]
+reviewpilot = ["reports/templates/*.html", "reports/templates/*.j2", "data/*.yml"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

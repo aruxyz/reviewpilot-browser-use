@@ -1,0 +1,40 @@
+name: ReviewPilot
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get preview URL
+        run: |
+          echo "Replace this step with your deploy preview action."
+          echo "Example for Vercel: vercel/preview-url-action"
+          echo "Example for Netlify: wait-for-netlify-preview"
+          echo "PREVIEW_URL=https://preview-${{ github.event.pull_request.number }}.yourapp.dev" >> $GITHUB_ENV
+
+      - name: Run ReviewPilot
+        uses: ./.github/actions/reviewpilot
+        with:
+          preview-url: ${{ env.PREVIEW_URL }}
+          github-token: ${{ github.token }}
+          config-path: .reviewpilot.yml
+          max-steps: '30'
+          timeout-seconds: '180'
+
+      - name: Upload report artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewpilot-report-${{ github.event.pull_request.number }}
+          path: reviewpilot-output/
+          retention-days: 14
